@@ -1,0 +1,3 @@
+aymard:
+    resource: "@AymardBundle/Controller/"
+    type:     annotation
