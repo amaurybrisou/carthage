@@ -1,0 +1,38 @@
+html {
+    width: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, Sans-Serif;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#mosaic {
+    position: fixed;
+    max-width:1200px; 
+}
+
+#menu {
+    position: fixed;
+    bottom: 5%;
+}
+
+#menu a {
+    text-decoration: none;
+}
+
+.thumbnail {
+    max-height: 20%;
+    max-width: 20%;
+}
+
+@media (min-width: 768px) {
+    #mosaic { 
+        width: 80%; 
+        margin: 2em auto; 
+    }
+    @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+    .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+}

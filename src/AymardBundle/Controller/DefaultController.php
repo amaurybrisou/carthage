@@ -8,10 +8,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{slug}", name="homepage", defaults={ "slug" : "index"})
      */
-    public function indexAction()
+    public function indexAction($slug)
     {
-        return $this->render('default/index.html.twig');
+    	
+		$page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle($slug);
+       	
+        return $this->render('AymardBundle:home:'. $slug . '.html.twig', ['photos' => $page->getPhotos()]);
     }
+
+
 }   

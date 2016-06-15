@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
         <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1,requiresActiveX=true" />
-        <title>Wix.com leforestierdequillien created by hortenseleforestier based on Photo Focus New</title>
         <meta http-equiv="X-Wix-Renderer-Server" content="app155.vae.aws" />
         <meta http-equiv="X-Wix-Meta-Site-Id" content="3f87cb05-4848-4e4a-bc97-dc049f37bc38" />
         <meta http-equiv="X-Wix-Application-Instance-Id" content="5cbc1c7033183f7b0ab6a2328d263f26|3f87cb05-4848-4e4a-bc97-dc049f37bc38" />
@@ -31,12 +30,19 @@
         <meta name="keywords" content="artiste, aymard, contemporain, le forestier de quillien, peinture" />
         <meta name="description" content="le forestier de quillien, aymard, peinture, artiste, contemporain" />
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        
+        <title>
+            {% block title %}
+                Welcome!
+            {% endblock %}
+        </title>
+        
+        {% block javascripts %}{% endblock %}
         {% block stylesheets %}{% endblock %}
+        
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body ng-app="aymardApp">
+    <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
     </body>
 </html>

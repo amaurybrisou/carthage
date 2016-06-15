@@ -1,0 +1,22 @@
+{
+  "name": "carthage",
+  "homepage": "https://github.com/php-amaurybrisou/carthage",
+  "authors": [
+    "Amaury <amaury.brisou@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.6"
+  }
+}

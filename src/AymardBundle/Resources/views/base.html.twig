@@ -1,0 +1,37 @@
+
+{% block javascripts %}
+    {% javascripts 
+        'js/angular/angular.min.js'
+        '@AymardBundle/Resources/public/js/main.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets 
+        '@AymardBundle/Resources/public/css/main.css'
+    %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
+    {% endstylesheets %}
+{% endblock %}
+
+<div ng-app="aymardApp">
+    {% block body %}{% endblock %}
+
+    <div id="menu">
+        {% block menu %}
+            <nav>
+                <a href="{{ path('homepage') }}">ACCUEIL</a>
+                <a href="{{ path('homepage', { 'slug': 'biography' }) }}">BIOGRAPHIE</a>
+                <a href="{{ path('homepage', { 'slug': 'acryliques' }) }}">ACRYLIQUES</a>
+                <a href="{{ path('homepage', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans }}</a>
+                <a href="{{ path('homepage', { 'slug' : 'ors' }) }}">ORS</a>
+                <a href="{{ path('homepage', { 'slug' : 'draws' }) }}">{{ 'menu.draws' | trans }}</a>
+                <a href="{{ path('homepage', { 'slug' : 'gouaches' }) }}">GOUACHES 1/2</a>
+                <a href="{{ path('homepage', { 'slug' : 'gouaches' }) }}">GOUACHES 2/2</a>
+                <a href="{{ path('homepage', { 'slug' : 'techniques_diverses' }) }}">TECHN DIVERSES</a>
+            </nav>
+        {% endblock %}
+    </div>
+</div>

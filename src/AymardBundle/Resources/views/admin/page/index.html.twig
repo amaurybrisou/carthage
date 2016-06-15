@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Page list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Meta</th>
+                <th>Keywords</th>
+                <th>Description</th>
+                <th>Photos</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for page in pages %}
+            <tr>
+                <td><a href="{{ path('admin_page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
+                <td>{{ page.title }}</td>
+                <td>{{ page.meta }}</td>
+                <td>{{ page.keywords }}</td>
+                <td>{{ page.description }}</td>
+                <td>{% if page.photos %}{{ page.photos|join(', ') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_page_show', { 'id': page.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_page_edit', { 'id': page.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_page_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

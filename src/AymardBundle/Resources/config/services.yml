@@ -1,3 +1,6 @@
+parameters:
+  aymard.image_path: %kernel.root_dir%/../web/img/
+
 services:
 #    aymard.example:
 #        class: AymardBundle\Example
