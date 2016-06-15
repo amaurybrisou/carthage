@@ -4,7 +4,7 @@
     <div id="wrapper">
      <input type="text" ng-model="yourName" placeholder="Enter a name here">
       <hr>
-      <h1>Hello {[{yourName}]}!</h1>
+      <h1>Hello {[{yourName}]} !</h1>
         LE FORESTIER DE QUILLIEN
         <nav>
             <a href="">ACCUEIL</a>
@@ -21,12 +21,12 @@
 {% endblock %}
 
 {% block javascripts %}
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="{{ asset('bundles/app/js/basic.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="{{ asset('bundles/aymard/js/basic.js') }}"></script>
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{{ asset('/bundles/app/css/viewer.css') }}" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{ asset('/bundles/aymard/css/viewer.css') }}" media="screen" />
 
 <style>
     body { background: #fff;  }

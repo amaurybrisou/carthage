@@ -1,3 +1,3 @@
-angular.module('myApp', []).config(function($interpolateProvider){
+angular.module('aymardApp', []).config(function($interpolateProvider){
     $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 });
