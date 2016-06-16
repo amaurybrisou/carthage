@@ -1,0 +1,15 @@
+{% extends 'AymardBundle::base.html.twig' %}
+
+{% block title %}LE FORESTIER DE QUILLIEN{% endblock %}
+{% block body %}
+	<div id="mosaic">
+		{% block mosaic %}
+	    	<hr>
+	        {% for photo in photos %}
+	        	<img class="thumbnail" src="{{ asset('img/' ~ photo.file ~ '' ) }}"/>
+	        {% endfor %}
+		{% endblock %}
+	</div>
+   
+{% endblock %}
+

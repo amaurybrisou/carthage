@@ -15,9 +15,10 @@ class DefaultController extends Controller
     	
 		$page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle($slug);
        	$photos = [];
-       	if($page){
+       	if(!is_null($page)){
        	    $photos = $page->getPhotos();
        	}
+    
         return $this->render('AymardBundle:home:'. $slug . '.html.twig', ['photos' => $photos]);
     }
 

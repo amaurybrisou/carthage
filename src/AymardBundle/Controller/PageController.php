@@ -47,8 +47,7 @@ class PageController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            echo $page->getDescription();
-            die(count($page->getPhotos()));
+
             $em->persist($page);
             $em->flush();
 
