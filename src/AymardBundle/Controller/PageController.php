@@ -47,6 +47,8 @@ class PageController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            echo $page->getDescription();
+            die(count($page->getPhotos()));
             $em->persist($page);
             $em->flush();
 
@@ -60,11 +62,11 @@ class PageController extends Controller
     }
 
     /**
-     * Finds and displays a Page entity.
-     *
-     * @Route("/{id}", name="admin_page_show")
-     * @Method("GET")
-     */
+    * Finds and displays a Page entity.
+    *
+    * @Route("/{id}", name="admin_page_show")
+    * @Method("GET")
+    */
     public function showAction(Page $page)
     {
         $deleteForm = $this->createDeleteForm($page);
