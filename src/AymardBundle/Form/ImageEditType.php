@@ -8,7 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
-class ImageType extends AbstractType
+class ImageEditType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -19,10 +19,6 @@ class ImageType extends AbstractType
         $builder
             ->add('description')
             ->add('page')
-            ->add('file', FileType::class, [
-                'label' => 'Image (png or jpg/jpeg)',
-                'data_class' => null ]
-            )
         ;
     }
     
@@ -33,7 +29,7 @@ class ImageType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'AymardBundle\Entity\Image',
-             'validation_groups' => array('default'),
+             'validation_groups' => array('registration'),
         ));
     }
 }

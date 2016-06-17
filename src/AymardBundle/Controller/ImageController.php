@@ -96,20 +96,22 @@ class ImageController extends Controller
     public function editAction(Request $request, Image $image)
     {
         $deleteForm = $this->createDeleteForm($image);
-        $editForm = $this->createForm('AymardBundle\Form\ImageType', $image);
+        $editForm = $this->createForm('AymardBundle\Form\ImageEditType', $image);
         $editForm->handleRequest($request);
-
+        $file = $image->getFile();
+        echo $file;
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            echo "heyo";
             $em = $this->getDoctrine()->getManager();
+            $image->setFile($file);
             $em->persist($image);
             $em->flush();
             
             return $this->redirectToRoute('admin_image_edit', array('id' => $image->getId()));
         }
     
-        if(!$editForm->isSubmitted()){
-            $editForm->remove('file');    
-        }
+        echo $image->getDescription();
+        echo $image->getFile();
         
         
         return $this->render('AymardBundle::admin/image/edit.html.twig', array(
