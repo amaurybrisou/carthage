@@ -4,10 +4,7 @@ namespace AymardBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class PageType extends AbstractType
 {
@@ -19,11 +16,14 @@ class PageType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('meta')
-            ->add('keywords')
+            ->add('meta_description')
+            ->add('meta_title')
+            ->add('meta_site_name')
+            ->add('meta_content')
+            ->add('meta_url')
+            ->add('meta_image')
+            ->add('meta_keywords')
             ->add('description')
-            ->add('photos')
-            ->add('save', SubmitType::class)
         ;
     }
     

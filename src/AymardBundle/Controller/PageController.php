@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AymardBundle\Entity\Page;
 use AymardBundle\Form\PageType;
 
+
 /**
  * Page controller.
  *
@@ -47,7 +48,6 @@ class PageController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($page);
             $em->flush();
 
@@ -92,7 +92,7 @@ class PageController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($page);
             $em->flush();
-
+            
             return $this->redirectToRoute('admin_page_edit', array('id' => $page->getId()));
         }
 

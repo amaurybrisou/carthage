@@ -79,8 +79,10 @@ nav a:hover {
 }
 
 #side-menu:hover {
-    width:250px !important;
+    width:500px !important;
     z-index:100;
+    
+    transition: width 0.3s ease;
 }
 
 .hidden {

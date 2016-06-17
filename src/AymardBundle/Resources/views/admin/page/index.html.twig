@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_base.html.twig' %}
 
 {% block body %}
     <h1>Page list</h1>
@@ -8,10 +8,14 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Meta</th>
-                <th>Keywords</th>
+                <th>Meta_description</th>
+                <th>Meta_title</th>
+                <th>Meta_site_name</th>
+                <th>Meta_content</th>
+                <th>Meta_url</th>
+                <th>Meta_image</th>
+                <th>Meta_keywords</th>
                 <th>Description</th>
-                <th>Photos</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,10 +24,14 @@
             <tr>
                 <td><a href="{{ path('admin_page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
                 <td>{{ page.title }}</td>
-                <td>{{ page.meta }}</td>
-                <td>{{ page.keywords }}</td>
+                <td>{{ page.metadescription }}</td>
+                <td>{{ page.metatitle }}</td>
+                <td>{{ page.metasitename }}</td>
+                <td>{{ page.metacontent }}</td>
+                <td>{{ page.metaurl }}</td>
+                <td>{{ page.metaimage }}</td>
+                <td>{{ page.metakeywords }}</td>
                 <td>{{ page.description }}</td>
-                <td>{% if page.photos %}{{ page.photos|join(', ') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>

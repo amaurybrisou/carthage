@@ -14,20 +14,36 @@
                 <td>{{ page.title }}</td>
             </tr>
             <tr>
-                <th>Meta</th>
-                <td>{{ page.meta }}</td>
+                <th>Meta_description</th>
+                <td>{{ page.metadescription }}</td>
             </tr>
             <tr>
-                <th>Keywords</th>
-                <td>{{ page.keywords }}</td>
+                <th>Meta_title</th>
+                <td>{{ page.metatitle }}</td>
+            </tr>
+            <tr>
+                <th>Meta_site_name</th>
+                <td>{{ page.metasitename }}</td>
+            </tr>
+            <tr>
+                <th>Meta_content</th>
+                <td>{{ page.metacontent }}</td>
+            </tr>
+            <tr>
+                <th>Meta_url</th>
+                <td>{{ page.metaurl }}</td>
+            </tr>
+            <tr>
+                <th>Meta_image</th>
+                <td>{{ page.metaimage }}</td>
+            </tr>
+            <tr>
+                <th>Meta_keywords</th>
+                <td>{{ page.metakeywords }}</td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>{{ page.description }}</td>
-            </tr>
-            <tr>
-                <th>Photos</th>
-                <td>{% if page.photos %}{{ page.photos|join(', ') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

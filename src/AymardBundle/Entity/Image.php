@@ -56,6 +56,8 @@ class Image
 
     public function setPage(Page $page){
         $this->page = $page;
+        
+        $page->addPhoto($this);
 
         return $this;
     }
@@ -124,5 +126,5 @@ class Image
 
     public function __toString(){
         return $this->file;
-    }
+   } 
 }

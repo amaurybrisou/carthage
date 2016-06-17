@@ -8,9 +8,9 @@ $(document).ready(function(){
         .mouseover(function(){
             window.setTimeout(function(){
                 $("#page-description").removeClass("hidden");
-            }, 100)
+            }, 0)
         })
-        .mouseout(function(){
+        .mouseleave(function(){
             $("#page-description").addClass("hidden");
         })
     $('#menu-trigger').click(function(){

@@ -30,19 +30,57 @@ class Page
      */
     private $title;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta", type="string", length=255, nullable=true)
-     */
-    private $meta;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="keywords", type="string", length=255, nullable=true)
+     * @ORM\Column(name="meta_description", type="string", length=255, nullable=true)
      */
-    private $keywords;
+    private $meta_description;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta_title", type="string", length=255, nullable=true)
+     */
+    private $meta_title;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta_site_name", type="string", length=255, nullable=true)
+     */
+    private $meta_site_name;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta_content", type="string", length=255, nullable=true)
+     */
+    private $meta_content;
+
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta_url", type="string", length=255, nullable=true)
+     */
+    private $meta_url;
+    
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta_image", type="string", length=255, nullable=true)
+     */
+    private $meta_image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta_keywords", type="string", length=255, nullable=true)
+     */
+    private $meta_keywords;
 
     /**
      * @var string
@@ -96,29 +134,9 @@ class Page
         return $this->title;
     }
 
-    /**
-     * Set meta
-     *
-     * @param string $meta
-     *
-     * @return Page
-     */
-    public function setMeta($meta)
-    {
-        $this->meta = $meta;
 
-        return $this;
-    }
 
-    /**
-     * Get meta
-     *
-     * @return string
-     */
-    public function getMeta()
-    {
-        return $this->meta;
-    }
+
 
     /**
      * Set keywords
@@ -178,7 +196,7 @@ class Page
     public function setPhotos($photos)
     {
         $this->photos = $photos;
-
+       
         return $this;
     }
 
@@ -202,7 +220,7 @@ class Page
     public function addPhoto(Image $photo)
     {
         $this->photos[] = $photo;
-
+       
         return $this;
     }
 
@@ -218,5 +236,173 @@ class Page
 
     public function __toString(){
         return $this->title;
+    }
+
+    /**
+     * Set metaDescription
+     *
+     * @param string $metaDescription
+     *
+     * @return Page
+     */
+    public function setMetaDescription($metaDescription)
+    {
+        $this->meta_description = $metaDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get metaDescription
+     *
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        return $this->meta_description;
+    }
+
+    /**
+     * Set metaTitle
+     *
+     * @param string $metaTitle
+     *
+     * @return Page
+     */
+    public function setMetaTitle($metaTitle)
+    {
+        $this->meta_title = $metaTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get metaTitle
+     *
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        return $this->meta_title;
+    }
+
+    /**
+     * Set metaSiteName
+     *
+     * @param string $metaSiteName
+     *
+     * @return Page
+     */
+    public function setMetaSiteName($metaSiteName)
+    {
+        $this->meta_site_name = $metaSiteName;
+
+        return $this;
+    }
+
+    /**
+     * Get metaSiteName
+     *
+     * @return string
+     */
+    public function getMetaSiteName()
+    {
+        return $this->meta_site_name;
+    }
+
+    /**
+     * Set metaContent
+     *
+     * @param string $metaContent
+     *
+     * @return Page
+     */
+    public function setMetaContent($metaContent)
+    {
+        $this->meta_content = $metaContent;
+
+        return $this;
+    }
+
+    /**
+     * Get metaContent
+     *
+     * @return string
+     */
+    public function getMetaContent()
+    {
+        return $this->meta_content;
+    }
+
+    /**
+     * Set metaUrl
+     *
+     * @param string $metaUrl
+     *
+     * @return Page
+     */
+    public function setMetaUrl($metaUrl)
+    {
+        $this->meta_url = $metaUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get metaUrl
+     *
+     * @return string
+     */
+    public function getMetaUrl()
+    {
+        return $this->meta_url;
+    }
+
+    /**
+     * Set metaImage
+     *
+     * @param string $metaImage
+     *
+     * @return Page
+     */
+    public function setMetaImage($metaImage)
+    {
+        $this->meta_image = $metaImage;
+
+        return $this;
+    }
+
+    /**
+     * Get metaImage
+     *
+     * @return string
+     */
+    public function getMetaImage()
+    {
+        return $this->meta_image;
+    }
+
+    /**
+     * Set metaKeywords
+     *
+     * @param string $metaKeywords
+     *
+     * @return Page
+     */
+    public function setMetaKeywords($metaKeywords)
+    {
+        $this->meta_keywords = $metaKeywords;
+
+        return $this;
+    }
+
+    /**
+     * Get metaKeywords
+     *
+     * @return string
+     */
+    public function getMetaKeywords()
+    {
+        return $this->meta_keywords;
     }
 }
