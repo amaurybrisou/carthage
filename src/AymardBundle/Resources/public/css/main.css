@@ -21,6 +21,7 @@ body {
     width:90%;
     margin-right:auto;
     margin-left:auto;
+    min-width:800px;
 }
 
 #menu a {
@@ -33,6 +34,7 @@ body {
     height: 100%;
     background: #fcfef6;
     left:5vw;
+    min-width:800px;
 }
 
 .thumbnail {

@@ -6,7 +6,9 @@ $(document).ready(function(){
 
     $("#side-menu")
         .mouseover(function(){
-            $("#page-description").removeClass("hidden");
+            window.setTimeout(function(){
+                $("#page-description").removeClass("hidden");
+            }, 100)
         })
         .mouseout(function(){
             $("#page-description").addClass("hidden");
