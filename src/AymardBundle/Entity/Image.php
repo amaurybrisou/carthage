@@ -26,7 +26,7 @@ class Image
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
     private $description;
 
@@ -45,7 +45,7 @@ class Image
     /**
     * @var Id
     * @ORM\ManyToOne(targetEntity="Page", inversedBy="photos")
-    * @ORM\JoinColumn(name="page_id", referencedColumnName="id")
+    * @ORM\JoinColumn(name="page_id", referencedColumnName="id", nullable=false)
     */
     private $page;
 

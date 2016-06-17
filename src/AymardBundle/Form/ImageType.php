@@ -18,11 +18,11 @@ class ImageType extends AbstractType
     {
         $builder
             ->add('description')
+            ->add('page')
             ->add('file', FileType::class, [
                 'label' => 'Image (png or jpg/jpeg)',
                 'data_class' => null ]
             )
-            ->add('page')
         ;
     }
     

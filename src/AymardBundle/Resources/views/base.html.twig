@@ -22,15 +22,15 @@
     <div id="menu">
         {% block menu %}
             <nav>
-                <a href="{{ path('homepage') }}">ACCUEIL</a>
-                <a href="{{ path('homepage', { 'slug': 'biography' }) }}">BIOGRAPHIE</a>
-                <a href="{{ path('homepage', { 'slug': 'acrylics' }) }}">ACRYLIQUES</a>
-                <a href="{{ path('homepage', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans }}</a>
-                <a href="{{ path('homepage', { 'slug' : 'gold' }) }}">ORS</a>
-                <a href="{{ path('homepage', { 'slug' : 'drawings' }) }}">{{ 'menu.drawings' | trans }}</a>
-                <a href="{{ path('homepage', { 'slug' : 'gouaches-1' }) }}">GOUACHES 1/2</a>
-                <a href="{{ path('homepage', { 'slug' : 'gouaches-2' }) }}">GOUACHES 2/2</a>
-                <a href="{{ path('homepage', { 'slug' : 'misc' }) }}">TECHN DIVERSES</a>
+                <a class="{% if slug == 'index' %} active {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
+                <a class="{% if slug == 'biography' %} active {% endif %}" href="{{ path('homepage', { 'slug': 'biography' }) }}">{{ 'menu.biography' | trans | upper }}</a>
+                <a class="{% if slug == 'acrylics' %} active {% endif %}" href="{{ path('homepage', { 'slug': 'acrylics' }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
+                <a class="{% if slug == 'oils' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans | upper }}</a>
+                <a class="{% if slug == 'gold' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'gold' }) }}">{{ 'menu.gold' | trans | upper }}</a>
+                <a class="{% if slug == 'drawings' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'drawings' }) }}">{{ 'menu.drawings' | trans | upper }}</a>
+                <a class="{% if slug == 'gouaches-1' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'gouaches-1' }) }}">{{ 'menu.gouaches-1' | trans | upper }}</a>
+                <a class="{% if slug == 'gouaches-2' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'gouaches-2' }) }}">{{ 'menu.gouaches-2' | trans | upper }}</a>
+                <a class="{% if slug == 'misc' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'misc' }) }}">{{ 'menu.misc' | trans | upper }}</a>
             </nav>
         {% endblock %}
     </div>

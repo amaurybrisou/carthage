@@ -1,6 +1,10 @@
 menu:
-  oils: HUILES
-  drawings: DESSINS
-  misc: techniques_diverses
-  gold: ors
-  acrylics: acryliques
+  homepage: "ACCUEIL"
+  oils: "HUILES"
+  drawings: "DESSINS"
+  misc: "TECHNIQUES DIVERSES"
+  gold: "ORS"
+  acrylics: "ACRYLIQUES"
+  gouaches-1: "GOUACHES-1"
+  gouaches-2: "GOUACHES-2"
+  biography: "BIOGRAPHIE"

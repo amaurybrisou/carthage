@@ -100,25 +100,18 @@ class ImageController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-
-            $file = $image->getFile();
-
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            
-            $file->move(
-                $this->container->getParameter('aymard.image_path'),
-                $fileName
-            );
-
-            $image->setFile($fileName);
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($image);
             $em->flush();
-
+            
             return $this->redirectToRoute('admin_image_edit', array('id' => $image->getId()));
         }
-
+    
+        if(!$editForm->isSubmitted()){
+            $editForm->remove('file');    
+        }
+        
+        
         return $this->render('AymardBundle::admin/image/edit.html.twig', array(
             'image' => $image,
             'edit_form' => $editForm->createView(),
