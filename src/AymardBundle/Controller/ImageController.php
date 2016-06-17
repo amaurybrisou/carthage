@@ -48,7 +48,7 @@ class ImageController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $file = $image->getFile();
 
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $fileName = $file->getClientOriginalName() .'.'.$file->guessExtension();
 
             $file->move(
                 $this->container->getParameter('aymard.image_path'),
