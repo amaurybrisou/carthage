@@ -99,9 +99,9 @@ class ImageController extends Controller
         $editForm = $this->createForm('AymardBundle\Form\ImageEditType', $image);
         $editForm->handleRequest($request);
         $file = $image->getFile();
-        echo $file;
+
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            echo "heyo";
+           
             $em = $this->getDoctrine()->getManager();
             $image->setFile($file);
             $em->persist($image);
@@ -109,10 +109,6 @@ class ImageController extends Controller
             
             return $this->redirectToRoute('admin_image_edit', array('id' => $image->getId()));
         }
-    
-        echo $image->getDescription();
-        echo $image->getFile();
-        
         
         return $this->render('AymardBundle::admin/image/edit.html.twig', array(
             'image' => $image,

@@ -1,6 +1,7 @@
 
 {% block javascripts %}
     {% javascripts 
+        'js/jquery/dist/jquery.min.js'
         'js/angular/angular.min.js'
         '@AymardBundle/Resources/public/js/main.js'
     %}
@@ -17,8 +18,19 @@
 {% endblock %}
 
 <div ng-app="aymardApp">
-    {% block body %}{% endblock %}
-
+    <nav id="side-menu">
+        <ul>
+            <li>
+                {{page.description}}
+            </li>
+        </ul>
+    </nav>
+    
+    <div id="main-content">
+        {% block body %}
+        
+        {% endblock %}
+    </div>
     <div id="menu">
         {% block menu %}
             <nav>

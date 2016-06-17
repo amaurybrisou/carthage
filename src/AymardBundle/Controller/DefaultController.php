@@ -12,17 +12,24 @@ class DefaultController extends Controller
      */
     public function indexAction($slug)
     {
-    	
-		$page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle($slug);
+    	$page = NULL;
+    	if($slug)
+		{
+		    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle($slug);
+		}
+		else {
+		    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle('index');
+		}
        	
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
        	}
-    
+      
         return $this->render('AymardBundle:home:'. $slug . '.html.twig', [
             'photos' => $photos,
-            'slug' => $slug
+            'slug' => $slug,
+            'page' => $page
         ]);
     }
 
