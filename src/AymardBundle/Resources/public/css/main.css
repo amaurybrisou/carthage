@@ -79,10 +79,11 @@ nav a:hover {
 #side-menu:hover {
     width:250px !important;
     z-index:100;
-
-    
 }
 
+.hidden {
+    display:none;
+}
 
 @media (min-width: 768px) {
     #mosaic { 

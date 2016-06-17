@@ -3,13 +3,14 @@ angular.module('aymardApp', []).config(function($interpolateProvider){
 });
 
 $(document).ready(function(){
-    $('body').click(function(){
-        var p = $( "p:first" );
-        var position = p.offset();
-        console.log(position)
-        $( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
-    })
 
+    $("#side-menu")
+        .mouseover(function(){
+            $("#page-description").removeClass("hidden");
+        })
+        .mouseout(function(){
+            $("#page-description").addClass("hidden");
+        })
     $('#menu-trigger').click(function(){
         $("#side-menu").toggleClass("menu-active");
     })
