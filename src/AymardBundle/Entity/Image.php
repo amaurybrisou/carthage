@@ -35,7 +35,7 @@ class Image
     * @var string 
     * 
     * @ORM\Column(name="file", type="string")
-    * @Assert\NotBlank(message="Please, upload an JPEG/JPG or PNG image file.")
+    * @Assert\NotBlank(message="Please, upload an JPEG/JPG or PNG image file.", groups={"registration"})
     */
     
     
