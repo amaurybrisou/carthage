@@ -18,15 +18,16 @@
 {% endblock %}
 
 <div ng-app="aymardApp">
+    
+
+    <a class="menu-trigger active">Open</a>
     <nav id="side-menu">
         <div id="page-description" class="hidden">
             {{page.description}}
         </div>
     </nav>
-    
     <div id="main-content">
         {% block body %}
-        
         {% endblock %}
     </div>
     <div id="menu">

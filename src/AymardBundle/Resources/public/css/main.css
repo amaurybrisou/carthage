@@ -71,19 +71,24 @@ nav a:hover {
 #side-menu {
     position:absolute;
     background:black;
-    width:5vw;
+    width:40vw;
     height:100vh;
-    transition: width 0.3s ease;
     opacity:0.8;
     color:#fafafa;
+    z-index:100;
 }
 
-#side-menu:hover {
-    width:500px !important;
-    z-index:100;
-    
-    transition: width 0.3s ease;
+.menu-trigger {
+    position:absolute;
+    z-index:101;
+    left:32vw;
 }
+
+/*#side-menu:hover {*/
+/*    width:500px !important;*/
+/*    z-index:100;*/
+/*    transition: width 0.3s ease;*/
+/*}*/
 
 .hidden {
     display:none;
@@ -96,5 +101,9 @@ nav a:hover {
     }
     @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
     @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-    .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    .sf-toolbar { 
+        opacity: 0; 
+        -webkit-animation: fade-in 1s .2s forwards; 
+        animation: fade-in 1s .2s forwards;
+    }
 }
