@@ -38,7 +38,6 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('hu-40-2011-60x60-labulle.jpg');$image->setDescription('hu-40-2011-60x60-labulle.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-280-2014-46x33-entregrisetrouge.jpg');$image->setDescription('hu-280-2014-46x33-entregrisetrouge.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-100-2012115x91-newjerusalem.jpg');$image->setDescription('hu-100-2012115x91-newjerusalem.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('fixtures');$image->setDescription('fixtures');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-90-2012-100x100autoportrait.jpg');$image->setDescription('hu-90-2012-100x100autoportrait.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-310-2014-60x60-intérieur.jpg');$image->setDescription('hu-310-2014-60x60-intérieur.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-300-2014-50x65-dublancaunoir.jpg');$image->setDescription('hu-300-2014-50x65-dublancaunoir.jpg');$image->setPage($page);$manager->persist($image);
@@ -59,7 +58,6 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('hu-250-2014-27x22-enigme.jpg');$image->setDescription('hu-250-2014-27x22-enigme.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-380-2015-30x30.jpg');$image->setDescription('hu-380-2015-30x30.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-400-2015-60x60-.jpg');$image->setDescription('hu-400-2015-60x60-.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('getpix.py');$image->setDescription('getpix.py');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-210-2013-80x80-lesgrainsdelaprécarité.jpg');$image->setDescription('hu-210-2013-80x80-lesgrainsdelaprécarité.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-190-2013-61x50-lalune.jpg');$image->setDescription('hu-190-2013-61x50-lalune.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-360-2015-41x27-aupied.jpg');$image->setDescription('hu-360-2015-41x27-aupied.jpg');$image->setPage($page);$manager->persist($image);
@@ -82,8 +80,7 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('ac-100-2011-30x40.jpg');$image->setDescription('ac-100-2011-30x40.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-10-1976-50x65.jpg');$image->setDescription('ac-10-1976-50x65.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-120-2011-50x65-lesformesauxpiedsdeplomb.jpg');$image->setDescription('ac-120-2011-50x65-lesformesauxpiedsdeplomb.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('fixtures');$image->setDescription('fixtures');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('ac-90-2010-35x28-fenêtre.jpg');$image->setDescription('ac-90-2010-35x28-fenêtre.jpg');$image->setPage($page);$manager->persist($image);
+       $image = new Image();$image->setFile('ac-90-2010-35x28-fenêtre.jpg');$image->setDescription('ac-90-2010-35x28-fenêtre.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-40-1985-50x50.jpg');$image->setDescription('ac-40-1985-50x50.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-190-2012-50x65.jpg');$image->setDescription('ac-190-2012-50x65.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-110-2011-30x50.jpg');$image->setDescription('ac-110-2011-30x50.jpg');$image->setPage($page);$manager->persist($image);
@@ -91,7 +88,6 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('ac-60-1985-55x40.jpg');$image->setDescription('ac-60-1985-55x40.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-30-1978-50x65.jpg');$image->setDescription('ac-30-1978-50x65.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-160-2011-60x80.jpg');$image->setDescription('ac-160-2011-60x80.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('getpix.py');$image->setDescription('getpix.py');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-80-2009-60x80.jpg');$image->setDescription('ac-80-2009-60x80.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-170-2011-80x60.jpg');$image->setDescription('ac-170-2011-80x60.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-70-2005-50x50.jpg');$image->setDescription('ac-70-2005-50x50.jpg');$image->setPage($page);$manager->persist($image);
@@ -126,7 +122,6 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('de-42.jpg');$image->setDescription('de-42.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-37.jpg');$image->setDescription('de-37.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-38.jpg');$image->setDescription('de-38.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('fixtures');$image->setDescription('fixtures');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-21.jpg');$image->setDescription('de-21.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-16.jpg');$image->setDescription('de-16.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-40.jpg');$image->setDescription('de-40.jpg');$image->setPage($page);$manager->persist($image);
@@ -137,7 +132,6 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('de-26.jpg');$image->setDescription('de-26.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-34.jpg');$image->setDescription('de-34.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-25.jpg');$image->setDescription('de-25.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('getpix.py');$image->setDescription('getpix.py');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-41.jpg');$image->setDescription('de-41.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-45.jpg');$image->setDescription('de-45.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('de-29.jpg');$image->setDescription('de-29.jpg');$image->setPage($page);$manager->persist($image);
@@ -200,7 +194,6 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('go-340.jpg');$image->setDescription('go-340.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-390.jpg');$image->setDescription('go-390.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-760.jpg');$image->setDescription('go-760.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('fix');$image->setDescription('fix');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-750.jpg');$image->setDescription('go-750.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-90.jpg');$image->setDescription('go-90.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-80-2012-25x25.jpg');$image->setDescription('go-80-2012-25x25.jpg');$image->setPage($page);$manager->persist($image);
@@ -209,7 +202,6 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('go-280.jpg');$image->setDescription('go-280.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-100.jpg');$image->setDescription('go-100.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-640.jpg');$image->setDescription('go-640.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('getpix.py');$image->setDescription('getpix.py');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-420.jpg');$image->setDescription('go-420.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-740.jpg');$image->setDescription('go-740.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('go-370.jpg');$image->setDescription('go-370.jpg');$image->setPage($page);$manager->persist($image);
@@ -245,9 +237,7 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('or20a-1983-hamel-triptique-91x80+détails.jpg');$image->setDescription('or20a-1983-hamel-triptique-91x80+détails.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or20-1983-hamel-triptique-91x80.jpg');$image->setDescription('or20-1983-hamel-triptique-91x80.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or40-1984-lemalène-31x20.jpg');$image->setDescription('or40-1984-lemalène-31x20.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('fix');$image->setDescription('fix');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or10-1984-ségurés-42x20.jpg');$image->setDescription('or10-1984-ségurés-42x20.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('getpix.py');$image->setDescription('getpix.py');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or50-1984-javols-20x31.jpg');$image->setDescription('or50-1984-javols-20x31.jpg');$image->setPage($page);$manager->persist($image);
                 
                 
@@ -280,10 +270,8 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('go-10-gouacheetpastel.jpg');$image->setDescription('go-10-gouacheetpastel.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('aq-20-aquarelle.jpg');$image->setDescription('aq-20-aquarelle.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('aq-30-aquarelle.jpg');$image->setDescription('aq-30-aquarelle.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('fix');$image->setDescription('fix');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('aq-70-aquarelle.jpg');$image->setDescription('aq-70-aquarelle.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('aq-10-aquarelle.jpg');$image->setDescription('aq-10-aquarelle.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('getpix.py');$image->setDescription('getpix.py');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('aq-50-aquarelle.jpg');$image->setDescription('aq-50-aquarelle.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('bo-20-gouachesurbois.jpg');$image->setDescription('bo-20-gouachesurbois.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('cr-10-crayonsdecouleur.jpg');$image->setDescription('cr-10-crayonsdecouleur.jpg');$image->setPage($page);$manager->persist($image);

@@ -7,9 +7,7 @@
 	    	<hr>
 	    	
 	    	{% for photo in photos %}
-
-	        		<img class="thumbnail" src="{{ ('web/img/' ~ photo.file) |imagine_filter('my_thumb')  }}"/>
-
+	        		<img class="thumbnail" src="{{ asset('/img/' ~ photo.file)  }}"/>
     		{% endfor %}
     		
 		{% endblock %}
