@@ -68,11 +68,8 @@ class PageController extends Controller
     */
     public function showAction(Page $page)
     {
-        $deleteForm = $this->createDeleteForm($page);
-
         return $this->render('AymardBundle::admin/page/show.html.twig', array(
             'page' => $page,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -84,7 +81,6 @@ class PageController extends Controller
      */
     public function editAction(Request $request, Page $page)
     {
-        $deleteForm = $this->createDeleteForm($page);
         $editForm = $this->createForm('AymardBundle\Form\PageType', $page);
         $editForm->handleRequest($request);
 
@@ -99,43 +95,6 @@ class PageController extends Controller
         return $this->render('AymardBundle::admin/page/edit.html.twig', array(
             'page' => $page,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
-    }
-
-    /**
-     * Deletes a Page entity.
-     *
-     * @Route("/{id}", name="admin_page_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, Page $page)
-    {
-        $form = $this->createDeleteForm($page);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($page);
-            $em->flush();
-        }
-
-        return $this->redirectToRoute('admin_page_index');
-    }
-
-    /**
-     * Creates a form to delete a Page entity.
-     *
-     * @param Page $page The Page entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Page $page)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_page_delete', array('id' => $page->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
     }
 }
