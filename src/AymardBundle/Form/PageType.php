@@ -3,6 +3,7 @@
 namespace AymardBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -23,7 +24,7 @@ class PageType extends AbstractType
             ->add('meta_url')
             ->add('meta_image')
             ->add('meta_keywords')
-            ->add('description')
+            ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:400px;width:300px;']])
         ;
     }
     

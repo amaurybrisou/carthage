@@ -85,7 +85,7 @@ class Page
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     * @ORM\Column(name="description", type="text", length=512, nullable=true)
      */
     private $description;
 

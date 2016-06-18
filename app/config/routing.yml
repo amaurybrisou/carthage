@@ -1,5 +1,6 @@
 aymard:
     resource: "@AymardBundle/Controller/"
     type:     annotation
-_liip_imagine:
-    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+image_format:
+    resource: "@AymardBundle/Resources/config/routing.yml"

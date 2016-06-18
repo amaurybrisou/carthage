@@ -4,9 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6ebde71355c4389817e958541746b69d",
-    "content-hash": "d29c333098ffa33c1934bd25f81d44a4",
+    "hash": "a0e162b5cc3b1f8773da18d9ba11ba00",
+    "content-hash": "1258bc8bc807349dd7d8f1c813888b87",
     "packages": [
+        {
+            "name": "avanzu/admin-theme-bundle",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avanzu/AdminThemeBundle.git",
+                "reference": "24a1ac93ace744b5e8cffe6681009a4cc8f3a133"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avanzu/AdminThemeBundle/zipball/24a1ac93ace744b5e8cffe6681009a4cc8f3a133",
+                "reference": "24a1ac93ace744b5e8cffe6681009a4cc8f3a133",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/assetic-bundle": ">=2.3",
+                "symfony/event-dispatcher": ">=2.3",
+                "symfony/http-foundation": ">=2.3",
+                "symfony/http-kernel": ">=2.3",
+                "symfony/twig-bundle": ">=2.3"
+            },
+            "require-dev": {
+                "hamcrest/hamcrest-php": "dev-master",
+                "mockery/mockery": "0.9.*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Avanzu\\AdminThemeBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Bach",
+                    "email": "mail@avanzu.de"
+                }
+            ],
+            "description": "Admin Theme based on the AdminLTE Template for easy integration into symfony",
+            "time": "2015-12-29 23:17:55"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",

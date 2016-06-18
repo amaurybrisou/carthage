@@ -4,14 +4,18 @@
 {% block body %}
 	<div id="mosaic">
 		{% block mosaic %}
-	    	<hr>
-	    	
 	    	{% for photo in photos %}
-	        		<img class="thumbnail" src="{{ asset('/img/' ~ photo.file)  }}"/>
+	    		<a href="" data-toggle="modal" data-target="#photo-modal">
+	        		<img class="img-thumbnail photo-thumbnail" src="{{ asset(('bundles/aymard/img/' ~ photo.file) | imagine_filter('photoThumb'))   }}"  full-size-link="{{ asset("bundles/aymard/img/" ~ photo.file) }}" image-description="{{ photo.description}}" />
+	        	</a>
     		{% endfor %}
-    		
 		{% endblock %}
 	</div>
-   
+	<div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+	   <div class="photo-modal-content" >
+      		<img src="" id="photo-modal-img" class="img-responsive" />
+      		<div id="image-description"></div>
+      </div>
+    </div>
 {% endblock %}
 

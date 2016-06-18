@@ -12,15 +12,8 @@ class DefaultController extends Controller
      */
     public function indexAction($slug)
     {
-    	$page = NULL;
-    	if($slug)
-		{
-		    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle($slug);
-		}
-		else {
-		    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle('index');
-		}
-       	
+	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneByTitle($slug);
+
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();

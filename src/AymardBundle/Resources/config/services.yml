@@ -1,7 +1,9 @@
 parameters:
   aymard.image_path: %kernel.root_dir%/../web/img/
+  aymard.menu_listener.class: AymardBundle\EventListener\MenuItemListListener
 
 services:
-#    aymard.example:
-#        class: AymardBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    aymard.menu_listener: 
+        class: "%aymard.menu_listener.class%"
+        tags:
+          - { event: theme.sidebar_setup_menu, method: onSetupMenu,  name: kernel.event_listener }

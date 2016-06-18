@@ -127,4 +127,8 @@ class Image
     public function __toString(){
         return $this->file;
    } 
+   
+   public function jsonSerialize(){
+       return array('file' => $this->file, 'description'=> $this->description);
+   }
 }

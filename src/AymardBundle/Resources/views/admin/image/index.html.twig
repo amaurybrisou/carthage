@@ -3,12 +3,15 @@
 {% block body %}
     <h1>Image list</h1>
 
-    <table>
+    <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Description</th>
+                <th>Photo</th>
+                <th>Page</th>
                 <th>Actions</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -27,7 +30,10 @@
                     </ul>
                 </td>
                 <td>
-                    <img class="thumbnail" height="150px" src="{{ asset('img/' ~ image.file ~ '' ) }}"/>
+                    <img class="img-thumbnail photo-thumbnail" src="{{ asset(('bundles/aymard/img/' ~ image.file) | imagine_filter('photoThumb'))   }}"/>
+                </td>
+                <td>
+                    {{ image.page.title }}
                 </td>
             </tr>
         {% endfor %}
@@ -39,4 +45,10 @@
             <a href="{{ path('admin_image_new') }}">Create a new entry</a>
         </li>
     </ul>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#table').DataTable();
+        });
+    </script>
 {% endblock %}

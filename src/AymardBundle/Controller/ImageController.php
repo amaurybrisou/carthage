@@ -32,7 +32,8 @@ class ImageController extends Controller
             'images' => $images,
         ));
     }
-
+    
+    
     /**
      * Creates a new Image entity.
      *

@@ -66,3 +66,20 @@ Enjoy!
 [10]: https://symfony.com/doc/3.0/cookbook/email.html
 [11]: https://symfony.com/doc/3.0/cookbook/logging/monolog.html
 [13]: https://symfony.com/doc/3.0/bundles/SensioGeneratorBundle/index.html
+
+
+## Resources 
+
+        http://isotope.metafizzy.co/
+        https://github.com/avanzu/AdminThemeBundle
+        
+## Installation
+
+        composer install
+        bower install
+        php bin/console assets:install web --symlink
+        php bin/console assetic:dump
+        php bin/console avanzu:admin:fetch-vendor
+        
+
+        

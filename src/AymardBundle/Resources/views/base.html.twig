@@ -2,7 +2,11 @@
 {% block javascripts %}
     {% javascripts 
         'js/jquery/dist/jquery.min.js'
+        'js/imagesloaded/imagesloaded.pkgd.min.js'
         'js/angular/angular.min.js'
+        'js/isotope/dist/isotope.pkgd.min.js'
+        'js/bootstrap/dist/js/bootstrap.min.js'
+
         '@AymardBundle/Resources/public/js/main.js'
     %}
     <script src="{{ asset_url }}"></script>
@@ -11,38 +15,43 @@
 
 {% block stylesheets %}
     {% stylesheets 
+        'js/bootstrap/dist/css/bootstrap.min.css'
+        'js/bootstrap/dist/css/bootstrap-theme.min.css'
         '@AymardBundle/Resources/public/css/main.css'
     %}
     <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
+    <style type="text/css">
+            @font-face {
+                font-family: 'Glyphicons Halflings';
+                src: url('/web/js/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf');
+            }
+    </style>
     {% endstylesheets %}
 {% endblock %}
 
-<div ng-app="aymardApp">
+<div class="">
     
-
-    <a class="menu-trigger active">Open</a>
-    <nav id="side-menu">
-        <div id="page-description" class="hidden">
-            {#{{page.description}}#}
-            page desc
-        </div>
+    <div id="c-menu__close" class="c-menu__close glyphicon glyphicon-backward is-active"></div>
+    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
+        {{  page.getDescription() }}
     </nav>
-    <div id="main-content">
+
+    <div id="main-content" >
         {% block body %}
         {% endblock %}
     </div>
-    <div id="menu">
+    <div id="menu" >
         {% block menu %}
             <nav>
-                <a class="{% if slug == 'index' %} active {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
-                <a class="{% if slug == 'biography' %} active {% endif %}" href="{{ path('homepage', { 'slug': 'biography' }) }}">{{ 'menu.biography' | trans | upper }}</a>
-                <a class="{% if slug == 'acrylics' %} active {% endif %}" href="{{ path('homepage', { 'slug': 'acrylics' }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
-                <a class="{% if slug == 'oils' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans | upper }}</a>
-                <a class="{% if slug == 'gold' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'gold' }) }}">{{ 'menu.gold' | trans | upper }}</a>
-                <a class="{% if slug == 'drawings' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'drawings' }) }}">{{ 'menu.drawings' | trans | upper }}</a>
-                <a class="{% if slug == 'gouaches-1' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'gouaches-1' }) }}">{{ 'menu.gouaches-1' | trans | upper }}</a>
-                <a class="{% if slug == 'gouaches-2' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'gouaches-2' }) }}">{{ 'menu.gouaches-2' | trans | upper }}</a>
-                <a class="{% if slug == 'misc' %} active {% endif %}" href="{{ path('homepage', { 'slug' : 'misc' }) }}">{{ 'menu.misc' | trans | upper }}</a>
+                <a class="{% if slug == 'index' %} active-menu {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
+                <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug': 'biography' }) }}">{{ 'menu.biography' | trans | upper }}</a>
+                <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug': 'acrylics' }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
+                <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans | upper }}</a>
+                <a class="{% if slug == 'gold' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug' : 'gold' }) }}">{{ 'menu.gold' | trans | upper }}</a>
+                <a class="{% if slug == 'drawings' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug' : 'drawings' }) }}">{{ 'menu.drawings' | trans | upper }}</a>
+                <a class="{% if slug == 'gouaches-1' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug' : 'gouaches-1' }) }}">{{ 'menu.gouaches-1' | trans | upper }}</a>
+                <!-- <a class="{% if slug == 'gouaches-2' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug' : 'gouaches-2' }) }}">{{ 'menu.gouaches-2' | trans | upper }}</a> -->
+                <a class="{% if slug == 'misc' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug' : 'misc' }) }}">{{ 'menu.misc' | trans | upper }}</a>
             </nav>
         {% endblock %}
     </div>

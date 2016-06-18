@@ -233,8 +233,8 @@ class LoadUserData implements FixtureInterface
         $page->setTitle('gold');
         $manager->persist($page);
         $image = new Image();$image->setFile('or30-1984-séguret-40x16.jpg');$image->setDescription('or30-1984-séguret-40x16.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('or20b-1983-hamel-triptique-détails.jpg');$image->setDescription('or20b-1983-hamel-triptique-détails.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('or20a-1983-hamel-triptique-91x80+détails.jpg');$image->setDescription('or20a-1983-hamel-triptique-91x80+détails.jpg');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('or20b-1983-hamel-triptique-détails.jpg');$image->setDescription('or20b-1983-hamel-triptique-details.jpg');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('or20a-1983-hamel-triptique-91x80+détails.jpg');$image->setDescription('or20a-1983-hamel-triptique-91x80-details.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or20-1983-hamel-triptique-91x80.jpg');$image->setDescription('or20-1983-hamel-triptique-91x80.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or40-1984-lemalène-31x20.jpg');$image->setDescription('or40-1984-lemalène-31x20.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or10-1984-ségurés-42x20.jpg');$image->setDescription('or10-1984-ségurés-42x20.jpg');$image->setPage($page);$manager->persist($image);
