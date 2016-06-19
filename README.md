@@ -81,5 +81,8 @@ Enjoy!
         php bin/console assetic:dump
         php bin/console avanzu:admin:fetch-vendor
         
+## Setup in production
 
-        
+        composer install --no-dev --optimize-autoloader
+        php bin/console cache:clear --env=prod --no-debug
+        php bin/console assetic:dump --env=prod --no-debug

@@ -1,12 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1,requiresActiveX=true" />
+
+    <link rel="shortcut icon" href="http://static.parastorage.com/client/pfavico.ico" type="image/png" />
+    <link rel="canonical" href="http://www.leforestierdequillien.com/" />
+        
+    <meta name="fragment" content="!" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    {% if page.meta is defined %}
+        {% for meta in page.meta %}
+            <meta property="{{ meta.property }}" content="{{ meta.content }}" />
+        {% endfor%}
+    {% endif %}
+    <meta charset="UTF-8" />
+        
+    <title>
+        {% block title %}
+            {{ page.title }}
+        {% endblock %}
+    </title>
+    
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
 
 {% block javascripts %}
     {% javascripts 
         'js/jquery/dist/jquery.min.js'
         'js/imagesloaded/imagesloaded.pkgd.min.js'
-        'js/angular/angular.min.js'
         'js/isotope/dist/isotope.pkgd.min.js'
         'js/bootstrap/dist/js/bootstrap.min.js'
-
         '@AymardBundle/Resources/public/js/main.js'
     %}
     <script src="{{ asset_url }}"></script>
@@ -18,32 +43,52 @@
         'js/bootstrap/dist/css/bootstrap.min.css'
         'js/bootstrap/dist/css/bootstrap-theme.min.css'
         '@AymardBundle/Resources/public/css/main.css'
+        '@AymardBundle/Resources/public/css/spinner.css'
     %}
     <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
+    
+    {% endstylesheets %}
     <style type="text/css">
             @font-face {
                 font-family: 'Glyphicons Halflings';
                 src: url('/web/js/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf');
             }
     </style>
-    {% endstylesheets %}
 {% endblock %}
 
 <div class="">
     
-    <div id="c-menu__close" class="c-menu__close glyphicon glyphicon-backward is-active"></div>
-    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
-        {{  page.getDescription() }}
-    </nav>
-
+    {% block left_slider %}
+        <div id="c-menu__close" class="c-menu__close glyphicon glyphicon-backward is-active"></div>
+        <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
+            {{  page.getDescription() }}
+        </nav>
+    {% endblock %}
     <div id="main-content" >
         {% block body %}
+            <div id="mosaic">
+                {% block mosaic %}
+        	    	{% for photo in photos %}
+        	    		<a href="" data-toggle="modal" data-target="#photo-modal">
+        	        		<img class="img-thumbnail photo-thumbnail" src="{{ asset(('bundles/aymard/img/' ~ photo.file) | imagine_filter('photoThumb'))   }}"  full-size-link="{{ asset("bundles/aymard/img/" ~ photo.file) }}" image-description="{{ photo.description}}" />
+        	        	</a>
+            		{% endfor %}
+        		{% endblock %}
+            </div>
+            
+        	<div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+        	   <div class="photo-modal-content">
+        	   		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
+              		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
+              		<div style="display:none;" id="image-description"></div>
+              </div>
+            </div>
         {% endblock %}
     </div>
     <div id="menu" >
         {% block menu %}
             <nav>
-                <a class="{% if slug == 'index' %} active-menu {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
+                <a class="{% if slug == 'home' %} active-menu {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
                 <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug': 'biography' }) }}">{{ 'menu.biography' | trans | upper }}</a>
                 <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug': 'acrylics' }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
                 <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('homepage', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans | upper }}</a>

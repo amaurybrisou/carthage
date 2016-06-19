@@ -6,6 +6,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+
+use AymardBundle\Entity\Meta;
 
 class PageType extends AbstractType
 {
@@ -15,17 +20,19 @@ class PageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        
         $builder
             ->add('title')
-            ->add('meta_description')
-            ->add('meta_title')
-            ->add('meta_site_name')
-            ->add('meta_content')
-            ->add('meta_url')
-            ->add('meta_image')
-            ->add('meta_keywords')
-            ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:400px;width:300px;']])
+            ->add('slug')
+            ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:200px;width:400px;']])
         ;
+        
+        $builder->add('meta', CollectionType::class, array(
+            'entry_type' => MetaType::class,
+            'allow_add'    => true,
+            'allow_delete' => true,
+            'by_reference' => false,
+        ));
     }
     
     /**

@@ -33,7 +33,7 @@ class ImageType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'AymardBundle\Entity\Image',
-             'validation_groups' => array('Default'),
+            'validation_groups' => array('Default'),
         ));
     }
 }

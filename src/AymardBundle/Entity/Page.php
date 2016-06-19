@@ -26,62 +26,17 @@ class Page
     /**
      * @var string
      *
+     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     */
+    private $slug;
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="title", type="string", length=255, unique=true)
      */
     private $title;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta_description", type="string", length=255, nullable=true)
-     */
-    private $meta_description;
     
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta_title", type="string", length=255, nullable=true)
-     */
-    private $meta_title;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta_site_name", type="string", length=255, nullable=true)
-     */
-    private $meta_site_name;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta_content", type="string", length=255, nullable=true)
-     */
-    private $meta_content;
-
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta_url", type="string", length=255, nullable=true)
-     */
-    private $meta_url;
-    
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta_image", type="string", length=255, nullable=true)
-     */
-    private $meta_image;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meta_keywords", type="string", length=255, nullable=true)
-     */
-    private $meta_keywords;
-
     /**
      * @var string
      *
@@ -95,6 +50,14 @@ class Page
      * @ORM\OneToMany(targetEntity="Image", mappedBy="page")
      */
     private $photos;
+
+    /**
+     * @var array
+     *
+     * @ORM\OneToMany(targetEntity="Meta", mappedBy="page", cascade={"persist"})
+     */
+    private $meta;    
+    
 
     public function __construct(){
         $this->photos = new ArrayCollection();
@@ -134,33 +97,31 @@ class Page
         return $this->title;
     }
 
-
-
-
-
     /**
-     * Set keywords
+     * Set slug
      *
-     * @param string $keywords
+     * @param string slug
      *
      * @return Page
      */
-    public function setKeywords($keywords)
+    public function setSlug($title)
     {
-        $this->keywords = $keywords;
+        $this->slug = $slug;
 
         return $this;
     }
 
     /**
-     * Get keywords
+     * Get slug
      *
      * @return string
      */
-    public function getKeywords()
+    public function getSlug()
     {
-        return $this->keywords;
+        return $this->slug;
     }
+    
+    
 
     /**
      * Set description
@@ -235,174 +196,56 @@ class Page
     }
 
     public function __toString(){
-        return $this->title;
+        return $this->slug . ' : ' . $this->title;
     }
 
+
+
     /**
-     * Set metaDescription
+     * Add metum
      *
-     * @param string $metaDescription
+     * @param \AymardBundle\Entity\Meta $metum
      *
      * @return Page
      */
-    public function setMetaDescription($metaDescription)
+    public function addMetum(\AymardBundle\Entity\Meta $metum)
     {
-        $this->meta_description = $metaDescription;
+        $this->meta[] = $metum;
 
         return $this;
     }
 
     /**
-     * Get metaDescription
+     * Remove metum
      *
-     * @return string
+     * @param \AymardBundle\Entity\Meta $metum
      */
-    public function getMetaDescription()
+    public function removeMetum(\AymardBundle\Entity\Meta $metum)
     {
-        return $this->meta_description;
+        $this->meta->removeElement($metum);
     }
 
     /**
-     * Set metaTitle
+     * Get meta
      *
-     * @param string $metaTitle
-     *
-     * @return Page
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setMetaTitle($metaTitle)
+    public function getMeta()
     {
-        $this->meta_title = $metaTitle;
-
-        return $this;
+        return $this->meta;
     }
-
-    /**
-     * Get metaTitle
-     *
-     * @return string
-     */
-    public function getMetaTitle()
+    
+    
+    
+    public function addMeta(Meta $meta)
     {
-        return $this->meta_title;
+        $meta->addPage($this);
+
+        $this->meta->add($meta);
     }
-
-    /**
-     * Set metaSiteName
-     *
-     * @param string $metaSiteName
-     *
-     * @return Page
-     */
-    public function setMetaSiteName($metaSiteName)
+    
+    public function removeMeta(Meta $meta)
     {
-        $this->meta_site_name = $metaSiteName;
-
-        return $this;
-    }
-
-    /**
-     * Get metaSiteName
-     *
-     * @return string
-     */
-    public function getMetaSiteName()
-    {
-        return $this->meta_site_name;
-    }
-
-    /**
-     * Set metaContent
-     *
-     * @param string $metaContent
-     *
-     * @return Page
-     */
-    public function setMetaContent($metaContent)
-    {
-        $this->meta_content = $metaContent;
-
-        return $this;
-    }
-
-    /**
-     * Get metaContent
-     *
-     * @return string
-     */
-    public function getMetaContent()
-    {
-        return $this->meta_content;
-    }
-
-    /**
-     * Set metaUrl
-     *
-     * @param string $metaUrl
-     *
-     * @return Page
-     */
-    public function setMetaUrl($metaUrl)
-    {
-        $this->meta_url = $metaUrl;
-
-        return $this;
-    }
-
-    /**
-     * Get metaUrl
-     *
-     * @return string
-     */
-    public function getMetaUrl()
-    {
-        return $this->meta_url;
-    }
-
-    /**
-     * Set metaImage
-     *
-     * @param string $metaImage
-     *
-     * @return Page
-     */
-    public function setMetaImage($metaImage)
-    {
-        $this->meta_image = $metaImage;
-
-        return $this;
-    }
-
-    /**
-     * Get metaImage
-     *
-     * @return string
-     */
-    public function getMetaImage()
-    {
-        return $this->meta_image;
-    }
-
-    /**
-     * Set metaKeywords
-     *
-     * @param string $metaKeywords
-     *
-     * @return Page
-     */
-    public function setMetaKeywords($metaKeywords)
-    {
-        $this->meta_keywords = $metaKeywords;
-
-        return $this;
-    }
-
-    /**
-     * Get metaKeywords
-     *
-     * @return string
-     */
-    public function getMetaKeywords()
-    {
-        return $this->meta_keywords;
+        $this->meta->removeElement($meta);
     }
 }

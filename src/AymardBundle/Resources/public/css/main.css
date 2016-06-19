@@ -7,7 +7,6 @@ html {
 }
 
 body {
-    
     width: 100%;
     font-size: 18px;
     margin: 0 auto;
@@ -17,7 +16,6 @@ body {
     z-index: -1;
     margin-bottom: 5%;
 }
-
 
 #menu {
     z-index: 600;
@@ -147,6 +145,10 @@ nav a:hover {
     transition: transform 0.3s;
 }
 
+#c-menu__close:hover {
+    cursor:pointer;
+}
+
 #photo-modal {
     height:100%;
     width:100%;
@@ -158,12 +160,14 @@ nav a:hover {
     position: relative;
     padding: 15px;
     margin:65px;
-
 }
+
+
 
 #image-description {
     color:white;
     margin:auto;
+    bottom: 0;
     text-align:center;
     font-size:0.9em;
     padding:5px;

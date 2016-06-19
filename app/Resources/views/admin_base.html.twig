@@ -24,8 +24,10 @@
 
 {% block javascripts_head %}
     {% javascripts 
+        'js/jquery/dist/jquery.min.js'
         '@common_js'
         '@admin_lte_wysiwyg'
+        '@AymardBundle/Resources/public/js/admin.js'
         '@AymardBundle/Resources/public/js/wysihtml.js'
         output='js/vendors.js'
     %}
@@ -37,10 +39,10 @@
     Administration
 {% endblock %}
 
-{# {% block page_subtitle %}
+{% block page_subtitle %}
     Administration
 {% endblock %}
- #}
+
 {% block page_content %}
     {%  block body  %}{% endblock %}
     
