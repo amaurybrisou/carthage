@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@AymardBundle/Resources/config/config.yml" }
     - { resource: "@AymardBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -79,10 +80,3 @@ assetic:
     twig:
         functions:
             jpegoptim: ~
-
-liip_imagine:
-    filter_sets:
-        photoThumb:
-            quality: 75
-            filters:
-                thumbnail: { size: [300, 90], mode: outbound }

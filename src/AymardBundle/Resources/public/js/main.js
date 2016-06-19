@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    console.log("Created by Amaury Brisou & Jerry Kim, @June 2016");
     $mosaic = $('#mosaic').imagesLoaded( function() {
   // init Isotope after all images have loaded
       $mosaic.isotope({
