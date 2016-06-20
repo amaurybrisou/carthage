@@ -104,7 +104,7 @@ class Page
      *
      * @return Page
      */
-    public function setSlug($title)
+    public function setSlug($slug)
     {
         $this->slug = $slug;
 

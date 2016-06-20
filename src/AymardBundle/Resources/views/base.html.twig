@@ -68,7 +68,7 @@
             {% block mosaic %}
     	    	{% for photo in photos %}
     	    		<a href="" data-toggle="modal" data-target="#photo-modal">
-    	        		<img class="img-thumbnail photo-thumbnail" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
+    	        		<img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
     	        	</a>
         		{% endfor %}
     		{% endblock %}

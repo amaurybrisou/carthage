@@ -31,7 +31,7 @@ $(document).ready(function(){
 
     })
     
-    $(".photo-thumbnail").on('click', function(event){
+    $(".photo-modal-event").on('click', function(event){
         var imageUrl = $(this).attr('full-size-link');
         var imageDesc = $(this).attr('image-description');
        

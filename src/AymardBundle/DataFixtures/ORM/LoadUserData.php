@@ -13,9 +13,25 @@ class LoadUserData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
+        $page = new Page();
+        $page->setTitle('home');
+        $page->setSlug('home');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+        $manager->persist($page);
+        $image = new Image();$image->setFile('bonnecat.jpeg');$image->setDescription('<p>"La bonne graine" 2011. Acrylique sur papier ingre. 48x63<br></p>');$image->setPage($page);$manager->persist($image);
+
+        $page = new Page();
+        $page->setTitle('biography');
+        $page->setSlug('biography');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+        $manager->persist($page);
+        $image = new Image();$image->setFile('aymard.jpeg');$image->setDescription('aymard.jpeg');$image->setPage($page);$manager->persist($image);
+
         //OILS
         $page = new Page();
         $page->setTitle('oils');
+        $page->setSlug('oils');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
         $manager->persist($page);
         
         $image = new Image();$image->setFile('hu-160-2013-60x60aubordduprécipice.jpg');$image->setDescription('hu-160-2013-60x60aubordduprécipice.jpg');$image->setPage($page);$manager->persist($image);
@@ -69,6 +85,7 @@ class LoadUserData implements FixtureInterface
         //Acrylics
         $page = new Page();
         $page->setTitle('acrylics');
+        $page->setSlug('acrylics');
         $manager->persist($page);
  
         $image = new Image();$image->setFile('ac-210-2012-50x65.jpg');$image->setDescription('ac-210-2012-50x65.jpg');$image->setPage($page);$manager->persist($image);
@@ -98,6 +115,8 @@ class LoadUserData implements FixtureInterface
         //DESSINS
         $page = new Page();
         $page->setTitle('drawings');
+        $page->setSlug('drawings');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
         $manager->persist($page);
         
         $image = new Image();$image->setFile('de-11.jpg');$image->setDescription('de-11.jpg');$image->setPage($page);$manager->persist($image);
@@ -144,6 +163,8 @@ class LoadUserData implements FixtureInterface
         //GOUACHES1
         $page = new Page();
         $page->setTitle('gouaches-1');
+        $page->setSlug('gouaches-1');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
         $manager->persist($page);
 
         $image = new Image();$image->setFile('go-250.jpg');$image->setDescription('go-250.jpg');$image->setPage($page);$manager->persist($image);
@@ -231,6 +252,8 @@ class LoadUserData implements FixtureInterface
         //GOLD
         $page = new Page();
         $page->setTitle('gold');
+        $page->setSlug('gold');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
         $manager->persist($page);
         $image = new Image();$image->setFile('or30-1984-séguret-40x16.jpg');$image->setDescription('or30-1984-séguret-40x16.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('or20b-1983-hamel-triptique-détails.jpg');$image->setDescription('or20b-1983-hamel-triptique-details.jpg');$image->setPage($page);$manager->persist($image);
@@ -244,6 +267,8 @@ class LoadUserData implements FixtureInterface
         //TECHN DIVERSES
         $page = new Page();
         $page->setTitle('misc');
+        $page->setSlug('misc');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
         $manager->persist($page);         
         $image = new Image();$image->setFile('pa-30-pastel.jpg');$image->setDescription('pa-30-pastel.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-10-acryligueetpastel.jpg');$image->setDescription('ac-10-acryligueetpastel.jpg');$image->setPage($page);$manager->persist($image);
