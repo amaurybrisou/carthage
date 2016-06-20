@@ -1,8 +1,18 @@
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-aymard:
-    resource: "@AymardBundle/Controller/"
+aymard_admin_image:
+    resource: "@AymardBundle/Controller/ImageController.php"
+    type:     annotation
+
+
+aymard_admin_page:
+    resource: "@AymardBundle/Controller/PageController.php"
+    type:     annotation
+
+
+aymard_default:
+    resource: "@AymardBundle/Controller/DefaultController.php"
     type:     annotation
 
 image_format:
