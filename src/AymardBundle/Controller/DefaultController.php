@@ -4,6 +4,7 @@ namespace AymardBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -11,9 +12,13 @@ class DefaultController extends Controller
      * @Route("/{_locale}", defaults={ "_locale": "fr"})
      * @Route("/{_locale}/home", name="homepage", defaults={ "_locale": "fr"})
      */
-    public function homeAction()
+    public function homeAction(Request $request)
     {
-
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    
+        $request->setLocale($lang);
+        $locale = $request->getLocale();
+      
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('home');
 
        	$photos = [];
@@ -50,7 +55,7 @@ class DefaultController extends Controller
     /**
      * @Route("/{_locale}/{slug}", name="view_pages", defaults={ "_locale" : "fr" })
      */
-    public function indexAction($_locale, $slug)
+    public function indexAction(Request $request, $_locale, $slug)
     {
         if($slug == 'admin'){
             return $this->redirectToRoute('admin_page_index');
