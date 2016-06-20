@@ -86,13 +86,7 @@
 <div id="menu" >
     {% block menu %}
         <nav>
-            {% if app.request.locale == "en" %}
-                {% set locale = 'fr' %}
-            {% else %}
-                {% set locale = 'en' %}
-            {% endif %}
-            <a class="language-switcher" href="{{ path(slug, {'_locale' : locale }) }}"><i class="glyphicon glyphicon-flag"></i></a>
-            <a class="{% if slug == 'home' %} active-menu {% endif %}" href="{{ path('home') }}">{{ 'homepage' | trans | upper }}</a>
+            <a class="{% if slug == 'home' %} active-menu {% endif %}" href="{{ path('home') }}">{{ 'home' | trans | upper }}</a>
             <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('biography') }}">{{ 'biography' | trans | upper }}</a>
             <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'acrylics'}) }}">{{ 'acrylics' | trans | upper }}</a>
             <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'oils' }) }}">{{ 'oils' | trans | upper }}</a>
