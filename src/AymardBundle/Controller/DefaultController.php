@@ -10,7 +10,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/{_locale}", defaults={ "_locale": "fr"})
-     * @Route("/{_locale}/home", name="homepage", defaults={ "_locale": "fr"})
+     * @Route("/{_locale}/home", name="home", defaults={ "_locale": "fr"})
      */
     public function homeAction(Request $request)
     {

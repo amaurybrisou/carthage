@@ -54,6 +54,10 @@ nav a:hover {
     color: black;
 }
 
+nav a.language-switcher {
+    border-bottom: none;
+}
+
 .active-menu {
     border-bottom:2px solid tomato;
 }
