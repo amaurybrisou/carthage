@@ -8,8 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
-     * @Route("/home", name="homepage")
+     * @Route("/{_locale}", defaults={ "_locale": "fr"})
+     * @Route("/{_locale}/home", name="homepage", defaults={ "_locale": "fr"})
      */
     public function homeAction()
     {
@@ -29,7 +29,7 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/biography", name="biography")
+     * @Route("/{_locale}/biography", name="biography", defaults={ "_locale": "fr"})
      */
     public function biographyAction()
     {
@@ -48,9 +48,9 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/{slug}", name="view_pages")
+     * @Route("/{_locale}/{slug}", name="view_pages", defaults={ "_locale" : "fr" })
      */
-    public function indexAction($slug)
+    public function indexAction($_locale, $slug)
     {
         if($slug == 'admin'){
             return $this->redirectToRoute('admin_page_index');

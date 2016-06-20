@@ -20,3 +20,5 @@ web/js
 web/css
 web/fonts
 web/js
+web/assetic/*
+*.gz

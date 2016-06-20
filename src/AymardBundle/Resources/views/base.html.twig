@@ -87,13 +87,13 @@
     {% block menu %}
         <nav>
             <a class="{% if slug == 'home' %} active-menu {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
-            <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'biography' }) }}">{{ 'menu.biography' | trans | upper }}</a>
-            <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'acrylics' }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
-            <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans | upper }}</a>
-            <a class="{% if slug == 'gold' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gold' }) }}">{{ 'menu.gold' | trans | upper }}</a>
-            <a class="{% if slug == 'drawings' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'drawings' }) }}">{{ 'menu.drawings' | trans | upper }}</a>
-            <a class="{% if slug == 'gouaches-1' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gouaches-1' }) }}">{{ 'menu.gouaches-1' | trans | upper }}</a>
-            <a class="{% if slug == 'misc' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'menu.misc' | trans | upper }}</a>
+            <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('biography', { '_locale' : app.request.locale }) }}">{{ 'menu.biography' | trans | upper }}</a>
+            <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'acrylics', '_locale' : app.request.locale }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
+            <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'oils', '_locale' : app.request.locale }) }}">{{ 'menu.oils' | trans | upper }}</a>
+            <a class="{% if slug == 'gold' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gold', '_locale' : app.request.locale }) }}">{{ 'menu.gold' | trans | upper }}</a>
+            <a class="{% if slug == 'drawings' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'drawings', '_locale' : app.request.locale }) }}">{{ 'menu.drawings' | trans | upper }}</a>
+            <a class="{% if slug == 'gouaches-1' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gouaches-1', '_locale' : app.request.locale }) }}">{{ 'menu.gouaches-1' | trans | upper }}</a>
+            <a class="{% if slug == 'misc' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'misc', '_locale' : app.request.locale }) }}">{{ 'menu.misc' | trans | upper }}</a>
         </nav>
     {% endblock %}
 </div>
