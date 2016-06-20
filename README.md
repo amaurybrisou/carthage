@@ -86,3 +86,6 @@ Enjoy!
         composer install --no-dev --optimize-autoloader
         php bin/console cache:clear --env=prod --no-debug
         php bin/console assetic:dump --env=prod --no-debug
+        
+## Create Admin User
+        php bin/console fos:user:create --super-admin <username> <email> <password>

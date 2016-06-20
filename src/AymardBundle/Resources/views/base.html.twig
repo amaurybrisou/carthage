@@ -19,7 +19,7 @@
         
     <title>
         {% block title %}
-            {{ page.title }}
+            {{ page.title | capitalize}}
         {% endblock %}
     </title>
     
@@ -47,6 +47,7 @@
         '@bootstrap_css'
         '@AymardBundle/Resources/public/css/main.css'
         '@AymardBundle/Resources/public/css/biography.css'
+        '@AymardBundle/Resources/public/css/home.css'
         '@AymardBundle/Resources/public/css/slider.css'
         '@AymardBundle/Resources/public/css/spinner.css'
     %}
@@ -54,47 +55,45 @@
     {% endstylesheets %}
 {% endblock %}
 
-<div>
-    {% block left_slider %}
-        <div id="c-menu__close" class="c-menu__close glyphicon glyphicon-backward is-active"></div>
-        <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
-            {{  page.getDescription() }}
+
+{% block left_slider %}
+    <div id="c-menu__close" class="c-menu__close glyphicon glyphicon-backward is-active"></div>
+    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
+        {{  page.getDescription() }}
+    </nav>
+{% endblock %}
+<div id="main-content" >
+    {% block body %}
+        <div id="mosaic">
+            {% block mosaic %}
+    	    	{% for photo in photos %}
+    	    		<a href="" data-toggle="modal" data-target="#photo-modal">
+    	        		<img class="img-thumbnail photo-thumbnail" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
+    	        	</a>
+        		{% endfor %}
+    		{% endblock %}
+        </div>
+        
+    	<div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+    	   <div class="photo-modal-content">
+    	   		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
+          		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
+          		<div style="display:none;" id="image-description"></div>
+          </div>
+        </div>
+    {% endblock %}
+</div>
+<div id="menu" >
+    {% block menu %}
+        <nav>
+            <a class="{% if slug == 'home' %} active-menu {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
+            <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'biography' }) }}">{{ 'menu.biography' | trans | upper }}</a>
+            <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'acrylics' }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
+            <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans | upper }}</a>
+            <a class="{% if slug == 'gold' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gold' }) }}">{{ 'menu.gold' | trans | upper }}</a>
+            <a class="{% if slug == 'drawings' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'drawings' }) }}">{{ 'menu.drawings' | trans | upper }}</a>
+            <a class="{% if slug == 'gouaches-1' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gouaches-1' }) }}">{{ 'menu.gouaches-1' | trans | upper }}</a>
+            <a class="{% if slug == 'misc' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'menu.misc' | trans | upper }}</a>
         </nav>
     {% endblock %}
-    <div id="main-content" >
-        {% block body %}
-            <div id="mosaic">
-                {% block mosaic %}
-        	    	{% for photo in photos %}
-        	    		<a href="" data-toggle="modal" data-target="#photo-modal">
-        	        		<img class="img-thumbnail photo-thumbnail" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
-        	        	</a>
-            		{% endfor %}
-        		{% endblock %}
-            </div>
-            
-        	<div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
-        	   <div class="photo-modal-content">
-        	   		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
-              		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
-              		<div style="display:none;" id="image-description"></div>
-              </div>
-            </div>
-        {% endblock %}
-    </div>
-    <div id="menu" >
-        {% block menu %}
-            <nav>
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                <a class="{% if slug == 'home' %} active-menu {% endif %}" href="{{ path('homepage') }}">{{ 'menu.homepage' | trans | upper }}</a>
-                <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'biography' }) }}">{{ 'menu.biography' | trans | upper }}</a>
-                <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'acrylics' }) }}">{{ 'menu.acrylics' | trans | upper }}</a>
-                <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'oils' }) }}">{{ 'menu.oils' | trans | upper }}</a>
-                <a class="{% if slug == 'gold' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gold' }) }}">{{ 'menu.gold' | trans | upper }}</a>
-                <a class="{% if slug == 'drawings' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'drawings' }) }}">{{ 'menu.drawings' | trans | upper }}</a>
-                <a class="{% if slug == 'gouaches-1' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gouaches-1' }) }}">{{ 'menu.gouaches-1' | trans | upper }}</a>
-                <a class="{% if slug == 'misc' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'menu.misc' | trans | upper }}</a>
-            </nav>
-        {% endblock %}
-    </div>
 </div>

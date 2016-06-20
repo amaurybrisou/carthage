@@ -11,12 +11,12 @@
                 <h3>AYMARD LE FORESTIER DE QUILLIEN</h3>
             </div>
             <div>
-                <h4> ARTISTE PEINTRE</h4>
+                <h4>{{ 'artiste_peintre' | trans | upper }}</h4>
             </div>
         </div>
     	{% for photo in photos %}
-    		<a href="" data-toggle="modal" data-target="#photo-modal">
-        		<img class="img-thumbnail photo-thumbnail" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
+    		<a data-toggle="modal" data-target="#photo-modal">
+        		<img src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
         	</a>
 		{% endfor %}
     </div>

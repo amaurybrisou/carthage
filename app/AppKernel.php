@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Avanzu\AdminThemeBundle\AvanzuAdminThemeBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new AymardBundle\AymardBundle(),
         ];
 

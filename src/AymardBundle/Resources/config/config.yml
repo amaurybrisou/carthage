@@ -15,3 +15,8 @@ liip_imagine:
             filters:
                 thumbnail: { size: [300, 300], mode: inset }
 
+# app/config/config.yml
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AymardBundle\Entity\User

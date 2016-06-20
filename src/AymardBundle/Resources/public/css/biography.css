@@ -8,13 +8,17 @@
     margin-left:auto;
 }
 
+.title {
+    width:100%;
+}
 
 .right_content {
-    width:55%;
+    margin-left:1px;
+    width:100%;
 }
 
 .biography .right_content_bottom {
-    font-size:0.9em;
+    font-size:1em;
     width:100%;
     display:inline-flex;
 }
