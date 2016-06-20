@@ -23,4 +23,14 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    
+    <script>
+        $('#image_edit_description').wysihtml5({
+            toolbar: {
+                fa: true,
+                html: true,
+                color: true
+            }
+         });
+    </script>
 {% endblock %}

@@ -7,9 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-
 use AymardBundle\Entity\Meta;
 
 class PageType extends AbstractType
@@ -24,15 +22,15 @@ class PageType extends AbstractType
         $builder
             ->add('title')
             ->add('slug')
-            ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:200px;width:400px;']])
+            ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:200px;']])
         ;
         
-        $builder->add('meta', CollectionType::class, array(
+        $builder->add('meta', CollectionType::class, [
             'entry_type' => MetaType::class,
             'allow_add'    => true,
             'allow_delete' => true,
             'by_reference' => false,
-        ));
+        ]);
     }
     
     /**

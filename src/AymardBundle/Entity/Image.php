@@ -123,7 +123,7 @@ class Image
     {
         return $this->file;
     }
-
+    
     public function __toString(){
         return $this->file;
    } 

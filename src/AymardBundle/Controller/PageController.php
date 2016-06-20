@@ -2,6 +2,8 @@
 
 namespace AymardBundle\Controller;
 
+
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -82,44 +84,31 @@ class PageController extends Controller
      */
     public function editAction(Request $request, Page $page)
     {
-        // $meta1= new Meta();
-        // $meta1->setProperty('name');
-        // $meta1->setContent("some content of name");
         
-        // $page->getMeta()->add($meta1);
-
         $editForm = $this->createForm('AymardBundle\Form\PageType', $page);
         $editForm->handleRequest($request);
 
 
-       // $originalMeta = new array();
+        $originalMeta = new ArrayCollection();
         
         // Create an ArrayCollection of the current Meta objects in the database
-        // foreach ($task->getMeta() as $meta) {
-        //     $originalMeta->add($meta);
-        // }
+         foreach ($page->getMeta() as $meta) {
+             $originalMeta->add($meta);
+        }
     
         if ($editForm->isSubmitted() && $editForm->isValid()) {
            
-        //      // remove the relationship between the tag and the Task
-        //     foreach ($originalMeta as $meta) {
-        //         if (false === $page->getMeta()->contains($meta)) {
-
-        //             // if it was a many-to-one relationship, remove the relationship like this
-        //             $meta->setPage(null);
+              // remove the relationship between the tag and the Task
+             foreach ($originalMeta as $meta) {
+                 if (false === $page->getMeta()->contains($meta)) {
+                     // if it was a many-to-one relationship, remove the relationship like this
+                     $meta->setPage(null);
     
-        //             $em->persist($tag);
-    
-        //             // if you wanted to delete the Tag entirely, you can also do that
-        //             $em->remove($meta);
-        //         }
-        //     }
-           
-           $m = $page->getMeta();
-           for($i =0; $i < count($m); $i++)
-           {
-                $m[$i]->setPage($page);   
-           }
+                     // if you wanted to delete the Tag entirely, you can also do that
+                     $em->remove($meta);
+                 }
+             }
+         
             $em = $this->getDoctrine()->getManager();
             $em->persist($page);
             $em->flush();

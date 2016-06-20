@@ -49,7 +49,7 @@ class ImageController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $file = $image->getFile();
 
-            $fileName = $file->getClientOriginalName() .'.'.$file->guessExtension();
+            $fileName = $file->getClientOriginalName();
 
             $file->move(
                 $this->container->getParameter('aymard.image_path'),
@@ -130,12 +130,23 @@ class ImageController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $fileName = $image->getFile();
+
+            $this->removeFile($this->container->getParameter('aymard.image_path') . $fileName);
+            
             $em = $this->getDoctrine()->getManager();
             $em->remove($image);
             $em->flush();
         }
 
         return $this->redirectToRoute('admin_image_index');
+    }
+    
+    private function removeFile($file)
+    {
+        if (isset($file)) {
+            unlink($file);
+        }
     }
 
     /**

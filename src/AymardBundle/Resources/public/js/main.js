@@ -3,6 +3,7 @@ $(document).ready(function(){
     $mosaic = $('#mosaic').imagesLoaded( function() {
   // init Isotope after all images have loaded
       $mosaic.isotope({
+          layoutMode: 'fitRows',
           itemSelector: '.photo-thumbnail',
           masonry: {
             columnWidth: 10
@@ -78,8 +79,7 @@ $(document).ready(function(){
 	        },
 	        "margin": "auto"
         });
-       
-            console.log(photo_modal_content.css("height"));
+
         img.css({
             "height": function () {
 	            return ("70vh");

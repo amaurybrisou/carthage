@@ -13,4 +13,13 @@
             <a href="{{ path('admin_image_index') }}">Back to the list</a>
         </li>
     </ul>
+        <script>
+        $('#image_description').wysihtml5({
+            toolbar: {
+                fa: true,
+                html: true,
+                color: true
+            }
+         });
+    </script>
 {% endblock %}

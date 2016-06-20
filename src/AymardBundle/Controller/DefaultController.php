@@ -8,19 +8,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
+     * @Route("/")
      * @Route("/home", name="homepage")
      */
     public function homeAction()
     {
 
-        
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('home');
 
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
        	}
-      
+
         return $this->render('AymardBundle:home:home.html.twig', [
             'photos' => $photos,
             'slug' => 'home',
@@ -48,7 +48,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/{slug}", name="homepage", defaults={ "slug" : "home"})
+     * @Route("/{slug}", name="view_pages")
      */
     public function indexAction($slug)
     {

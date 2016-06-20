@@ -1,1 +1,31 @@
 {% extends 'AymardBundle::base.html.twig' %}
+
+{% block left_slider %}{% endblock %}
+
+{% block body %}
+
+    
+    <div class="home">
+        <div class="title title_home">
+            <div>
+                <h3>AYMARD LE FORESTIER DE QUILLIEN</h3>
+            </div>
+            <div>
+                <h4> ARTISTE PEINTRE</h4>
+            </div>
+        </div>
+    	{% for photo in photos %}
+    		<a href="" data-toggle="modal" data-target="#photo-modal">
+        		<img class="img-thumbnail photo-thumbnail" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
+        	</a>
+		{% endfor %}
+    </div>
+    
+    <div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+       <div class="photo-modal-content">
+       		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
+      		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
+      		<div style="display:none;" id="image-description"></div>
+      </div>
+    </div>
+{% endblock %}
