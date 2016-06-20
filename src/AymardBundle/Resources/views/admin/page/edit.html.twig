@@ -8,14 +8,16 @@
         {{ form_row(edit_form.description) }}
         {{ form_row(edit_form.slug) }}
         <h1>Meta</h1>
-        <ul class="metas" data-prototype="{{ form_widget(edit_form.meta.vars.prototype)|e('html_attr') }}" >
-            {% for m in edit_form.meta %}
-                <div class="form-inline">
-                    <li class="form-group">{{ form_row(m.property) }}</li>
-                    <li class="form-group">{{ form_row(m.content) }}</li>
-                    
-                </div>
+        <ul class="metas form-inline" data-prototype="{{ form_widget(edit_form.metas.vars.prototype)|e('html_attr') }}" >
+            {% for m in edit_form.metas %}
+                <li>
+                    <div class="form-group">
+                        {{ form_row(m.property) }}
+                        {{ form_row(m.content) }}
+                    </div>
+                </li>
             {% endfor %}
+            
         </ul>
     
         <input type="submit" value="Edit" />
@@ -42,13 +44,13 @@
         var $collectionHolder;
 
         // setup an "add a tag" link
-        var $addMetaLink = $('<a href="#" class="add_meta_link">Add a Meta tag</a>');
+        var $addMetaLink = $('<button href="#" class="btn btn-primary add_meta_link">Add a Meta tag</button>');
         var $newLinkLi = $('<li></li>').append($addMetaLink);
         
         
         
         function addMetaFormDeleteLink($metaFormLi) {
-            var $removeFormA = $('<a href="#">delete this tag</a>');
+            var $removeFormA = $('<button class="btn btn-primary" href="#">Delete this Meta</button>');
             $metaFormLi.append($removeFormA);
         
             $removeFormA.on('click', function(e) {
@@ -71,16 +73,18 @@
             // Replace '__name__' in the prototype's HTML to
             // instead be a number based on how many items we have
             var newForm = prototype.replace(/__name__/g, index);
-        
+            
             // increase the index with one for the next item
             $collectionHolder.data('index', index + 1);
         
             // Display the form in the page in an li, before the "Add a tag" link li
-            var $newFormLi = $('<li></li>').append(newForm);
-            $newLinkLi.before($newFormLi);
+            var $newFormDiv = $('<div class="form-inline"></div>').append(newForm);
+            $newLinkLi.before($newFormDiv);
             
             // add a delete link to the new form
-            addMetaFormDeleteLink($newFormLi);
+            addMetaFormDeleteLink($newFormDiv);
+            
+            return index;
         }
         
         jQuery(document).ready(function() {
@@ -102,14 +106,15 @@
             $addMetaLink.on('click', function(e) {
                 // prevent the link from creating a "#" on the URL
                 e.preventDefault();
-        
                 // add a new tag form (see next code block)
-                addMetaForm($collectionHolder, $newLinkLi);
+                var index = addMetaForm($collectionHolder, $newLinkLi);
+                
+                $("#page_metas_" + index ).addClass('form-group');
             });
         });
         
         function addTagFormDeleteLink($tagFormLi) {
-            var $removeFormA = $('<a href="#">delete this tag</a>');
+            var $removeFormA = $('<button class="btn btn-primary"> Delete this meta</button>');
             $tagFormLi.append($removeFormA);
         
             $removeFormA.on('click', function(e) {
@@ -121,16 +126,16 @@
             });
         }
         
-        jQuery(document).ready(function() {
+        /*jQuery(document).ready(function() {
             // Get the ul that holds the collection of tags
-            $collectionHolder = $('ul.tags');
+            $collectionHolder = $('ul.metas');
         
-            // add a delete link to all of the existing tag form li elements
+            // add a delete link to all of the existing metas form li elements
             $collectionHolder.find('li').each(function() {
                 addTagFormDeleteLink($(this));
             });
         
             // ... the rest of the block from above
-        });
+        });*/
     </script>
 {% endblock %}

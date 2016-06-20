@@ -15,7 +15,7 @@ use AymardBundle\Form\PageType;
 
 /**
  * Page controller.
- *
+ * @Route("/admin")
  * @Route("/admin/page")
  */
 class PageController extends Controller
@@ -82,34 +82,29 @@ class PageController extends Controller
      * @Route("/{id}/edit", name="admin_page_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Page $page)
+    public function editAction(Page $page, Request $request)
     {
+        $originalMeta = new ArrayCollection();
+        
+        // Create an ArrayCollection of the current Meta objects in the database
+        foreach ($page->getMetas() as $meta) {
+             $originalMeta->add($meta);
+        }
         
         $editForm = $this->createForm('AymardBundle\Form\PageType', $page);
         $editForm->handleRequest($request);
 
-
-        $originalMeta = new ArrayCollection();
-        
-        // Create an ArrayCollection of the current Meta objects in the database
-         foreach ($page->getMeta() as $meta) {
-             $originalMeta->add($meta);
-        }
     
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-           
-              // remove the relationship between the tag and the Task
-             foreach ($originalMeta as $meta) {
-                 if (false === $page->getMeta()->contains($meta)) {
-                     // if it was a many-to-one relationship, remove the relationship like this
-                     $meta->setPage(null);
-    
-                     // if you wanted to delete the Tag entirely, you can also do that
-                     $em->remove($meta);
-                 }
-             }
-         
             $em = $this->getDoctrine()->getManager();
+              // remove the relationship between the meta and the page
+            foreach ($originalMeta as $meta) {
+                if (!$page->getMetas()->contains($meta)) {
+                    // if you wanted to delete the Tag entirely, you can also do that
+                    $em->remove($meta);
+                }
+            }
+         
             $em->persist($page);
             $em->flush();
             

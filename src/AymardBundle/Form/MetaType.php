@@ -11,8 +11,8 @@ class MetaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('property', TextType::class, ['attr' => ['class' => "form-control"]])
-            ->add('content', TextType::class, ['attr' => ['class' => "form-control"]]);
+            ->add('property', TextType::class)
+            ->add('content', TextType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

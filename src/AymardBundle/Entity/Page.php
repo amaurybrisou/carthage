@@ -56,7 +56,7 @@ class Page
      *
      * @ORM\OneToMany(targetEntity="Meta", mappedBy="page", cascade={"persist"})
      */
-    private $meta;    
+    private $metas;    
     
 
     public function __construct(){
@@ -210,7 +210,7 @@ class Page
      */
     public function addMetum(\AymardBundle\Entity\Meta $metum)
     {
-        $this->meta[] = $metum;
+        $this->metas[] = $metum;
 
         return $this;
     }
@@ -222,17 +222,17 @@ class Page
      */
     public function removeMetum(\AymardBundle\Entity\Meta $metum)
     {
-        $this->meta->removeElement($metum);
+        $this->metas->removeElement($metum);
     }
 
     /**
-     * Get meta
+     * Get metas
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMeta()
+    public function getMetas()
     {
-        return $this->meta;
+        return $this->metas;
     }
     
     
@@ -241,11 +241,11 @@ class Page
     {
         $meta->addPage($this);
 
-        $this->meta->add($meta);
+        $this->metas->add($meta);
     }
     
     public function removeMeta(Meta $meta)
     {
-        $this->meta->removeElement($meta);
+        $this->metas->removeElement($meta);
     }
 }

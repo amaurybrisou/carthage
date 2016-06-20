@@ -39,7 +39,7 @@ class Meta
     
     /**
     * @var Id
-    * @ORM\ManyToOne(targetEntity="Page", inversedBy="photos")
+    * @ORM\ManyToOne(targetEntity="Page", inversedBy="metas")
     * @ORM\JoinColumn(name="page_id", referencedColumnName="id", nullable=false)
     */
     private $page;
@@ -133,9 +133,7 @@ class Meta
     
     public function addPage(Page $page)
     {
-        if (!$this->meta->contains($page)) {
-            $this->meta->add($page);
-        }
+        $this->page = $page;
         return $this;
     }
 }

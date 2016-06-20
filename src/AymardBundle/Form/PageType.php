@@ -25,11 +25,12 @@ class PageType extends AbstractType
             ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:200px;']])
         ;
         
-        $builder->add('meta', CollectionType::class, [
+        $builder->add('metas', CollectionType::class, [
             'entry_type' => MetaType::class,
             'allow_add'    => true,
             'allow_delete' => true,
             'by_reference' => false,
+            'attr' => ['class' => 'form-inline']
         ]);
     }
     
