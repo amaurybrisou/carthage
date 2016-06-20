@@ -1,3 +1,7 @@
+aymard_page:
+    resource: "@AymardBundle/Controller/PageController.php"
+    type:     annotation
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
