@@ -15,7 +15,6 @@ use AymardBundle\Form\PageType;
 
 /**
  * Page controller.
- * @Route("/admin")
  * @Route("/admin/page")
  */
 class PageController extends Controller
