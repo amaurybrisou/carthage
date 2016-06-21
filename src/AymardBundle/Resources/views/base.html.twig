@@ -1,10 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1,requiresActiveX=true" />
-
-    <link rel="shortcut icon" href="http://static.parastorage.com/client/pfavico.ico" type="image/png" />
     <link rel="canonical" href="http://www.leforestierdequillien.com/" />
         
     <meta name="fragment" content="!" />
@@ -15,11 +12,11 @@
             <meta property="{{ meta.property }}" content="{{ meta.content }}" />
         {% endfor%}
     {% endif %}
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
         
     <title>
         {% block title %}
-            {{ page.title | trans | capitalize }}
+            {{ page.title | trans | capitalize }} - Aymard Le Forestier de Quilien
         {% endblock %}
     </title>
     
@@ -34,7 +31,11 @@
         '@bootstrap_js'
         '@AymardBundle/Resources/public/vendors/imagesloaded/imagesloaded.pkgd.min.js'
         '@AymardBundle/Resources/public/vendors/isotope/dist/isotope.pkgd.min.js'
-        '@AymardBundle/Resources/public/js/main.js'
+        '@AymardBundle/Resources/public/js/left-slider.js'
+        '@AymardBundle/Resources/public/js/isotope.js'
+        '@AymardBundle/Resources/public/js/modal.js'
+        '@AymardBundle/Resources/public/js/author.js'
+        
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -46,10 +47,10 @@
     {% stylesheets  filter="cssrewrite"
         '@bootstrap_css'
         '@AymardBundle/Resources/public/css/main.css'
-        '@AymardBundle/Resources/public/css/biography.css'
-        '@AymardBundle/Resources/public/css/home.css'
         '@AymardBundle/Resources/public/css/slider.css'
+        '@AymardBundle/Resources/public/css/modal.css'
         '@AymardBundle/Resources/public/css/spinner.css'
+        '@AymardBundle/Resources/public/css/menu.css'
     %}
         <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
     {% endstylesheets %}
@@ -68,7 +69,7 @@
             {% block mosaic %}
     	    	{% for photo in photos %}
     	    		<a href="" data-toggle="modal" data-target="#photo-modal">
-    	        		<img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" />
+    	        		<img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ ('img/' ~ photo.file) | imagine_filter('fullSize')   }}" image-description="{{ photo.description}}" />
     	        	</a>
         		{% endfor %}
     		{% endblock %}
@@ -76,6 +77,7 @@
         
     	<div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
     	   <div class="photo-modal-content">
+    	        <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
     	   		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
           		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
           		<div style="display:none;" id="image-description"></div>
@@ -85,15 +87,33 @@
 </div>
 <div id="menu" >
     {% block menu %}
-        <nav>
-            <a class="{% if slug == 'home' %} active-menu {% endif %}" href="{{ path('home') }}">{{ 'home' | trans | upper }}</a>
-            <a class="{% if slug == 'biography' %} active-menu {% endif %}" href="{{ path('biography') }}">{{ 'biography' | trans | upper }}</a>
-            <a class="{% if slug == 'acrylics' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug': 'acrylics'}) }}">{{ 'acrylics' | trans | upper }}</a>
-            <a class="{% if slug == 'oils' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'oils' }) }}">{{ 'oils' | trans | upper }}</a>
-            <a class="{% if slug == 'gold' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gold' }) }}">{{ 'gold' | trans | upper }}</a>
-            <a class="{% if slug == 'drawings' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'drawings' } ) }}">{{ 'drawings' | trans | upper }}</a>
-            <a class="{% if slug == 'gouaches-1' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gouaches-1' }) }}">{{ 'gouaches-1' | trans | upper }}</a>
-            <a class="{% if slug == 'misc' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'misc' | trans | upper }}</a>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-center">
+                    <li class="navbar-header {% if slug == 'home' %} active {% endif %}"><a href="{{ path('home') }}">{{ 'home' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'biography' %} active {% endif %}"><a href="{{ path('biography') }}">{{ 'biography' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'acrylics' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug': 'acrylics'}) }}">{{ 'acrylics' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'oils' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'oils' }) }}">{{ 'oils' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'gold' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'gold' }) }}">{{ 'gold' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'drawings' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'drawings' } ) }}">{{ 'drawings' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'gouaches-1' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'gouaches-1' }) }}">{{ 'gouaches-1' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'misc' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'misc' | trans | upper }}</a></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+           
         </nav>
     {% endblock %}
 </div>

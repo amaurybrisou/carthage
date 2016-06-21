@@ -1,0 +1,33 @@
+#photo-modal {
+    height:100%;
+    width:100%;
+    margin-top:5vh;
+}
+
+.photo-modal-content {
+    background:black;
+    position: relative;
+    padding: 15px;
+    margin:65px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+#image-description {
+    color:white;
+    margin:auto;
+    bottom: 0;
+    text-align:center;
+    font-size:0.9em;
+    padding:5px;
+}
+
+
+#photo-modal >
+.photo-modal-content >
+.glyphicon-remove {
+    right: 0.2vw;
+    top: 0.2vw;
+    position: absolute;
+}

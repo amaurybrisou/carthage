@@ -1,5 +1,19 @@
 {% extends 'AymardBundle::base.html.twig' %}
 
+{% block javascripts %}{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets  filter="cssrewrite"
+        '@bootstrap_css'
+        '@AymardBundle/Resources/public/css/main.css'
+        '@AymardBundle/Resources/public/css/menu.css'
+        '@AymardBundle/Resources/public/css/biography.css'
+    %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
+    {% endstylesheets %}
+{% endblock %}
+
+
 {% block left_slider %}{% endblock %}
 
 {% block body %}

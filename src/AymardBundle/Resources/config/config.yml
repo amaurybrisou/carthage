@@ -10,10 +10,14 @@ liip_imagine:
                 data_root: %kernel.root_dir%/../web/
     filter_sets:
         cache: ~
+        fullSize:
+            quality: 80
+            filters:
+                strip: ~
         photoThumb:
             quality: 75
             filters:
-                thumbnail: { size: [300, 300], mode: inset }
+                thumbnail: { size: [400, 400], mode: inset }
 
 # app/config/config.yml
 fos_user:
