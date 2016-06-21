@@ -14,10 +14,10 @@ class DefaultController extends Controller
      */
     public function homeAction(Request $request)
     {
-        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        // $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
     
-        $request->setLocale($lang);
-        $locale = $request->getLocale();
+        // $request->setLocale($lang);
+        // $locale = $request->getLocale();
       
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('home');
 

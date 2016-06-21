@@ -6,7 +6,6 @@ class Translation {
     
     title
     description
-    
 }
 
 class page {

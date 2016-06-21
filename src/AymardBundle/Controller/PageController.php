@@ -1,5 +1,4 @@
 <?php
-
 namespace AymardBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +15,6 @@ use AymardBundle\Form\PageType;
  */
 class PageController extends Controller
 {
-    
     /**
      * 
      * @Route("/{_locale}/test/{slug}/{desc}/{title}", defaults={ "_locale": "fr" })
@@ -35,7 +33,6 @@ class PageController extends Controller
         $page->setTitle($title);
         $page->setDescription($desc);
         $page->addTranslation();
-        
         
         $em->persist($page);
         $em->flush();
@@ -60,24 +57,20 @@ class PageController extends Controller
                     return $this->render('test.html.twig', [ 'page' => $translation ]);  
                 }
             }
-              
         }
-        
-        
     }
     
     /**
      * Lists all Page entities.
      *
-     * @Route("/", name="admin_page_index")
+     * @Route("/{_locale}", defaults={ "_locale": "fr" }, name="admin_page_index")
      * @Method("GET")
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $pages = $em->getRepository('AymardBundle:Page')->findAll();
-
+        
         return $this->render('page/index.html.twig', array(
             'pages' => $pages,
         ));
@@ -128,17 +121,29 @@ class PageController extends Controller
     /**
      * Displays a form to edit an existing Page entity.
      *
-     * @Route("/{id}/edit", name="admin_page_edit")
+     * @Route("/{_locale}/{id}/edit", name="admin_page_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Page $page)
+    public function editAction(Request $request, Page $page, $_locale)
     {
+        $em = $this->getDoctrine()->getManager();
+        // $page->newTranslation("en");
+        // $page->setTitle("title english");
+        // $page->setDescription("desc english");
+        // $page->addTranslation();
+        
+        // $page->newTranslation("fr");
+        // $page->setTitle("title french");
+        // $page->setDescription("desc french");
+        // $page->addTranslation();
+        // $em->persist($page);
+        // $em->flush();
+        
         $deleteForm = $this->createDeleteForm($page);
         $editForm = $this->createForm('AymardBundle\Form\PageType', $page);
         $editForm->handleRequest($request);
-
+        
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
             $em->persist($page);
             $em->flush();
 

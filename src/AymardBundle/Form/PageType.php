@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+
 class PageType extends AbstractType
 {
     /**
@@ -16,9 +18,15 @@ class PageType extends AbstractType
     {
         $builder
             ->add('slug')
-            ->add('translations')
         ;
         
+        $builder->add('translations', CollectionType::class, [
+            'entry_type' => TranslationType::class,
+            'allow_add'    => true,
+            'allow_delete' => true,
+            'by_reference' => false,
+            'attr' => ['class' => 'form-inline']
+        ]);
     }
     
     /**
