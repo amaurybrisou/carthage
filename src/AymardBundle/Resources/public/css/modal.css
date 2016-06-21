@@ -31,3 +31,10 @@
     top: 0.2vw;
     position: absolute;
 }
+
+
+#photo-modal >
+.photo-modal-content >
+.glyphicon-remove:hover {
+    cursor: pointer;
+}
