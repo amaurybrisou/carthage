@@ -1,6 +1,13 @@
 {% extends 'AymardBundle::base.html.twig' %}
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    {% javascripts 
+        '@AymardBundle/Resources/public/vendors/jquery/dist/jquery.min.js'
+        '@bootstrap_js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
 
 {% block stylesheets %}
     {% stylesheets  filter="cssrewrite"

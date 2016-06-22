@@ -11,9 +11,10 @@
 {% endblock %}
 
 {% block stylesheets %}
-    {% stylesheets 
+    {% stylesheets filter="cssrewrite"
         '@admin_lte_all_css'
-        filter="cssrewrite"
+        output="css/admin_vendors.css"
+        
     %}
     <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
 
