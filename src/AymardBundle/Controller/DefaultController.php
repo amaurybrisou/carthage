@@ -18,18 +18,35 @@ class DefaultController extends Controller
     
         // $request->setLocale($lang);
         // $locale = $request->getLocale();
-      
+        
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('home');
+        $form = $this->createForm('AymardBundle\Form\ContactType');
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            
+            $subject = "New message from " . $form->get("email")->getData() . " RE: " . $form->get("subject")->getData();
+            $message = \Swift_Message::newInstance()
+                    ->setSubject($subject)
+                    ->setFrom($form->get("email")->getData())
+                    ->setTo('jbki@protonmail.com')
+                    ->setBody($form->get("message")->getData());
+            $this->get('mailer')->send($message);
+            
+            return $this->redirectToRoute('home');
+        }
 
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
        	}
-
+  
+        
         return $this->render('AymardBundle:home:home.html.twig', [
             'photos' => $photos,
             'slug' => 'home',
-            'page' => $page
+            'page' => $page,
+            'form' => $form->createView()
         ]);
     }
     
@@ -39,6 +56,21 @@ class DefaultController extends Controller
     public function biographyAction()
     {
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('biography');
+	    $form = $this->createForm('AymardBundle\Form\ContactType');
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $subject = "New message from " . $form->get("email")->getData() . " RE: " . $form->get("subject")->getData();
+            $message = \Swift_Message::newInstance()
+                    ->setSubject($subject)
+                    ->setFrom($form->get("email")->getData())
+                    ->setTo('jbki@protonmail.com')
+                    ->setBody($form->get("message")->getData());
+            $this->get('mailer')->send($message);
+            
+            return $this->redirectToRoute('biography');
+        }
+        
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
@@ -47,11 +79,11 @@ class DefaultController extends Controller
         return $this->render('AymardBundle:home:biography.html.twig', [
             'photos' => $photos,
             'slug' => 'biography',
-            'page' => $page
+            'page' => $page,
+            'form' => $form->createView()
         ]);
     }
-
-
+    
     /**
      * @Route("/{_locale}/{slug}", name="view_pages", defaults={ "_locale" : "fr" })
      */
@@ -62,7 +94,21 @@ class DefaultController extends Controller
         }
         
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug($slug);
-
+	    $form = $this->createForm('AymardBundle\Form\ContactType');
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $subject = "New message from " . $form->get("email")->getData() . " RE: " . $form->get("subject")->getData();
+            $message = \Swift_Message::newInstance()
+                    ->setSubject($subject)
+                    ->setFrom($form->get("email")->getData())
+                    ->setTo('jbki@protonmail.com')
+                    ->setBody($form->get("message")->getData());
+            $this->get('mailer')->send($message);
+            
+            return $this->redirectToRoute($slug);
+        }
+        
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
@@ -71,7 +117,8 @@ class DefaultController extends Controller
         return $this->render('AymardBundle::base.html.twig', [
             'photos' => $photos,
             'slug' => $slug,
-            'page' => $page
+            'page' => $page,
+            'form' => $form->createView()
         ]);
     }
 

@@ -19,7 +19,7 @@
         
     <title>
         {% block title %}
-            {{ page.title | trans | capitalize }}
+            {#{{ page.title | trans | capitalize }}#}
         {% endblock %}
     </title>
     
@@ -59,7 +59,7 @@
 {% block left_slider %}
     <div id="c-menu__close" class="c-menu__close glyphicon glyphicon-backward is-active"></div>
     <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
-        {{  page.getDescription() }}
+        {#{{  page.getDescription() }}#}
     </nav>
 {% endblock %}
 <div id="main-content" >
@@ -82,6 +82,36 @@
           </div>
         </div>
     {% endblock %}
+    <style>
+        #contact-modal {
+            width:60%;
+            margin-left:auto;
+            margin-right:auto;
+            padding:25px;
+        }
+        
+        #contact {
+            padding:25px;
+        }
+        
+        .modal-remove {
+            cursor:pointer;
+            padding:5px;
+            float:right;
+        }
+    </style>
+        <div id="contact-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                
+                <div class="modal-content">
+                    
+                <a class="modal-remove" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                    {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
 </div>
 <div id="menu" >
     {% block menu %}
@@ -94,6 +124,7 @@
             <a class="{% if slug == 'drawings' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'drawings' } ) }}">{{ 'drawings' | trans | upper }}</a>
             <a class="{% if slug == 'gouaches-1' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'gouaches-1' }) }}">{{ 'gouaches-1' | trans | upper }}</a>
             <a class="{% if slug == 'misc' %} active-menu {% endif %}" href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'misc' | trans | upper }}</a>
+            <a href="" data-toggle="modal" data-target="#contact-modal">{{ "contact" | trans | upper }}</a>
         </nav>
     {% endblock %}
 </div>
