@@ -16,51 +16,6 @@ use AymardBundle\Form\PageType;
 class PageController extends Controller
 {
     /**
-     * 
-     * @Route("/{_locale}/test/{slug}/{desc}/{title}", defaults={ "_locale": "fr" })
-     * 
-     */
-    public function testAction($_locale, $slug, $desc, $title){
-        $em = $this->getDoctrine()->getManager();
-        $page = $em->getRepository('AymardBundle:Page')->findOneBySlug($slug);
-        if(is_null($page)){
-            $page = new Page($_locale);
-            $page->setSlug($slug);
-        } else {
-            $page->newTranslation($_locale);
-        }
-        
-        $page->setTitle($title);
-        $page->setDescription($desc);
-        $page->addTranslation();
-        
-        $em->persist($page);
-        $em->flush();
-    }
-    
-    /**
-     * 
-     * @Route("/{_locale}/fetch/{slug}", defaults={ "_locale": "fr" })
-     * 
-     */
-    public function fetchAction($_locale, $slug){
-        $em = $this->getDoctrine()->getManager();
-        $page = $em->getRepository('AymardBundle:Page')->findOneBySlug($slug);
-        if(is_null($page)){
-            die('No Page');
-        } else {
-            
-            $translations = $page->getTranslations();
-            foreach($translations as $translation) {
-                if($translation->getLocale() == $_locale) {
-                    $translation->slug = $slug;
-                    return $this->render('test.html.twig', [ 'page' => $translation ]);  
-                }
-            }
-        }
-    }
-    
-    /**
      * Lists all Page entities.
      *
      * @Route("/{_locale}", defaults={ "_locale": "fr" }, name="admin_page_index")
@@ -71,7 +26,7 @@ class PageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $pages = $em->getRepository('AymardBundle:Page')->findAll();
         
-        return $this->render('page/index.html.twig', array(
+        return $this->render('AymardBundle::admin/page/index.html.twig', array(
             'pages' => $pages,
         ));
     }
@@ -97,7 +52,7 @@ class PageController extends Controller
             return $this->redirectToRoute('admin_page_show', array('id' => $page->getId()));
         }
 
-        return $this->render('page/new.html.twig', array(
+        return $this->render('AymardBundle::admin/page/new.html.twig', array(
             'page' => $page,
             'form' => $form->createView(),
         ));
@@ -113,7 +68,7 @@ class PageController extends Controller
     {
         $deleteForm = $this->createDeleteForm($page);
 
-        return $this->render('page/show.html.twig', array(
+        return $this->render('AymardBundle::admin/page/show.html.twig', array(
             'page' => $page,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -128,18 +83,6 @@ class PageController extends Controller
     public function editAction(Request $request, Page $page, $_locale)
     {
         $em = $this->getDoctrine()->getManager();
-        // $page->newTranslation("en");
-        // $page->setTitle("title english");
-        // $page->setDescription("desc english");
-        // $page->addTranslation();
-        
-        // $page->newTranslation("fr");
-        // $page->setTitle("title french");
-        // $page->setDescription("desc french");
-        // $page->addTranslation();
-        // $em->persist($page);
-        // $em->flush();
-        
         $deleteForm = $this->createDeleteForm($page);
         $editForm = $this->createForm('AymardBundle\Form\PageType', $page);
         $editForm->handleRequest($request);
@@ -151,7 +94,7 @@ class PageController extends Controller
             return $this->redirectToRoute('admin_page_edit', array('id' => $page->getId()));
         }
 
-        return $this->render('page/edit.html.twig', array(
+        return $this->render('AymardBundle::admin/page/edit.html.twig', array(
             'page' => $page,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

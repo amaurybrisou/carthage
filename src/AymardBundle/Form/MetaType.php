@@ -1,4 +1,5 @@
-<?php // src/AppBundle/Form/Type/MetaType.php
+<?php 
+
 namespace AymardBundle\Form;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;

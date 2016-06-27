@@ -36,6 +36,13 @@ class Page
      */
     private $title;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", unique=false, nullable=true)
+     */
+    private $description;
+    
     
     /**
      * @var array
@@ -126,7 +133,7 @@ class Page
      */
     public function setDescription($description)
     {
-
+        $this->description = $description;
         return $this;
     }
 
