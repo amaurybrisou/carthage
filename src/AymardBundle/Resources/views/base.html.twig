@@ -83,18 +83,18 @@
         </div>
     {% endblock %}
    
-        <div id="contact-modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+    <div id="contact-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            
+            <div class="modal-content">
                 
-                <div class="modal-content">
-                    
-                <a class="modal-remove" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                    {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                    {{ form_end(form) }}
-                </div>
+            <a class="modal-remove" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                {{ form_start(form, {'action': path('contact'), 'method': 'POST'}) }}
+                    {{ form_widget(form) }}
+                {{ form_end(form) }}
             </div>
         </div>
+    </div>
 </div>
 <div id="menu" >
     {% block menu %}

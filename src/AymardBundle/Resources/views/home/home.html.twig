@@ -4,7 +4,13 @@
 
 {% block body %}
 
-    
+    {% for label, flashes in app.session.flashbag.all %}
+        {% for flash in flashes %}
+            <div class="alert alert-{{ label }}">
+                {{ flash }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     <div class="home">
         <div class="title title_home">
             <div>
