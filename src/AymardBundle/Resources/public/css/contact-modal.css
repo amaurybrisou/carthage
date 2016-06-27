@@ -1,0 +1,16 @@
+#contact-modal {
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:25px;
+}
+
+#contact {
+    padding:25px;
+}
+
+.modal-remove {
+    cursor:pointer;
+    padding:5px;
+    float:right;
+}

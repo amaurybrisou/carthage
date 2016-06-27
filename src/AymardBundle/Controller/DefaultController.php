@@ -4,6 +4,8 @@ namespace AymardBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
@@ -14,6 +16,8 @@ class DefaultController extends Controller
      */
     public function homeAction(Request $request)
     {
+        $form = $this->createForm('AymardBundle\Form\ContactType');
+
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('home');
 
        	$photos = [];
@@ -21,10 +25,12 @@ class DefaultController extends Controller
        	    $photos = $page->getPhotos();
        	}
 
+        
         return $this->render('AymardBundle:home:home.html.twig', [
             'photos' => $photos,
             'slug' => 'home',
-            'page' => $page
+            'page' => $page,
+            'form' => $form->createView()
         ]);
     }
     
@@ -34,6 +40,9 @@ class DefaultController extends Controller
     public function biographyAction()
     {
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('biography');
+        $form = $this->createForm('AymardBundle\Form\ContactType');
+
+        
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
@@ -42,11 +51,39 @@ class DefaultController extends Controller
         return $this->render('AymardBundle:home:biography.html.twig', [
             'photos' => $photos,
             'slug' => 'biography',
-            'page' => $page
+            'page' => $page,
+            'form' => $form->createView()
         ]);
     }
-
-
+    
+    /**
+     * @Route("/{_locale}/contact", name="contact")
+     * @Method({ "POST"})
+     */
+     public function contactAction(Request $request){
+        $form = $this->createForm('AymardBundle\Form\ContactType');
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $translator = $this->get('translator');
+            
+            $subject = $translator->trans('new-message') . $form->get("email")->getData() . " : " . $form->get("subject")->getData();
+            $message = \Swift_Message::newInstance()
+                    ->setSubject($subject)
+                    ->setFrom($form->get("email")->getData())
+                    ->setTo($this->getParameter('mailer_receiver'))
+                    ->setBody($form->get("message")->getData());
+            $this->get('mailer')->send($message);
+            
+            $this->addFlash(
+                'success',
+                $this->get('translator')->trans('mail-sent')
+            );
+            
+            return $this->redirectToRoute('home');
+        }
+     }
+    
     /**
      * @Route("/{_locale}/{slug}", name="view_pages", defaults={ "_locale" : "fr" })
      */
@@ -56,8 +93,10 @@ class DefaultController extends Controller
             return $this->redirectToRoute('admin_page_index');
         }
         
+        $form = $this->createForm('AymardBundle\Form\ContactType');
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug($slug);
-
+	    
+        
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
@@ -66,7 +105,8 @@ class DefaultController extends Controller
         return $this->render('AymardBundle::base.html.twig', [
             'photos' => $photos,
             'slug' => $slug,
-            'page' => $page
+            'page' => $page,
+            'form' => $form->createView()
         ]);
     }
 

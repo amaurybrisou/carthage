@@ -5,7 +5,6 @@ namespace AymardBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use AymardBundle\Entity\Image;
-
 /**
  * Page
  *
@@ -37,13 +36,7 @@ class Page
      */
     private $title;
     
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text", length=512, nullable=true)
-     */
-    private $description;
-
+    
     /**
      * @var array
      *
@@ -57,12 +50,14 @@ class Page
      * @ORM\OneToMany(targetEntity="Meta", mappedBy="page", cascade={"persist"})
      */
     private $metas;    
-    
+
 
     public function __construct(){
         $this->photos = new ArrayCollection();
+
     }
 
+    
     /**
      * Get id
      *
@@ -83,7 +78,6 @@ class Page
     public function setTitle($title)
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -132,7 +126,6 @@ class Page
      */
     public function setDescription($description)
     {
-        $this->description = $description;
 
         return $this;
     }
@@ -198,8 +191,6 @@ class Page
     public function __toString(){
         return $this->slug . ' : ' . $this->title;
     }
-
-
 
     /**
      * Add metum

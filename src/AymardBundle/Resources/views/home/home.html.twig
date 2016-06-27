@@ -18,7 +18,8 @@
         '@bootstrap_css'
         '@AymardBundle/Resources/public/css/main.css'
         '@AymardBundle/Resources/public/css/home.css'
-        '@AymardBundle/Resources/public/css/modal.css'
+        '@AymardBundle/Resources/public/css/photo-modal.css'
+        '@AymardBundle/Resources/public/css/contact-modal.css'
         '@AymardBundle/Resources/public/css/spinner.css'
         '@AymardBundle/Resources/public/css/menu.css'
         
@@ -31,7 +32,13 @@
 
 {% block body %}
 
-    
+    {% for label, flashes in app.session.flashbag.all %}
+        {% for flash in flashes %}
+            <div class="alert alert-{{ label }}">
+                {{ flash }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     <div class="home">
         <div class="title title_home">
             <div>
