@@ -4,15 +4,10 @@
     Administration
 {% endblock %}
 
-{% block avanzu_logo %}
-    <a href="{{ path('admin_page_index') }}" class="logo">
-        Administration
-    </a>
-{% endblock %}
-
 {% block stylesheets %}
     {% stylesheets filter="cssrewrite"
         '@admin_lte_all_css'
+        '@AymardBundle/Resources/public/css/admin.css'
         output="css/admin_vendors.css"
         
     %}
@@ -26,6 +21,7 @@
     {% javascripts 
         '@AymardBundle/Resources/public/vendors/jquery/dist/jquery.min.js'
         '@common_js'
+        '@admin_lte_all'
         '@admin_lte_wysiwyg'
         '@AymardBundle/Resources/public/js/admin.js'
         '@AymardBundle/Resources/public/js/wysihtml.js'
@@ -43,8 +39,39 @@
     Administration
 {% endblock %}
 
+
+{% block avanzu_admin_header %}
+    <header class="main-header">
+        {% block avanzu_logo %}
+            <a href="{{ path('admin_page_index') }}" class="logo">
+                {{ block('title') }}
+            </a>
+        {% endblock %}
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            {% if app.user is not null and is_granted('IS_AUTHENTICATED_FULLY') %}
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        {% block avanzu_navbar %}
+                            {{ render(controller('AvanzuAdminThemeBundle:Navbar:messages')) }}
+                            {{ render(controller('AvanzuAdminThemeBundle:Navbar:notifications')) }}
+                            {{ render(controller('AvanzuAdminThemeBundle:Navbar:tasks')) }}
+                            {{ render(controller('AymardBundle:Navbar:user')) }}
+                        {% endblock %}
+                    </ul>
+                </div>
+            {% endif %}
+        </nav>
+    </header>
+{% endblock %}
+
 {% block page_content %}
-    {%  block body  %}{% endblock %}
+    {%  block body  %}
+    {% endblock %}
     
     
 {% endblock %}

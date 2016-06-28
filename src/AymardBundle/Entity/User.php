@@ -4,13 +4,15 @@
 namespace AymardBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
+use Avanzu\AdminThemeBundle\Model\UserInterface;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
-class User extends BaseUser
+class User extends BaseUser implements UserInterface
 {
     /**
      * @ORM\Id
@@ -23,5 +25,37 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+    }
+    
+    public function getAvatar(){}
+    
+    
+    public function getName(){
+        return $this->username;
+    }
+    
+    public function getMemberSince(){
+        return $this->created_at;
+    }
+    
+    /**
+     * @ORM\Column(name="is_online", type="integer", length=1)
+     */
+    private $is_online;
+    
+    public function setIsOnline($value){
+        $this->is_online = $value;
+    }
+    
+    public function isOnline(){
+        return $this->last_login;
+    }
+    
+    public function getIdentifier(){
+        return $this->id;
+    }
+    
+    public function getTitle(){
+        return $this->username;
     }
 }

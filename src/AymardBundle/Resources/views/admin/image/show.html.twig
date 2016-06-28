@@ -26,16 +26,16 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_image_index') }}">Back to the list</a>
+    <ul class="form-inline">
+        <li class="form-group">
+            <a class="btn btn-primary"  href="{{ path('admin_image_index') }}">Back to the list</a>
         </li>
-        <li>
-            <a href="{{ path('admin_image_edit', { 'id': image.id }) }}">Edit</a>
+        <li class="form-group">
+            <a class="form-control btn btn-primary" href="{{ path('admin_image_edit', { 'id': image.id }) }}">Save</a>
         </li>
-        <li>
+        <li class="form-group">
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="form-control btn btn-primary" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

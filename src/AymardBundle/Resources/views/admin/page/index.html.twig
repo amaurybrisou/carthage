@@ -9,13 +9,6 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Description</th>
-                {#<th>Meta_description</th>#}
-                {#<th>Meta_title</th>#}
-                {#<th>Meta_site_name</th>#}
-                {#<th>Meta_content</th>#}
-                {#<th>Meta_url</th>#}
-                {#<th>Meta_image</th>#}
-                {#<th>Meta_keywords</th>#}
 
                 <th>Actions</th>
             </tr>
@@ -23,24 +16,17 @@
         <tbody>
         {% for page in pages %}
             <tr>
-                <td><a href="{{ path('admin_page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
+                <td><a class="btn btn-primary" href="{{ path('admin_page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
                 <td>{{ page.title }}</td>
                 <td>{{ page.description }}</td>
-                {#<td>{{ page.metadescription }}</td>#}
-                {#<td>{{ page.metatitle }}</td>#}
-                {#<td>{{ page.metasitename }}</td>#}
-                {#<td>{{ page.metacontent }}</td>#}
-                {#<td>{{ page.metaurl }}</td>#}
-                {#<td>{{ page.metaimage }}</td>#}
-                {#<td>{{ page.metakeywords }}</td>#}
-
+                
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_page_show', { 'id': page.id }) }}">show</a>
+                            <a class="btn btn-primary" href="{{ path('admin_page_show', { 'id': page.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_page_edit', { 'id': page.id }) }}">edit</a>
+                            <a class="btn btn-primary" href="{{ path('admin_page_edit', { 'id': page.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -51,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_page_new') }}">Create a new entry</a>
+            <a class="btn btn-primary" href="{{ path('admin_page_new') }}">Create a new entry</a>
         </li>
     </ul>
     

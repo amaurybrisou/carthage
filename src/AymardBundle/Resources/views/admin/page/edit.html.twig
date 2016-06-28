@@ -7,27 +7,26 @@
         {{ form_row(edit_form.title) }}
         {{ form_row(edit_form.description) }}
         {{ form_row(edit_form.slug) }}
-        <h1>Meta</h1>
-        <ul class="metas form-inline" data-prototype="{{ form_widget(edit_form.metas.vars.prototype)|e('html_attr') }}" >
+        <ul class="metas" data-prototype="{{ form_widget(edit_form.metas.vars.prototype, { 'attr' : { 'class' : 'form-inline' }})|e('html_attr') }}" >
             {% for m in edit_form.metas %}
-                <li>
-                    <div class="form-group">
-                        
-                        {{ form_row(m.property) }}
-                        {{ form_row(m.content) }}
-                    </div>
+                <li  class="form-inline">
+                    {{ form_row(m.property) }}
+                    {{ form_row(m.content) }}
                 </li>
             {% endfor %}
-            
+            {{ form_rest(edit_form) }}    
         </ul>
-    
-        <input type="submit" value="Edit" />
-        {{ form_rest(edit_form) }}
+        
+        <div class="form-inline">
+            <input class="btn btn-primary" type="submit" value="Save" />
+            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">Back to the list</a>
+        </div>
+        
     {{ form_end(edit_form, {'render_rest': false}) }}
 
     <ul>
         <li>
-            <a href="{{ path('admin_page_index') }}">Back to the list</a>
+            
         </li>
 
     </ul>
@@ -79,7 +78,7 @@
             $collectionHolder.data('index', index + 1);
         
             // Display the form in the page in an li, before the "Add a tag" link li
-            var $newFormDiv = $('<div class="form-inline"></div>').append(newForm);
+            var $newFormDiv = $('<li class="form-inline"></li>').append(newForm);
             $newLinkLi.before($newFormDiv);
             
             // add a delete link to the new form

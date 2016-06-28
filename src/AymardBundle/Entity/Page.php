@@ -61,7 +61,7 @@ class Page
 
     public function __construct(){
         $this->photos = new ArrayCollection();
-
+        $this->metas = new ArrayCollection();
     }
 
     

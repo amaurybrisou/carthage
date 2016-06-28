@@ -44,6 +44,14 @@ class Meta
     */
     private $page;
 
+
+    public function __construct($property, $content){
+        $this->property = $property;
+        $this->content = $content;
+        
+        return $this;
+    }
+    
    
    public function jsonSerialize(){
        return array('file' => $this->file, 'description'=> $this->description);

@@ -18,7 +18,7 @@ class PageController extends Controller
     /**
      * Lists all Page entities.
      *
-     * @Route("/{_locale}", defaults={ "_locale": "fr" }, name="admin_page_index")
+     * @Route("/", name="admin_page_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -77,10 +77,10 @@ class PageController extends Controller
     /**
      * Displays a form to edit an existing Page entity.
      *
-     * @Route("/{_locale}/{id}/edit", name="admin_page_edit")
+     * @Route("/{id}/edit", name="admin_page_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Page $page, $_locale)
+    public function editAction(Request $request, Page $page)
     {
         $em = $this->getDoctrine()->getManager();
         $deleteForm = $this->createDeleteForm($page);

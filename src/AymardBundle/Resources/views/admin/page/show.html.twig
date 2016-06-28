@@ -20,12 +20,12 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_page_index') }}">Back to the list</a>
+    <ul class="form-inline">
+        <li class="form-group">
+            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">Back to the list</a>
         </li>
-        <li>
-            <a href="{{ path('admin_page_edit', { 'id': page.id }) }}">Edit</a>
+        <li class="form-group">
+            <a class="btn btn-primary" href="{{ path('admin_page_edit', { 'id': page.id }) }}">Edit</a>
         </li>
  
     </ul>

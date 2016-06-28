@@ -16,3 +16,9 @@ biography.p3: "Désormais tout son temps est consacré à ses recherches et à l
 
 mail-sent: 'Votre message a été envoyé à Aymard'
 new-message: 'Nouveau message de '
+
+email: Email
+name: Nom
+subject: Sujet
+message: Message
+send: Envoyer

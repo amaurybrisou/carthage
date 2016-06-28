@@ -1,0 +1,14 @@
+<!-- User Account: style can be found in dropdown.less -->
+{% import "AvanzuAdminThemeBundle:layout:macros.html.twig" as macro %}
+<li class="dropdown user user-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        {{ macro.avatar(user.avatar, user.username, 'user-image') }}
+        <span class="hidden-xs">{{ user.name }}</span>
+    </a>
+    <ul class="dropdown-menu" style="width:0">
+        <!-- User image -->
+        <li class="">
+            <a href="{{ path('avanzu_admin_logout') }}" class="btn btn-default btn-flat">{{ 'Sign out'|trans({}, 'AvanzuAdminTheme') }}</a>
+        </li>
+    </ul>
+</li>
