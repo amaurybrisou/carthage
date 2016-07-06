@@ -25,27 +25,29 @@
 {% block left_slider %}{% endblock %}
 
 {% block body %}
-    <div class="biography">
-        <div class="title">
-            <div>
-                <h3>AYMARD LE FORESTIER DE QUILLIEN</h3>
-            </div>
-            <div>
-                <h4>{{ 'artiste_peintre' | trans | upper }}</h4>
-            </div>
-        </div>
-        <div class="right_content">
-            <div class="right_content_top">LE FORESTIER DE QUILLIEN AYMARD</div>
-            <div class="right_content_bottom">
+    <div class="wrapper">
+        <div class="biography">
+            <div class="title">
                 <div>
-                    {% for photo in photos %}
-                	    <img class="thumbnail" src="{{ asset('img/' ~ photo.file ~ '') }}"/>
-                    {% endfor %}
+                    <h3>AYMARD LE FORESTIER DE QUILLIEN</h3>
                 </div>
-        		<div>
-                	<p>{{ 'biography.p1' | trans }}</p>
-                	<p>{{ 'biography.p2' | trans }}</p>
-                	<p>{{ 'biography.p3' | trans }}</p>
+                <div>
+                    <h4>{{ 'artiste_peintre' | trans | upper }}</h4>
+                </div>
+            </div>
+            <div class="right_content">
+                
+                <div class="right_content_bottom">
+                    <div>
+                        {% for photo in photos %}
+                    	    <img class="thumbnail" src="{{ asset('img/' ~ photo.file ~ '') }}"/>
+                        {% endfor %}
+                    </div>
+            		<div>
+                    	<p>{{ 'biography.p1' | trans }}</p>
+                    	<p>{{ 'biography.p2' | trans }}</p>
+                    	<p>{{ 'biography.p3' | trans }}</p>
+                    </div>
                 </div>
             </div>
         </div>

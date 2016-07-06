@@ -3,6 +3,7 @@
   src: url(/web/fonts/glyphicons-halflings-regular.woff);
 }
 
+
 html {
     width: 100%;
 }
@@ -14,8 +15,11 @@ body {
 }
 
 #main-content {
-    
     z-index: -1;
+    height: 100%;
+}
+
+#mosaic-bg {
     margin-bottom: 5%;
 }
 

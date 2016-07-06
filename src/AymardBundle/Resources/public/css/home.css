@@ -1,11 +1,23 @@
+.wrapper {
+  background-color: #90AAD4;
+  height: 100vh;
+  padding-top: 10%;
+}
+
 .home {
     width:60%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-top:15%;
     margin-right:auto;
     margin-left:auto;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    
+}
+
+.title_home {
+    margin-top: -6%;
 }
 
 .title div:nth-child(2) {

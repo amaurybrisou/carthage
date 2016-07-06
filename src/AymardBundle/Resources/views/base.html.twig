@@ -35,6 +35,7 @@
         '@AymardBundle/Resources/public/js/isotope.js'
         '@AymardBundle/Resources/public/js/modal.js'
         '@AymardBundle/Resources/public/js/author.js'
+        '@AymardBundle/Resources/public/js/main.js'
         
     %}
     <script src="{{ asset_url }}"></script>
@@ -66,23 +67,25 @@
 {% endblock %}
 <div id="main-content" >
     {% block body %}
-        <div id="mosaic">
-            {% block mosaic %}
-    	    	{% for photo in photos %}
-    	    		<a href="" data-toggle="modal" data-target="#photo-modal">
-    	        		<img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ ('img/' ~ photo.file) | imagine_filter('fullSize')   }}" image-description="{{ photo.description}}" />
-    	        	</a>
-        		{% endfor %}
-    		{% endblock %}
-        </div>
-        
-    	<div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
-    	   <div class="photo-modal-content">
-    	        <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
-    	   		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
-          		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
-          		<div style="display:none;" id="image-description"></div>
-          </div>
+        <div id="mosaic-bg">
+            <div id="mosaic">
+                {% block mosaic %}
+        	    	{% for photo in photos %}
+        	    		<a href="" data-toggle="modal" data-target="#photo-modal">
+        	        		<img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ ('img/' ~ photo.file) | imagine_filter('fullSize')   }}" image-description="{{ photo.description}}" />
+        	        	</a>
+            		{% endfor %}
+        		{% endblock %}
+            </div>
+            
+        	<div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+        	   <div class="photo-modal-content">
+        	        <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
+        	   		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
+              		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
+              		<div style="display:none;" id="image-description"></div>
+              </div>
+            </div>
         </div>
     {% endblock %}
    

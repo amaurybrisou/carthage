@@ -3,12 +3,13 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-top:10%;
     margin-right:auto;
     margin-left:auto;
+    padding-top: 10px;
 }
 
 .title {
+    margin-top: -4%;
     width:100%;
 }
 
@@ -23,6 +24,12 @@
     display:inline-flex;
 }
 
+.wrapper {
+  background-color: #90AAD4;
+  height: 100vh;
+  padding-top: 10%;
+}
+
 .right_content_top {
     margin-bottom:25px;
     text-align:center;
@@ -35,4 +42,5 @@
 
 .biography img {
     margin-right:20px;
+    margin-top: 6%;
 }

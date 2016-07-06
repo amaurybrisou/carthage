@@ -18,6 +18,7 @@ class ImageEditType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('image_order')
             ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:200px;']])
             ->add('page')
         ;

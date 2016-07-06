@@ -48,6 +48,7 @@ class Page
      * @var array
      *
      * @ORM\OneToMany(targetEntity="Image", mappedBy="page")
+     * @ORM\OrderBy({"image_order" = "ASC"})
      */
     private $photos;
 

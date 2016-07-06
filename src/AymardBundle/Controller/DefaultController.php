@@ -95,7 +95,6 @@ class DefaultController extends Controller
         
         $form = $this->createForm('AymardBundle\Form\ContactType');
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug($slug);
-	    
         
        	$photos = [];
        	if(!is_null($page)){

@@ -3,19 +3,27 @@
 {% block body %}
     <h1>Image edit</h1>
 
-    {{ form_start(edit_form ) }}
+    {{ form_start(edit_form) }}
         {{ form_widget(edit_form.description)}}
+        {{ form_widget(edit_form.image_order)}}
         {{ form_widget(edit_form.page)}}
-        <img class="thumbnail" class="" height="300px" src="{{ asset('img/' ~ image.file ~ '' ) }}"/>
-        <div class="form-inline">
-            <input class="btn btn-primary" type="submit" value="Save" />
-            <a class="form-control btn btn-primary" href="{{ path('admin_image_index') }}">Back to the list</a>    
-            {{ form_start(delete_form,  {'attr': {'class': 'form-group'}}) }}
-                <input class="pull-right form-control btn btn-primary" type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </div>
+        
+        <input class="btn btn-primary" type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 
+    <ul>
+        <li>
+            <img class="thumbnail" height="300px" src="{{ asset('img/' ~ image.file ~ '' ) }}"/>
+        </li>
+        <li>
+            <a class="btn btn-primary" href="{{ path('admin_image_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-primary" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
     
     <script>
         $('#image_edit_description').wysihtml5({
@@ -27,3 +35,4 @@
          });
     </script>
 {% endblock %}
+

@@ -29,6 +29,13 @@ class Image
      * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
     private $description;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_order", type="integer", nullable=false)
+     */
+    private $image_order;
 
 
     /**
@@ -37,8 +44,6 @@ class Image
     * @ORM\Column(name="file", type="string")
     * @Assert\NotBlank(message="Please, upload an JPEG/JPG or PNG image file.", groups={"registration"})
     */
-    
-    
     private $file;
 
     
@@ -126,9 +131,19 @@ class Image
     
     public function __toString(){
         return $this->file;
-   } 
+    } 
+    
+    public function getImageOrder(){
+        return $this->image_order;
+    }
+    
+    public function setImageOrder($image_order){
+        $this->image_order = $image_order;
+        return $this;
+    }
    
-   public function jsonSerialize(){
+   
+    public function jsonSerialize(){
        return array('file' => $this->file, 'description'=> $this->description);
-   }
+    }
 }
