@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
-class User extends BaseUser implements UserInterface
+class User extends BaseUser 
 {
     /**
      * @ORM\Id
@@ -25,6 +25,7 @@ class User extends BaseUser implements UserInterface
     {
         parent::__construct();
         // your own logic
+        $this->is_online = true;
     }
     
     public function getAvatar(){}

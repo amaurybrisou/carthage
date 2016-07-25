@@ -17,7 +17,7 @@
         <tbody>
         {% for image in images %}
             <tr>
-                <td>{{ image.order }}</td>
+                <td>{{ image.getImageOrder() }}</td>
                 <td>{{ image.description }}</td>
                 <td>
                     <ul>
