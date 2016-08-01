@@ -67,10 +67,11 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $translator = $this->get('translator');
             
-            $subject = $translator->trans('new-message') . $form->get("email")->getData() . " : " . $form->get("subject")->getData();
+            $subject = $translator->trans('new-message') . $form->get("email")->getData() . " : " . $form->get("name")->getData();
             $message = \Swift_Message::newInstance()
                     ->setSubject($subject)
-                    ->setFrom($form->get("email")->getData())
+                    ->setFrom($this->getParameter('mailer_user'))
+                    ->setReplyTo($form->get("email")->getData())
                     ->setTo($this->getParameter('mailer_receiver'))
                     ->setBody($form->get("message")->getData());
             $this->get('mailer')->send($message);
