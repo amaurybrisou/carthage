@@ -19,6 +19,7 @@ class DefaultController extends Controller
         $form = $this->createForm('AymardBundle\Form\ContactType');
 
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('home');
+        $menus = $this->getDoctrine()->getRepository('AymardBundle:Page')->findall();
 
        	$photos = [];
        	if(!is_null($page)){
@@ -30,6 +31,7 @@ class DefaultController extends Controller
             'photos' => $photos,
             'slug' => 'home',
             'page' => $page,
+            'menus' => $menus,
             'form' => $form->createView()
         ]);
     }
@@ -41,7 +43,7 @@ class DefaultController extends Controller
     {
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('biography');
         $form = $this->createForm('AymardBundle\Form\ContactType');
-
+        $menus = $this->getDoctrine()->getRepository('AymardBundle:Page')->findall();
         
        	$photos = [];
        	if(!is_null($page)){
@@ -52,6 +54,7 @@ class DefaultController extends Controller
             'photos' => $photos,
             'slug' => 'biography',
             'page' => $page,
+            'menus' => $menus,
             'form' => $form->createView()
         ]);
     }
@@ -96,6 +99,8 @@ class DefaultController extends Controller
         
         $form = $this->createForm('AymardBundle\Form\ContactType');
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug($slug);
+        $menus = $this->getDoctrine()->getRepository('AymardBundle:Page')->findall();
+        
         
        	$photos = [];
        	if(!is_null($page)){
@@ -106,6 +111,7 @@ class DefaultController extends Controller
             'photos' => $photos,
             'slug' => $slug,
             'page' => $page,
+            'menus' => $menus,
             'form' => $form->createView()
         ]);
     }

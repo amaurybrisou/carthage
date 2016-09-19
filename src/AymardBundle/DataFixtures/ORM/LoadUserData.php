@@ -47,7 +47,8 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('hu-160-2013-60x60aubordduprécipice.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-160-2013-60x60aubordduprécipice.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-240-2014-61x50-aubord.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-240-2014-61x50-aubord.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-110-2013-38x55-atable.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-110-2013-38x55-atable.jpg');$image->setPage($page);$manager->persist($image);
-        $image = new Image();$image->setFile('hu-150a-2013-àdroiteouàgauche1.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-150a-2013-àdroiteouàgauche1.jpg');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('hu-150a-2013-àdroiteouàgauche1.jpg');
+        $image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-150a-2013-àdroiteouàgauche1.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-220-201359x49blancsurfondbleu.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-220-201359x49blancsurfondbleu.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-70-2012-60x60-orientation.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-70-2012-60x60-orientation.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('hu-420-2015-100x80-lefilconducteur.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('hu-420-2015-100x80-lefilconducteur.jpg');$image->setPage($page);$manager->persist($image);
@@ -328,7 +329,7 @@ class LoadUserData implements FixtureInterface
     
     private function getImageOrder($fileName){
         $order = explode('-', $fileName);
-        return (array_key_exists(1, $order)) ? $order[1] : 0;
+        return (array_key_exists(1, $order) && is_numeric($order[1])) ? $order[1] : 0;
     }
 }
 ?>

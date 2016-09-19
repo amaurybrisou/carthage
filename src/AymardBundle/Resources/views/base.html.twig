@@ -119,14 +119,17 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-center">
-                    <li class="navbar-header {% if slug == 'home' %} active {% endif %}"><a href="{{ path('home') }}">{{ 'home' | trans | upper }}</a></li>
+                    {% for menu in menus %}
+                        <li class="navbar-header {% if slug == menu.slug %} active {% endif %}"><a href="{{ path('view_pages', {slug : menu.slug }) }}">{{ menu.slug | trans | upper }}</a></li>
+                    {% endfor %}
+                    {# <li class="navbar-header {% if slug == 'home' %} active {% endif %}"><a href="{{ path('home') }}">{{ 'home' | trans | upper }}</a></li>
                     <li class="{% if slug == 'biography' %} active {% endif %}"><a href="{{ path('biography') }}">{{ 'biography' | trans | upper }}</a></li>
                     <li class="{% if slug == 'acrylics' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug': 'acrylics'}) }}">{{ 'acrylics' | trans | upper }}</a></li>
                     <li class="{% if slug == 'oils' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'oils' }) }}">{{ 'oils' | trans | upper }}</a></li>
                     <li class="{% if slug == 'gold' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'gold' }) }}">{{ 'gold' | trans | upper }}</a></li>
                     <li class="{% if slug == 'drawings' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'drawings' } ) }}">{{ 'drawings' | trans | upper }}</a></li>
                     <li class="{% if slug == 'gouaches-1' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'gouaches-1' }) }}">{{ 'gouaches-1' | trans | upper }}</a></li>
-                    <li class="{% if slug == 'misc' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'misc' | trans | upper }}</a></li>
+                    <li class="{% if slug == 'misc' %} active {% endif %}" ><a href="{{ path('view_pages', { 'slug' : 'misc' }) }}">{{ 'misc' | trans | upper }}</a></li> #}
                     <li><a href="" data-toggle="modal" data-target="#contact-modal">{{ "contact" | trans | upper }}</a></li>
                   </ul>
                 </div><!-- /.navbar-collapse -->

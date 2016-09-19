@@ -5,6 +5,7 @@ $(document).ready(function(){
       itemSelector: '.photo-thumbnail',
       masonry: {
         columnWidth: 10,
+        gutter: 10
       }
     });
   });
