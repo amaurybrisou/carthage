@@ -1,3 +1,7 @@
+html {
+    background-color: #90AAD4;
+}
+
 .biography {
     width:80%;
     display:flex;
@@ -10,7 +14,7 @@
 
 .title {
     margin-top: -4%;
-    width:100%;
+    width:70%;
 }
 
 .right_content {
@@ -27,7 +31,7 @@
 .wrapper {
   background-color: #90AAD4;
   height: 100vh;
-  padding-top: 10%;
+  padding-top: 2%;
 }
 
 .right_content_top {
@@ -37,7 +41,7 @@
 
 .right_content_bottom div:nth-child(2){
     font-size: 0.77em;
-    width: 52%;
+    /*width: 52%;*/
 }
 
 .biography img {
