@@ -18,11 +18,13 @@ html {
 }
 
 .right_content {
+    padding-bottom: 15%;
     margin-left:1px;
     width:100%;
+    font-size: 0.77em;
 }
 
-.biography .right_content_bottom {
+.biography .right_content_top {
     font-size:1em;
     width:100%;
     display:inline-flex;
@@ -34,17 +36,11 @@ html {
   padding-top: 2%;
 }
 
-.right_content_top {
-    margin-bottom:25px;
-    text-align:center;
+.right_content_top div:nth-child(2){
+    width: 52%;
 }
 
-.right_content_bottom div:nth-child(2){
-    font-size: 0.77em;
-    /*width: 52%;*/
-}
 
 .biography img {
     margin-right:20px;
-    margin-top: 6%;
 }

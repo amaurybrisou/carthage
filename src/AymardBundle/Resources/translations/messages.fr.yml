@@ -9,15 +9,17 @@ biography: "biographie"
 misc: "techniques diverses"
   
 artiste_peintre: "artiste peintre"
-
-biography.p1: "Je  me préoccupe de l’art depuis l’âge de 14 ans et mon intérêt s’est au départ porté sur l’artisanat. Le vitrail et la mosaïque furent mon premier travail, j’ai rencontré des artistes Edmond BOISSONNET, Mirande, Pierre THÉRON, Alfred MANESSIER qui faisaient appel à ces techniques pour réaliser des commandes. J’ai écouté et observé!"
-biography.p2: "Par la suite j’ai passé six ans aux Beaux-Arts pendant lesquels je me suis familiarisé à l’histoire de l’Art et aux techniques d’expressions plastiques."
-biography.p3: "Ma vie s’organise autour de ma passion, je commence à exposer et à travailler mes pensées aussi face à un art contemporain naissant et qui aujourd’hui s’est académisé. En 1981, je m’intéresse à la dorure à l’eau et avec l’aide de Pierre GICQUEL, restaurateur des cadres du musée du Louvre, je m’approprie cette technique au service de mes créations. C’est une aventure qui durera et évoluera pendant quatre ans."
-biography.p4: "Dessin, huile et diverses techniques accompagneront mon cheminement jusqu'à aujourd’hui."
-biography.p5: "L’adhésion à une aventure dans un monde en devenir est le mien et celui auquel j’appartiens, ainsi je participe et contribue à ma manière à le rendre meilleur et plus beau en sachant très bien que je ne suis ni le début et ni la fin. Mon projet est de vivre dans un monde à découvrir et de tenter de m’y émanciper constamment en matérialisant au plus juste mes idées par la forme et la couleur."
-biography.p6: "Ecouter, observer, méditer, travailler sont des ingrédients propres à alimenter des expressions renouvelées sans rejeter les racines et les expériences qui la constituent. Or, «Aujourd’hui est le premier jour du reste de ma vie» comme le disait si bien Hemingway, j’en fis un des fondements de mon œuvre."
-biography.p7: "De la maitrise de la forme et de la matière découle l’expression en quête du vrai, du beau et du bon, le prolongement plus que la rupture s’est matérialisé dans des travaux toujours renouvelés pour vivre des jours nouveaux et créer des œuvres singulières."
-biography.p8: "Aymard le Forestier de Quillien."
+biography.p1: "Né en 1952, Aymard est Diplômé National des Beaux-Arts de Bordeaux en 1974. Après s’être formé pendant deux années chez un maître verrier mosaïste et puis avoir fait des études de peinture et de gravure aux Beaux-arts de Bordeaux et d’Angers, il y ajoutera en 1982 et 1983, une formation à la technique de la dorure. Entre 1976 et 2013 il se consacrera à l’enseignement dans les collèges et les lycées."
+biography.p2: "Depuis 1976, il a exposé dans de nombreuses galeries : Quimper, Bordeaux, Brest, Paris, Tirana  (Albanie 2012) Chambéry, Aix les Bains (2014-2015)."
+biography.p3: "Désormais tout son temps est consacré à ses recherches et à la diffusion de l’ensemble de son travail de création."
+biography.p4: "« Je  me préoccupe de l’art depuis l’âge de 14 ans et mon intérêt s’est au départ porté sur l’artisanat. Le vitrail et la mosaïque furent mon premier travail, j’ai rencontré des artistes Edmond BOISSONNET, Mirande, Pierre THÉRON, Alfred MANESSIER qui faisaient appel à ces techniques pour réaliser des commandes. J’ai écouté et observé!"
+biography.p5: "Par la suite j’ai passé six ans aux Beaux-Arts pendant lesquels je me suis familiarisé à l’histoire de l’Art et aux techniques d’expressions plastiques."
+biography.p6: "Ma vie s’organise autour de ma passion, je commence à exposer et à travailler mes pensées aussi face à un art contemporain naissant et qui aujourd’hui s’est académisé. En 1981, je m’intéresse à la dorure à l’eau et avec l’aide de Pierre GICQUEL, restaurateur des cadres du musée du Louvre, je m’approprie cette technique au service de mes créations. C’est une aventure qui durera et évoluera pendant quatre ans."
+biography.p7: "Dessin, huile et diverses techniques accompagneront mon cheminement jusqu'à aujourd’hui."
+biography.p8: "L’adhésion à une aventure dans un monde en devenir est le mien et celui auquel j’appartiens, ainsi je participe et contribue à ma manière à le rendre meilleur et plus beau en sachant très bien que je ne suis ni le début et ni la fin. Mon projet est de vivre dans un monde à découvrir et de tenter de m’y émanciper constamment en matérialisant au plus juste mes idées par la forme et la couleur."
+biography.p9: "Ecouter, observer, méditer, travailler sont des ingrédients propres à alimenter des expressions renouvelées sans rejeter les racines et les expériences qui la constituent. Or, «Aujourd’hui est le premier jour du reste de ma vie» comme le disait si bien Hemingway, j’en fis un des fondements de mon œuvre."
+biography.p10: "De la maitrise de la forme et de la matière découle l’expression en quête du vrai, du beau et du bon, le prolongement plus que la rupture s’est matérialisé dans des travaux toujours renouvelés pour vivre des jours nouveaux et créer des œuvres singulières. »"
+biography.p11: "Aymard le Forestier de Quillien."
 
 mail-sent: 'Votre message a été envoyé à Aymard'
 new-message: 'Nouveau message de '
