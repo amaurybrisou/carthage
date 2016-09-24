@@ -1,0 +1,98 @@
+{% extends 'AymardBundle::base.html.twig' %}
+
+{% trans_default_domain "presse" %}
+
+{% block javascripts %}
+  {% javascripts 
+  '@AymardBundle/Resources/public/vendors/jquery/dist/jquery.min.js'
+  '@bootstrap_js'
+  %}
+  <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+  {% stylesheets  filter="cssrewrite"
+  '@bootstrap_css'
+  '@AymardBundle/Resources/public/css/main.css'
+  '@AymardBundle/Resources/public/css/language_switcher.css'
+  '@AymardBundle/Resources/public/css/menu.css'
+  '@AymardBundle/Resources/public/css/contact-modal.css'
+  '@AymardBundle/Resources/public/css/press.css'
+  %}
+  <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
+  {% endstylesheets %}
+{% endblock %}
+
+
+{% block left_slider %}{% endblock %}
+
+{% block body %}
+  <main>
+    <article class="press">
+      <h2>{{ 'title' | trans }}</h2>
+      <p>{{ 'p1' | trans }}</p>
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[0].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[0].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[0].description}}"
+            alt="{{ photos[0].description}}"
+            title="{{ photos[0].description}}" />
+      <p>{{ 'p2' | trans }}</p>
+      <p>{{ 'p3' | trans }}</p>
+      <p>{{ 'p4' | trans }}</p>
+      <p>{{ 'p5' | trans }}</p>
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[1].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[1].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[1].description}}"
+            alt="{{ photos[1].description}}"
+            title="{{ photos[1].description}}" />
+      <p>{{ 'p6' | trans }}</p>
+
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[2].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[2].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[2].description}}"
+            alt="{{ photos[2].description}}"
+            title="{{ photos[2].description}}" />
+
+      <p>{{ 'p7' | trans }}</p>
+
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[3].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[3].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[3].description}}"
+            alt="{{ photos[3].description}}"
+            title="{{ photos[3].description}}" />
+
+      <p>{{ 'p8' | trans }}</p>
+
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[4].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[4].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[4].description}}"
+            alt="{{ photos[4].description}}"
+            title="{{ photos[4].description}}" />
+      
+      <p>{{ 'p8' | trans }}</p>
+
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[5].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[5].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[5].description}}"
+            alt="{{ photos[5].description}}"
+            title="{{ photos[5].description}}" />
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[6].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[6].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[6].description}}"
+            alt="{{ photos[6].description}}"
+            title="{{ photos[6].description}}" />
+      
+      <p>{{ 'p9' | trans }}</p>
+
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[7].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[7].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[7].description}}"
+            alt="{{ photos[7].description}}"
+            title="{{ photos[7].description}}" />
+
+      <p>{{ 'p10' | trans }}</p>
+      <p>{{ 'p11' | trans }}</p>
+      <p>{{ 'p12' | trans }}</p>
+      <p>{{ 'p13' | trans }}</p>
+      <p>{{ 'p14' | trans }}</p>
+
+      <img class="photo-modal-event" src="{{ ('img/' ~ photos[8].file) | imagine_filter('fullSize')   }}"  full-size-link="{{ ('img/' ~ photos[8].file) | imagine_filter('fullSize')   }}" image-description="{{ photos[8].description}}"
+            alt="{{ photos[8].description}}"
+            title="{{ photos[8].description}}" />
+
+      <p>{{ 'p15' | trans }}</p>
+      <p>{{ 'p16' | trans }}</p>
+      <p>{{ 'p17' | trans }}</p>
+      <p>{{ 'p18' | trans }}</p>
+      <p>{{ 'p19' | trans }}</p>
+      <p class="firm">{{ 'firm' | trans }}</p>
+    </article>
+
+  </main>
+{% endblock %}
+

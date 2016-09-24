@@ -1,7 +1,9 @@
 {% extends 'AymardBundle::admin/admin_base.html.twig' %}
 
+{% trans_default_domain "AvanzuAdminTheme" %}
+
 {% block body %}
-    <h1>Page creation</h1>
+    <h1>{{ 'page.new.title'|trans}}</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -10,7 +12,7 @@
 
     <ul>
         <li>
-            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">Back to the list</a>
+            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">{{'admin.back'}}</a>
         </li>
     </ul>
 {% endblock %}

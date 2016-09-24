@@ -24,6 +24,7 @@ class MenuItemListListener {
         $menuItems = [
             $page = new MenuItemModel('page', 'Pages', 'admin_page_index', array(), 'iconclasses fa fa-plane'),
             $image = new MenuItemModel('image', 'Photos', 'admin_page_index', array(/* options */), 'iconclasses fa fa-plane'),
+            $trans = new MenuItemModel('trans', 'Traductions', 'jms_translation_index', array('locale' => "fr"), 'iconclasses fa fa-plane'),
         ];
         $page->addChild(new MenuItemModel('page_list', 'List', 'admin_page_index', array(), 'fa fa-rss-square'));
         //$page->addChild(new MenuItemModel('page_new', 'Create', 'admin_page_new', array(), 'fa fa-rss-square'));

@@ -1,3 +1,8 @@
+JMSTranslationBundle_ui:
+  resource: "@JMSTranslationBundle/Controller/"
+  type:     annotation
+  prefix:   /admin/_trans
+
 aymard_admin_page:
     resource: "@AymardBundle/Controller/PageController.php"
     type:     annotation

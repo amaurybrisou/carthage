@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2016-09-24T22:12:34Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b1b14e58fbf3ac67fb83a009be104b2fbae96908" resname="acrylics">
+        <source>/acrylics</source>
+        <target>/acrylics</target>
+        <jms:reference-file line="13">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d033e22ae348aeb5660fc2140aec35850c4da997" resname="admin">
+        <source>/admin</source>
+        <target>/admin</target>
+      </trans-unit>
+      <trans-unit id="626e8a49412705d0110dc2b1c395b61a44545b94" resname="admin_image_delete">
+        <source>/admin/image/{id}</source>
+        <target>/admin/image/{id}</target>
+      </trans-unit>
+      <trans-unit id="71e829be2086af750509a9e7a2da86b257facd32" resname="admin_image_edit">
+        <source>/admin/image/{id}/edit</source>
+        <target>/admin/image/{id}/edit</target>
+      </trans-unit>
+      <trans-unit id="6e2d84a569a24b0ca9f76d4498388fad272d804a" resname="admin_image_index">
+        <source>/admin/image/</source>
+        <target>/admin/image/</target>
+      </trans-unit>
+      <trans-unit id="7fdcd58fdd279dfa751991c88fcf0813473aa90e" resname="admin_image_new">
+        <source>/admin/image/new</source>
+        <target>/admin/image/new</target>
+      </trans-unit>
+      <trans-unit id="1415f55613cff857418c51a23ca045af002917b8" resname="admin_image_show">
+        <source>/admin/image/{id}</source>
+        <target>/admin/image/{id}</target>
+      </trans-unit>
+      <trans-unit id="c56ce41e81ae4d3bc06cf868474d9dc63320aef0" resname="admin_page_delete">
+        <source>/admin/page/{id}</source>
+        <target>/admin/page/{id}</target>
+      </trans-unit>
+      <trans-unit id="28746aa695da4da4adb39f54864763e34f569c1d" resname="admin_page_edit">
+        <source>/admin/page/{id}/edit</source>
+        <target>/admin/page/{id}/edit</target>
+      </trans-unit>
+      <trans-unit id="cf40e3b9b84b17f3e99890551549021cc509b13d" resname="admin_page_index">
+        <source>/admin/page/</source>
+        <target>/admin/page/</target>
+      </trans-unit>
+      <trans-unit id="4c40767453f1e997a5c4b3686435b9812ef92bfc" resname="admin_page_new">
+        <source>/admin/page/new</source>
+        <target>/admin/page/new</target>
+      </trans-unit>
+      <trans-unit id="f3beed67736977e21b425111a40204bc37521006" resname="admin_page_show">
+        <source>/admin/page/{id}</source>
+        <target>/admin/page/{id}</target>
+      </trans-unit>
+      <trans-unit id="0a313f0e0651f59970120ca83aedd3e2f4a6a93a" resname="avanzu_admin_logout">
+        <source>/logout</source>
+        <target>/logout</target>
+      </trans-unit>
+      <trans-unit id="830dfc85c5d6a273ebcc3892ba6afcc39fb4148c" resname="avanzu_admin_profile">
+        <source>/profile/{userid}/</source>
+        <target>/profile/{userid}/</target>
+      </trans-unit>
+      <trans-unit id="3e62e877f84906e1616035c00ee311ab31207545" resname="aymard_default_home">
+        <source>/</source>
+        <target>/</target>
+      </trans-unit>
+      <trans-unit id="bf7d7e82b9df5767ba9a116978d55cb30dd19218" resname="biography">
+        <source>/biography</source>
+        <target>/biography</target>
+      </trans-unit>
+      <trans-unit id="1a73af9e7ae00182733b2292511b814be66f065f" resname="contact">
+        <source>/contact</source>
+        <target>/contact</target>
+        <jms:reference-file line="22">/../src/AymardBundle/Resources/views/commons/menus.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dc130d74e20d02461d358a05f6b7145e32ed287c" resname="drawings">
+        <source>/drawings</source>
+        <target>/drawings</target>
+        <jms:reference-file line="16">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3e7a1eb65964daab6c8503cea70e628e3f933ce0" resname="fos_user_change_password">
+        <source>/profile/change-password</source>
+        <target>/profile/change-password</target>
+      </trans-unit>
+      <trans-unit id="89d9f90f552727a161575b47336d827555229023" resname="fos_user_profile_edit">
+        <source>/profile/edit</source>
+        <target>/profile/edit</target>
+      </trans-unit>
+      <trans-unit id="a5c247e0ed2953f5e091126240a417a30fe47c12" resname="fos_user_profile_show">
+        <source>/profile/</source>
+        <target>/profile/</target>
+      </trans-unit>
+      <trans-unit id="a7796b4f4f42c56769357a8303569fc003731e87" resname="fos_user_registration_check_email">
+        <source>/register/check-email</source>
+        <target>/register/check-email</target>
+      </trans-unit>
+      <trans-unit id="22ca20e7a4ac37652a84e45daaf1e68e388eca26" resname="fos_user_registration_confirm">
+        <source>/register/confirm/{token}</source>
+        <target>/register/confirm/{token}</target>
+      </trans-unit>
+      <trans-unit id="43816e069e01819401d9822574dad6c50d82d2d7" resname="fos_user_registration_confirmed">
+        <source>/register/confirmed</source>
+        <target>/register/confirmed</target>
+      </trans-unit>
+      <trans-unit id="693eeded1b8403ebe14463be5de2a9a1ecefbf14" resname="fos_user_registration_register">
+        <source>/register/</source>
+        <target>/register/</target>
+      </trans-unit>
+      <trans-unit id="031c418d91c7b50426906ae4ad5b80194b7e153e" resname="fos_user_resetting_check_email">
+        <source>/resetting/check-email</source>
+        <target>/resetting/check-email</target>
+      </trans-unit>
+      <trans-unit id="57721581c69f4c8163632a830f07d82ee0d719f3" resname="fos_user_resetting_request">
+        <source>/resetting/request</source>
+        <target>/resetting/request</target>
+      </trans-unit>
+      <trans-unit id="3631be6fbf01f3e1ac7ed153ed4648c6469fe0e2" resname="fos_user_resetting_reset">
+        <source>/resetting/reset/{token}</source>
+        <target>/resetting/reset/{token}</target>
+      </trans-unit>
+      <trans-unit id="b68f7e5fae30e8373429c4abe045ae50b8f5f762" resname="fos_user_resetting_send_email">
+        <source>/resetting/send-email</source>
+        <target>/resetting/send-email</target>
+      </trans-unit>
+      <trans-unit id="33d36422431d1bc6e64296b7b849a049c426bfb1" resname="fos_user_security_check">
+        <source>/login_check</source>
+        <target>/login_check</target>
+      </trans-unit>
+      <trans-unit id="e33cc56c226adb625998728b77c6d7989d693f61" resname="fos_user_security_login">
+        <source>/login</source>
+        <target>/login</target>
+      </trans-unit>
+      <trans-unit id="00fb021cee4fd738a7b66a0f5deb9f30bf059593" resname="fos_user_security_logout">
+        <source>/logout</source>
+        <target>/logout</target>
+      </trans-unit>
+      <trans-unit id="09feb137fd5e58ac9131bff6c66ba2e70260bf8c" resname="gold">
+        <source>/gold</source>
+        <target>/gold</target>
+        <jms:reference-file line="18">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="24fa39e505ab9c9a1f589da0a9f5eb99f8cdb212" resname="gouaches-1">
+        <source>/gouaches-1</source>
+        <target>/gouaches-1</target>
+        <jms:reference-file line="17">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e83249bd3ba79932e16fb1fb5100dafade9954c2" resname="home">
+        <source>/home</source>
+        <target>/home</target>
+      </trans-unit>
+      <trans-unit id="29a2e327c88850e83538b45de33a16b13d6375da" resname="liip_imagine_filter">
+        <source>/media/cache/resolve/{filter}/{path}</source>
+        <target>/media/cache/resolve/{filter}/{path}</target>
+      </trans-unit>
+      <trans-unit id="cc9da47695fc3217da654fdf973462ef7c25ab02" resname="liip_imagine_filter_runtime">
+        <source>/media/cache/resolve/{filter}/rc/{hash}/{path}</source>
+        <target>/media/cache/resolve/{filter}/rc/{hash}/{path}</target>
+      </trans-unit>
+      <trans-unit id="291d3e10d996b9590a718565f00bfbbd0ad02bef" resname="misc">
+        <source>/misc</source>
+        <target>/misc</target>
+        <jms:reference-file line="15">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="077efc4f9e2e7328d4e1a18c8ec29e649bcd074c" resname="oils">
+        <source>/oils</source>
+        <target>/oils</target>
+        <jms:reference-file line="14">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd09e18a9bd74edaca7d487211db598da4416565" resname="press">
+        <source>/press</source>
+        <target>/press</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

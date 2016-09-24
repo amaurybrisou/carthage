@@ -1,0 +1,21 @@
+* {
+	--flag-size: 1.6em;
+}
+
+#language_switcher_dropdown {
+	padding: calc(var(--flag-size) / 2);
+}
+
+#bs-example-navbar-collapse-1 > ul > li.dropup.open > div {
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 10px;
+	bottom: 110%;
+	padding: 10%;
+	min-width: calc(var(--flag-size) * 4.6);
+}
+
+.flag,
+.flag img {
+	max-height: var(--flag-size) !important;
+}

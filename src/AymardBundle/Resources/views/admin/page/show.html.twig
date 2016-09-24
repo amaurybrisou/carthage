@@ -1,27 +1,29 @@
 {% extends 'AymardBundle::admin/admin_base.html.twig' %}
 
+{% trans_default_domain "AvanzuAdminTheme" %}
+
 {% block body %}
-    <h1>Page</h1>
+    <h1>{{'page.show.title'|trans}}</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Title</th>
+                <th>{{ 'page.title'|trans }}</th>
                 <td>{{ page.title }}</td>
             </tr>
-            <tr>
+            {# <tr>
                 <th>Description</th>
                 <td>{{ page.description }}</td>
-            </tr>
+            </tr> #}
         </tbody>
     </table>
 
     <ul class="form-inline">
         <li class="form-group">
-            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">Back to the list</a>
+            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">{{ 'admin.back'|trans}}</a>
         </li>
         <li class="form-group">
-            <a class="btn btn-primary" href="{{ path('admin_page_edit', { 'id': page.id }) }}">Edit</a>
+            <a class="btn btn-primary" href="{{ path('admin_page_edit', { 'id': page.id }) }}">{{'admin.edit'|trans}}</a>
         </li>
  
     </ul>

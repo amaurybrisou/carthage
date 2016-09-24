@@ -1,5 +1,5 @@
 html {
-    background-color: #90AAD4;
+    background-color: var(--main-color);
 }
 
 .biography {
@@ -30,8 +30,8 @@ html {
     display:inline-flex;
 }
 
-.wrapper {
-  background-color: #90AAD4;
+main {
+  background-color: var(--main-color);
   height: 100vh;
   padding-top: 2%;
 }

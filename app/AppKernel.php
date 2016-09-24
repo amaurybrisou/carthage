@@ -19,6 +19,10 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Avanzu\AdminThemeBundle\AvanzuAdminThemeBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+            new JMS\AopBundle\JMSAopBundle(),
+            new JMS\TranslationBundle\JMSTranslationBundle(),            
             new AymardBundle\AymardBundle(),
         ];
 

@@ -1,20 +1,22 @@
 {% extends 'AymardBundle::admin/admin_base.html.twig' %}
 
+{% trans_default_domain "AvanzuAdminTheme" %}
+
 {% block body %}
     <h1>Image</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Order</th>
+                <th>{{ 'image.order'|trans}}</th>
                 <td>{{ image.getImageOrder() }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>{{ 'image.description'|trans}}</th>
                 <td>{{ image.description }}</td>
             </tr>
             <tr>
-                <th>File</th>
+                <th>{{'image.file'|trans}}</th>
                 <td>{{ image.file }}</td>
             </tr>
             <tr>
@@ -28,10 +30,13 @@
 
     <ul class="form-inline">
         <li class="form-group">
-            <a class="btn btn-primary"  href="{{ path('admin_image_index') }}">Back to the list</a>
+            <a class="btn btn-primary"  href="{{ path('admin_image_index') }}">{{'admin.back'|trans}}</a>
         </li>
         <li class="form-group">
-            <a class="form-control btn btn-primary" href="{{ path('admin_image_edit', { 'id': image.id }) }}">Save</a>
+            <a class="form-control btn btn-primary" href="{{ path('admin_image_edit', { 'id': image.id }) }}">{{'admin.edit'|trans}}</a>
+        </li>
+        <li class="form-group">
+            <a class="form-control btn btn-primary" href="{{ path('admin_image_new') }}">{{'admin.new'|trans}}</a>
         </li>
         <li class="form-group">
             {{ form_start(delete_form) }}

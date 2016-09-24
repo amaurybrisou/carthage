@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/{_locale}", defaults={ "_locale": "fr"})
-     * @Route("/{_locale}/home", name="home", defaults={ "_locale": "fr"})
+     * @Route("/")
+     * @Route("/home", name="home")
      */
     public function homeAction(Request $request)
     {
@@ -20,6 +20,7 @@ class DefaultController extends Controller
 
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('home');
         $menus = $this->getDoctrine()->getRepository('AymardBundle:Page')->findall();
+        $locales = $this->getParameter('locales');
 
        	$photos = [];
        	if(!is_null($page)){
@@ -32,18 +33,20 @@ class DefaultController extends Controller
             'slug' => 'home',
             'page' => $page,
             'menus' => $menus,
+            'locales' => $locales,
             'form' => $form->createView()
         ]);
     }
     
     /**
-     * @Route("/{_locale}/biography", name="biography", defaults={ "_locale": "fr"})
+     * @Route("/biography", name="biography")
      */
     public function biographyAction()
     {
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('biography');
         $form = $this->createForm('AymardBundle\Form\ContactType');
         $menus = $this->getDoctrine()->getRepository('AymardBundle:Page')->findall();
+        $locales = $this->getParameter('locales');
         
        	$photos = [];
        	if(!is_null($page)){
@@ -55,12 +58,38 @@ class DefaultController extends Controller
             'slug' => 'biography',
             'page' => $page,
             'menus' => $menus,
+            'locales' => $locales,
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/press", name="press")
+     */
+    public function pressAction()
+    {
+        $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug('press');
+        $form = $this->createForm('AymardBundle\Form\ContactType');
+        $menus = $this->getDoctrine()->getRepository('AymardBundle:Page')->findall();
+        $locales = $this->getParameter('locales');
+        
+        $photos = [];
+        if(!is_null($page)){
+            $photos = $page->getPhotos();
+        }
+      
+        return $this->render('AymardBundle:home:press.html.twig', [
+            'photos' => $photos,
+            'slug' => 'press',
+            'page' => $page,
+            'menus' => $menus,
+            'locales' => $locales,
             'form' => $form->createView()
         ]);
     }
     
     /**
-     * @Route("/{_locale}/contact", name="contact")
+     * @Route("/contact", name="contact")
      * @Method({ "POST"})
      */
      public function contactAction(Request $request){
@@ -70,7 +99,7 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $translator = $this->get('translator');
             
-            $subject = $translator->trans('new-message') . $form->get("email")->getData() . " : " . $form->get("name")->getData();
+            $subject = $translator->trans('subject.new.message', [], 'email') . " : " . $form->get("name")->getData();
             $message = \Swift_Message::newInstance()
                     ->setSubject($subject)
                     ->setFrom($this->getParameter('mailer_user'))
@@ -81,7 +110,7 @@ class DefaultController extends Controller
             
             $this->addFlash(
                 'success',
-                $this->get('translator')->trans('mail-sent')
+                $this->get('translator')->trans('flash.mail-sent', [], 'email')
             );
             
             return $this->redirectToRoute('home');
@@ -89,19 +118,28 @@ class DefaultController extends Controller
      }
     
     /**
-     * @Route("/{_locale}/{slug}", name="view_pages", defaults={ "_locale" : "fr" })
+     * @Route("/oils", name="oils")
+     * @Route("/acrylics", name="acrylics")
+     * @Route("/drawings", name="drawings")
+     * @Route("/gouaches-1", name="gouaches-1")
+     * @Route("/gold", name="gold")
+     * @Route("/misc", name="misc")
+     * @Route("/admin", name="admin")
      */
-    public function indexAction(Request $request, $_locale, $slug)
+    public function indexAction(Request $request)
     {
-        if($slug == 'admin'){
+        $slug = $request->get('_route');
+        
+        if(!strcasecmp($slug, 'admin')){
             return $this->redirectToRoute('admin_page_index');
         }
         
         $form = $this->createForm('AymardBundle\Form\ContactType');
 	    $page = $this->getDoctrine()->getRepository('AymardBundle:Page')->findOneBySlug($slug);
         $menus = $this->getDoctrine()->getRepository('AymardBundle:Page')->findall();
-        
-        
+        $locales = $this->getParameter('locales');
+
+        // die(var_dump($slug, $menus));
        	$photos = [];
        	if(!is_null($page)){
        	    $photos = $page->getPhotos();
@@ -112,6 +150,7 @@ class DefaultController extends Controller
             'slug' => $slug,
             'page' => $page,
             'menus' => $menus,
+            'locales' => $locales,
             'form' => $form->createView()
         ]);
     }

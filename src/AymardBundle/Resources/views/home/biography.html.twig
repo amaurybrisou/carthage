@@ -1,5 +1,7 @@
 {% extends 'AymardBundle::base.html.twig' %}
 
+{% trans_default_domain "biography" %}
+
 {% block javascripts %}
     {% javascripts 
         '@AymardBundle/Resources/public/vendors/jquery/dist/jquery.min.js'
@@ -13,6 +15,7 @@
     {% stylesheets  filter="cssrewrite"
         '@bootstrap_css'
         '@AymardBundle/Resources/public/css/main.css'
+        '@AymardBundle/Resources/public/css/language_switcher.css'
         '@AymardBundle/Resources/public/css/menu.css'
         '@AymardBundle/Resources/public/css/biography.css'
         '@AymardBundle/Resources/public/css/contact-modal.css'
@@ -25,17 +28,17 @@
 {% block left_slider %}{% endblock %}
 
 {% block body %}
-    <div class="wrapper">
+    <main class="wrapper">
         <div class="biography">
             <div class="title">
                 <div>
-                    <h3>AYMARD LE FORESTIER DE QUILLIEN</h3>
+                    <h3>{{ 'painter_name' | trans }}</h3>
                 </div>
                 <div>
                     <h4>{{ 'artiste_peintre' | trans | upper }}</h4>
                 </div>
             </div>
-            <div class="right_content">
+            <article class="right_content">
                 
                 <div class="right_content_top">
                     <div>
@@ -59,8 +62,8 @@
                     <p>{{ 'biography.p10' | trans }}</p>
                     <p>{{ 'biography.p11' | trans }}</p>
                 </div>
-            </div>
+            </article>
         </div>
-    </div>
+    </main>
 {% endblock %}
 

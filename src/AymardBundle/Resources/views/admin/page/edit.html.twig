@@ -1,13 +1,16 @@
 {% extends 'AymardBundle::admin/admin_base.html.twig' %}
 
+{% trans_default_domain "AvanzuAdminTheme" %}
+
+
 {% block body %}
-    <h1>Page edit</h1>
+    <h1>{{'page.edit.title'|trans}}</h1>
 
     {{ form_start(edit_form) }}
         {{ form_row(edit_form.title) }}
-        {{ form_row(edit_form.description) }}
-        {{ form_row(edit_form.slug) }}
-        <ul class="metas" data-prototype="{{ form_widget(edit_form.metas.vars.prototype, { 'attr' : { 'class' : 'form-inline' }})|e('html_attr') }}" >
+        {# {{ form_row(edit_form.description) }}
+        {{ form_row(edit_form.slug) }} #}
+         <ul class="metas" data-prototype="{{ form_widget(edit_form.metas.vars.prototype, { 'attr' : { 'class' : 'form-inline' }})|e('html_attr') }}" >
             {% for m in edit_form.metas %}
                 <li  class="form-inline">
                     {{ form_row(m.property) }}
@@ -19,7 +22,7 @@
         
         <div class="form-inline">
             <input class="btn btn-primary" type="submit" value="Save" />
-            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">Back to the list</a>
+            <a class="btn btn-primary" href="{{ path('admin_page_index') }}">{{ 'admin.back'|trans }}</a>
         </div>
         
     {{ form_end(edit_form, {'render_rest': false}) }}
@@ -33,13 +36,13 @@
     
     <script>
         
-        $('#page_description').wysihtml5({
-            toolbar: {
-                fa: true,
-                html: true,
-                color: true
-            }
-         });
+        // $('#page_description').wysihtml5({
+        //     toolbar: {
+        //         fa: true,
+        //         html: true,
+        //         color: true
+        //     }
+        //  });
     
         var $collectionHolder;
 

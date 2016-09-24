@@ -1,5 +1,7 @@
 {% extends 'AvanzuAdminThemeBundle:layout:base-layout.html.twig' %}
 
+{% trans_default_domain "AvanzuAdminTheme" %}
+
 {% block title %}
     Administration
 {% endblock %}
@@ -51,9 +53,9 @@
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">{{ 'admin.navigation'|trans }}</span>
             </a>
-            {% if app.user is not null and is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         {% block avanzu_navbar %}

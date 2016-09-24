@@ -1,5 +1,7 @@
 {% extends 'AymardBundle::base.html.twig' %}
 
+{% trans_default_domain "home" %}
+
 {% block javascripts %}
     {% javascripts 
         '@AymardBundle/Resources/public/vendors/jquery/dist/jquery.min.js'
@@ -21,8 +23,8 @@
         '@AymardBundle/Resources/public/css/photo-modal.css'
         '@AymardBundle/Resources/public/css/contact-modal.css'
         '@AymardBundle/Resources/public/css/spinner.css'
-        '@AymardBundle/Resources/public/css/menu.css'
-        
+        '@AymardBundle/Resources/public/css/language_switcher.css'
+        '@AymardBundle/Resources/public/css/menu.css'        
     %}
         <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
     {% endstylesheets %}
@@ -39,11 +41,11 @@
             </div>
         {% endfor %}
     {% endfor %}
-    <div class="wrapper">
+    <main>
         <div class="home">
             <div class="title title_home">
                 <div>
-                    <h3>AYMARD LE FORESTIER DE QUILLIEN</h3>
+                    <h3>{{ 'painter_name' | trans | upper }}</h3>
                 </div>
                 <div>
                     <h4>{{ 'artiste_peintre' | trans | upper }}</h4>
@@ -55,13 +57,13 @@
             	</a>
     		{% endfor %}
         </div>
-    </div>
-    <div id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+    </main>
+    <article id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
        <div class="photo-modal-content">
             <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
        		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
       		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
       		<div style="display:none;" id="image-description"></div>
       </div>
-    </div>
+    </article>
 {% endblock %}

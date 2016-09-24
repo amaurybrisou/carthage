@@ -178,8 +178,8 @@ class LoadUserData implements FixtureInterface
         
         //GOUACHES1
         $page = new Page();
-        $page->setTitle('gouaches-1');
-        $page->setSlug('gouaches-1');
+        $page->setTitle('gouaches');
+        $page->setSlug('gouaches');
         $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
         $page->addMeta(new Meta("title", "Text appearing in the google link"));
         $page->addMeta(new Meta("description", "Text appearing in the google description below the link"));

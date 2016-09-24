@@ -18,5 +18,7 @@ parameters:
     mailer_encryption: tls
     mailer_port:       587
 
+    locales: ['fr', 'en', 'es', 'de', 'pt']
+    
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt

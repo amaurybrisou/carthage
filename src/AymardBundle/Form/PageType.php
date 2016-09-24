@@ -19,8 +19,8 @@ class PageType extends AbstractType
     {
                 $builder
             ->add('title')
-            ->add('slug')
-            ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:200px;']])
+            // ->add('slug')
+            // ->add('description', TextAreaType::class, ['attr' => ['style' => 'height:200px;']])
         ;
         
         $builder->add('metas', CollectionType::class, [

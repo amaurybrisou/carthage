@@ -44,7 +44,7 @@
   }
 }
 
-@media (min-width: 950px) and (max-width: 1149px) {
+@media (min-width: 977px) and (max-width: 1149px) {
   .navbar-default {
       font-size: 0.7em;
   }
@@ -54,7 +54,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 949px) {
+@media (min-width: 768px) and (max-width: 976px) {
   .navbar-default {
       font-size: 0.6em;
   }

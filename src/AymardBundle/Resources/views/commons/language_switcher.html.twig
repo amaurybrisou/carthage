@@ -1,0 +1,38 @@
+<!-- _languageSwitcher.html.twig -->
+
+{# If method is not GET the language switcher is hidden to prevent change the url on a post action #}
+
+{% if app.request.get('_route') and app.request.method and "GET" == app.request.method %}
+
+  {% set actualLanguage = app.request.locale %}
+  
+  <a class="language-current language-current-{{actualLanguage}} dropdown-toggle" id="language_switcher_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="flag flag-{{actualLanguage}}">
+      <img src="{{ asset('bundles/aymard/img/flags/'~actualLanguage~'.png') }}" alt="flag-{{actualLanguage}}"/>
+    </div>
+    {# <div class="iso">
+      {{ language|capitalize }}
+    </div> #}
+  </a>
+  
+  <div class="dropdown-menu language-available" aria-labelledby="language_switcher_dropdown">
+    {% set routeParams = app.request.get('_route_params') %}
+    {% for language in locales %} {# If you have a language referential you may call a controller to get all languages #}
+      {% if language != actualLanguage %}
+        {% if routeParams['_locale'] is defined %}
+          {%set routeParams = routeParams|merge({'_locale': language}) %}
+        {% endif %}
+        
+        <span class="flag flag-{{language}}">
+          <a href="{{ path(app.request.get('_route'), routeParams) }}">
+            <img src="{{ asset('bundles/aymard/img/flags/'~language~'.png') }}" alt="flag-{{language}}"/>
+          </a>
+        </span>
+        {# <div class="iso">
+          <a href="{{ path(app.request.get('_route'), routeParams) }}">{{ language|capitalize }}</a>
+        </div> #}
+      {% endif %}
+    {% endfor %}
+  </div>
+  {# <div class="clear"></div> #}
+{% endif %}

@@ -1,5 +1,7 @@
 {% extends 'AymardBundle::base.html.twig' %}
 
+{% trans_default_domain "contact" %}
+
 {% block title %}{% endblock %}
 {% block left_slider %}{% endblock %}
 
@@ -22,8 +24,9 @@
         '@bootstrap_css'
         '@AymardBundle/Resources/public/css/main.css'
         '@AymardBundle/Resources/public/css/home.css'
-        '@AymardBundle/Resources/public/css/modal.css'
+        '@AymardBundle/Resources/public/css/contact-modal.css'
         '@AymardBundle/Resources/public/css/spinner.css'
+        '@AymardBundle/Resources/public/css/language_switcher.css'
         '@AymardBundle/Resources/public/css/menu.css'
         
     %}

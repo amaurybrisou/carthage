@@ -1,0 +1,69 @@
+{% trans_default_domain 'menus' %}
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-center">
+        {% for menu in menus %}
+            <li class="navbar-header {% if slug == menu.slug %} active {% endif %}">
+              <a href="{{ path(menu.slug) }}">{{ menu.slug | trans({}, 'routes') | upper }}</a></li>
+        
+          {% endfor %}
+        <li>
+          <a href="" data-toggle="modal" data-target="#contact-modal">{{ "contact" | trans({}, "routes") | upper }}</a>
+        </li>
+        {% block language_switcher %}
+          <li class="dropup">
+            {% include 'AymardBundle::commons/language_switcher.html.twig' %}
+          </li>
+        {% endblock %}
+        {# <li class="navbar-header {% if slug == 'home' %} active {% endif %}">
+
+            <a href="{{ path('home', {}, 'routes') }}">{{ 'home' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'biography' %} active {% endif %}"> 
+
+            <a href="{{ path('biography', {}, 'routes') }}">{{ 'biography' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'acrylics' %} active {% endif %}" > 
+
+            <a href="{{ path('acrylics') }}">{{ 'acrylics' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'oils' %} active {% endif %}" > 
+
+            <a href="{{ path( slug ) }}">{{ 'oils' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'gold' %} active {% endif %}" > 
+
+            <a href="{{ path( slug ) }}">{{ 'gold' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'drawings' %} active {% endif %}" > 
+
+            <a href="{{ path( slug ) }}">{{ 'drawings' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'gouaches-1' %} active {% endif %}" > 
+
+            <a href="{{ path( slug ) }}">{{ 'gouaches-1' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'misc' %} active {% endif %}" > 
+
+            <a href="{{ path( slug ) }}">{{ 'misc' | trans({}, "routes") | upper }}</a></li>
+        
+        <li class="{% if slug == 'press' %} active {% endif %}" >
+
+            <a href="{{ path( slug ) }}">{{ 'press' | trans({}, "routes") | upper }}</a></li>
+        
+        <li><a href="" data-toggle="modal" data-target="#contact-modal">{{ "contact" | trans({}, "routes") | upper }}</a></li> #}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>

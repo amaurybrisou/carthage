@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2016-09-24T22:12:29Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b8deb1e6424abf22a2f7071fb892f40133320451" resname="artiste_peintre">
+        <source>artiste_peintre</source>
+        <target>artiste_peintre</target>
+        <jms:reference-file line="51">/../src/AymardBundle/Resources/views/home/home.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7ad54e82d24a5c25ca48685f8874861a6ca7e00f" resname="painter_name">
+        <source>painter_name</source>
+        <target>painter_name</target>
+        <jms:reference-file line="48">/../src/AymardBundle/Resources/views/home/home.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

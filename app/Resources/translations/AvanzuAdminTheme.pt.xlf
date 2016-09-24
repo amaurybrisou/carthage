@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2016-09-24T22:12:32Z" source-language="en" target-language="pt" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="02434cb961412b44c239aeb86e5672eba53480e9" resname="admin.back">
+        <source>admin.back</source>
+        <target>admin.back</target>
+        <jms:reference-file line="33">/../src/AymardBundle/Resources/views/admin/image/show.html.twig</jms:reference-file>
+        <jms:reference-file line="25">/../src/AymardBundle/Resources/views/admin/page/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/AymardBundle/Resources/views/admin/page/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b577ca8f4be857b71df2bdeb83271036a59b9179" resname="admin.edit">
+        <source>admin.edit</source>
+        <target>admin.edit</target>
+        <jms:reference-file line="36">/../src/AymardBundle/Resources/views/admin/image/show.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/AymardBundle/Resources/views/admin/page/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">/../src/AymardBundle/Resources/views/admin/page/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="53e718cd4371846e084c816b4c5c1bf2875f271c" resname="admin.navigation">
+        <source>admin.navigation</source>
+        <target>admin.navigation</target>
+        <jms:reference-file line="56">/../src/AymardBundle/Resources/views/admin/admin_base.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0a682b6ab893f251fa816ffad10d94670d68aa5" resname="admin.new">
+        <source>admin.new</source>
+        <target state="new">admin.new</target>
+        <jms:reference-file line="39">/../src/AymardBundle/Resources/views/admin/image/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7142fa5573d612a4ece720a83da80eab97a391eb" resname="admin.show">
+        <source>admin.show</source>
+        <target>admin.show</target>
+        <jms:reference-file line="27">/../src/AymardBundle/Resources/views/admin/page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae9de4a701a34a95b97654d59da24d65d6863bb7" resname="image.description">
+        <source>image.description</source>
+        <target>image.description</target>
+        <jms:reference-file line="15">/../src/AymardBundle/Resources/views/admin/image/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3e0cc99faa30cbd9ea4160325e2b14defff59540" resname="image.file">
+        <source>image.file</source>
+        <target>image.file</target>
+        <jms:reference-file line="19">/../src/AymardBundle/Resources/views/admin/image/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b23f85f1dbc82f6b7862ea52e7d30bb618aa34d1" resname="image.order">
+        <source>image.order</source>
+        <target>image.order</target>
+        <jms:reference-file line="11">/../src/AymardBundle/Resources/views/admin/image/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7c38dc8c81b30718eb3876bce0b2ffb1cf7583a1" resname="page.edit.title">
+        <source>page.edit.title</source>
+        <target>page.edit.title</target>
+        <jms:reference-file line="7">/../src/AymardBundle/Resources/views/admin/page/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e8344f4dd85268c385e9b2cdba937244070e2aab" resname="page.index.title">
+        <source>page.index.title</source>
+        <target>page.index.title</target>
+        <jms:reference-file line="7">/../src/AymardBundle/Resources/views/admin/page/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aed840df008bc618d932c44134824efaa82a169f" resname="page.new.title">
+        <source>page.new.title</source>
+        <target>page.new.title</target>
+        <jms:reference-file line="6">/../src/AymardBundle/Resources/views/admin/page/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1aa16068727acb12d048c6b203fa2a59688f96ad" resname="page.show.title">
+        <source>page.show.title</source>
+        <target>page.show.title</target>
+        <jms:reference-file line="6">/../src/AymardBundle/Resources/views/admin/page/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="79a8edfcb21065b597c4c9af8f55ad87fd876fd0" resname="page.title">
+        <source>page.title</source>
+        <target>page.title</target>
+        <jms:reference-file line="12">/../src/AymardBundle/Resources/views/admin/page/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">/../src/AymardBundle/Resources/views/admin/page/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ace147a19e021b4d4d0a5221b62dca0cb5cdc27d" resname="sign.out">
+        <source>sign.out</source>
+        <target>sign.out</target>
+        <jms:reference-file line="13">/../src/AymardBundle/Resources/views/admin/navbar/user.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -16,7 +16,7 @@
             <img class="thumbnail" height="300px" src="{{ asset('img/' ~ image.file ~ '' ) }}"/>
         </li>
         <li>
-            <a class="btn btn-primary" href="{{ path('admin_image_index') }}">Back to the list</a>
+            <a class="btn btn-primary" href="{{ path('admin_image_index') }}">{{'admin.back'|trans}}</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

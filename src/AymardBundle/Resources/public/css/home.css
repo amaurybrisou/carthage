@@ -1,5 +1,5 @@
-.wrapper {
-  background-color: #90AAD4;
+main {
+  background-color: var(--main-color);
   height: 100vh;
   padding-top: 10%;
 }

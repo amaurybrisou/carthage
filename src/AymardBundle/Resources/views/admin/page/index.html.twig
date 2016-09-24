@@ -1,13 +1,16 @@
 {% extends 'AymardBundle::admin/admin_base.html.twig' %}
 
+{% trans_default_domain "AvanzuAdminTheme" %}
+
+
 {% block body %}
-    <h1>Page list</h1>
+    <h1>{{'page.index.title'|trans}}</h1>
 
     <table id="table" class="table table-striped table-bordered" >
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Description</th>
+                <th>{{ 'page.title'|trans}}</th>
+                {# <th>{{ 'page.description'|trans}}</th> #}
 
                 <th>Actions</th>
             </tr>
@@ -16,15 +19,15 @@
         {% for page in pages %}
             <tr>
                 <td>{{ page.title }}</td>
-                <td>{{ page.description }}</td>
+                {# <td>{{ page.description }}</td> #}
                 
                 <td>
                     <ul>
                         <li>
-                            <a class="btn btn-primary" href="{{ path('admin_page_show', { 'id': page.id }) }}">show</a>
+                            <a class="btn btn-primary" href="{{ path('admin_page_show', { 'id': page.id }) }}">{{'admin.show'|trans}}</a>
                         </li>
                         <li>
-                            <a class="btn btn-primary" href="{{ path('admin_page_edit', { 'id': page.id }) }}">edit</a>
+                            <a class="btn btn-primary" href="{{ path('admin_page_edit', { 'id': page.id }) }}">{{'admin.edit'|trans}}</a>
                         </li>
                     </ul>
                 </td>
@@ -33,12 +36,6 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a class="btn btn-primary" href="{{ path('admin_page_new') }}">Create a new entry</a>
-        </li>
-    </ul>
-    
     <script type="text/javascript">
         $(document).ready(function(){
             $('#table').DataTable();

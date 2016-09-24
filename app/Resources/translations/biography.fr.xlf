@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2016-09-24T22:12:28Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b8deb1e6424abf22a2f7071fb892f40133320451" resname="artiste_peintre">
+        <source>artiste_peintre</source>
+        <target>Artiste Peintre</target>
+        <jms:reference-file line="38">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e176f9a84b066f15e8d17155dc8b81f1ced9a9f0" resname="biography.p1">
+        <source>biography.p1</source>
+        <target>Né en 1952, Aymard est Diplômé National des Beaux-Arts de Bordeaux en 1974. Après s’être formé pendant deux années chez un maître verrier mosaïste et puis avoir fait des études de peinture et de gravure aux Beaux-arts de Bordeaux et d’Angers, il y ajoutera en 1982 et 1983, une formation à la technique de la dorure. Entre 1976 et 2013 il se consacrera à l’enseignement dans les collèges et les lycées.</target>
+        <jms:reference-file line="50">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c3dcd9bd10f0401d3e9642f151499172ab4ce0ba" resname="biography.p10">
+        <source>biography.p10</source>
+        <target xml:space="preserve">De la maitrise de la forme et de la matière découle l’expression en quête du vrai, du beau et du bon, le prolongement plus que la rupture s’est matérialisé dans des travaux toujours renouvelés pour vivre des jours nouveaux et créer des œuvres singulières. »
+
+</target>
+        <jms:reference-file line="62">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="04f88918c9282b12fce02a23417783d2b7573614" resname="biography.p11">
+        <source>biography.p11</source>
+        <target>Aymard le Forestier de Quillien.</target>
+        <jms:reference-file line="63">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0bafac2380be33e9cb87865ebcf333cda65bc25" resname="biography.p2">
+        <source>biography.p2</source>
+        <target>Depuis 1976, il a exposé dans de nombreuses galeries : Quimper, Bordeaux, Brest, Paris, Tirana (Albanie 2012) Chambéry, Aix les Bains (2014-2015).</target>
+        <jms:reference-file line="51">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0a1f9ab2903b60e4b7373b1ff4d54326fc92bed9" resname="biography.p3">
+        <source>biography.p3</source>
+        <target>Désormais tout son temps est consacré à ses recherches et à la diffusion de l’ensemble de son travail de création.</target>
+        <jms:reference-file line="52">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7c54ddecd733ce0ca52c96196a34c09a560a83c1" resname="biography.p4">
+        <source>biography.p4</source>
+        <target>« Je me préoccupe de l’art depuis l’âge de 14 ans et mon intérêt s’est au départ porté sur l’artisanat. Le vitrail et la mosaïque furent mon premier travail, j’ai rencontré des artistes Edmond BOISSONNET, Mirande, Pierre THÉRON, Alfred MANESSIER qui faisaient appel à ces techniques pour réaliser des commandes. J’ai écouté et observé!</target>
+        <jms:reference-file line="56">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a3d368c6ff28dc464e74b889c58463b2dfe5bf8" resname="biography.p5">
+        <source>biography.p5</source>
+        <target xml:space="preserve">Par la suite j’ai passé six ans aux Beaux-Arts pendant lesquels je me suis familiarisé à l’histoire de l’Art et aux techniques d’expressions plastiques.
+
+</target>
+        <jms:reference-file line="57">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3ba286360607e829f3f8314da2cd69c27506c23a" resname="biography.p6">
+        <source>biography.p6</source>
+        <target xml:space="preserve">Ma vie s’organise autour de ma passion, je commence à exposer et à travailler mes pensées aussi face à un art contemporain naissant et qui aujourd’hui s’est académisé. En 1981, je m’intéresse à la dorure à l’eau et avec l’aide de Pierre GICQUEL, restaurateur des cadres du musée du Louvre, je m’approprie cette technique au service de mes créations. C’est une aventure qui durera et évoluera pendant quatre ans.
+
+</target>
+        <jms:reference-file line="58">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f2bd9a528f677c17721d010688549a89dfdc1d3d" resname="biography.p7">
+        <source>biography.p7</source>
+        <target xml:space="preserve">Dessin, huile et diverses techniques accompagneront mon cheminement jusqu'à aujourd’hui.
+
+</target>
+        <jms:reference-file line="59">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a564215ed0777e826d8253c0b041f6976b65482f" resname="biography.p8">
+        <source>biography.p8</source>
+        <target xml:space="preserve">L’adhésion à une aventure dans un monde en devenir est le mien et celui auquel j’appartiens, ainsi je participe et contribue à ma manière à le rendre meilleur et plus beau en sachant très bien que je ne suis ni le début et ni la fin. Mon projet est de vivre dans un monde à découvrir et de tenter de m’y émanciper constamment en matérialisant au plus juste mes idées par la forme et la couleur.
+
+</target>
+        <jms:reference-file line="60">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="33d3f1d338d0f872dc4db8611ebe6e97fab8dbee" resname="biography.p9">
+        <source>biography.p9</source>
+        <target xml:space="preserve">Ecouter, observer, méditer, travailler sont des ingrédients propres à alimenter des expressions renouvelées sans rejeter les racines et les expériences qui la constituent. Or, «Aujourd’hui est le premier jour du reste de ma vie» comme le disait si bien Hemingway, j’en fis un des fondements de mon œuvre.
+
+</target>
+        <jms:reference-file line="61">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7ad54e82d24a5c25ca48685f8874861a6ca7e00f" resname="painter_name">
+        <source>painter_name</source>
+        <target>Aymard Le Forestier De Quillien</target>
+        <jms:reference-file line="35">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
