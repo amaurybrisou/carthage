@@ -121,7 +121,7 @@ class DefaultController extends Controller
      * @Route("/oils", name="oils")
      * @Route("/acrylics", name="acrylics")
      * @Route("/drawings", name="drawings")
-     * @Route("/gouaches-1", name="gouaches-1")
+     * @Route("/gouaches", name="gouaches")
      * @Route("/gold", name="gold")
      * @Route("/misc", name="misc")
      * @Route("/admin", name="admin")
