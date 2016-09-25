@@ -2,7 +2,7 @@ $(document).ready(function(){
     var closeButton = $("#c-menu__close");
     var slider = $("#c-menu--slide-left");
     
-    $('#c-menu__close').click(function(){
+    var openClose = function(){
     
         if($(slider).hasClass("is-active") && closeButton.hasClass('is-active'))
         {
@@ -19,7 +19,10 @@ $(document).ready(function(){
             $(closeButton).addClass('glyphicon-backward');
         }
     
-    });
+    }
+
+    $('#c-menu__close').click(openClose);
+    $('#c-menu--slide-left').click(openClose);
 });
 
 

@@ -1,3 +1,5 @@
 $(document).ready(function(){
-  $("#mosaic").css('margin-bottom', $('footer').height() + 15);
+  var v = $('footer').height() + 15;
+  $("#mosaic").css('margin-bottom', v);
+  $('.c-menu--slide-left').css('padding-bottom', v)
 });
