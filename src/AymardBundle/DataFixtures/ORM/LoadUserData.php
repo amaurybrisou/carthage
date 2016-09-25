@@ -324,6 +324,24 @@ class LoadUserData implements FixtureInterface
         $image = new Image();$image->setFile('cr-10-crayonsdecouleur.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('cr-10-crayonsdecouleur.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('ac-20b-acrylique.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('ac-20b-acrylique.jpg');$image->setPage($page);$manager->persist($image);
         $image = new Image();$image->setFile('pa-10-aquarelleetpastel.jpg');$image->setImageOrder($this->getImageOrder($image->getFile()));$image->setDescription('pa-10-aquarelleetpastel.jpg');$image->setPage($page);$manager->persist($image);
+
+        $page = new Page();
+        $page->setTitle('Presse');
+        $page->setSlug('press');
+        $page->setDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+        $page->addMeta(new Meta("title", "Presse"));
+        $page->addMeta(new Meta("description", "Presse"));
+        $manager->persist($page);
+        $image = new Image();$image->setFile('article_001_im_001.jpg');$image->setImageOrder(0);$image->setDescription('Aymard Le Forestier de Quillien sur sa terrasse');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_003.jpg');$image->setImageOrder(1);$image->setDescription('A gauche ou à droite (détail)');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_004.jpg');$image->setImageOrder(2);$image->setDescription('Fourche et Luc');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_005.jpg');$image->setImageOrder(3);$image->setDescription('La balance');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_006.jpg');$image->setImageOrder(4);$image->setDescription('Naissance des grains');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_007.jpg');$image->setImageOrder(5);$image->setDescription('Etude');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_008.jpg');$image->setImageOrder(6);$image->setDescription('Etude');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_009.jpg');$image->setImageOrder(7);$image->setDescription('Thérèse, Jardin, Etude');$image->setPage($page);$manager->persist($image);
+        $image = new Image();$image->setFile('article_001_im_010.jpg');$image->setImageOrder(8);$image->setDescription('Je cherche la lumière');$image->setPage($page);$manager->persist($image);
+        
         $manager->flush();
     }
     
