@@ -22,4 +22,4 @@ web/fonts
 web/js
 web/assetic
 *.gz
-/app/Resources/translations
+/app/Resources/translations/
