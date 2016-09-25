@@ -26,8 +26,6 @@ html {
 
 .biography .right_content_top {
     font-size:1em;
-    width:100%;
-    display:inline-flex;
 }
 
 main {
@@ -36,9 +34,6 @@ main {
   padding-top: 2%;
 }
 
-/*.right_content_top div:nth-child(2){
-    width: 52%;
-}*/
 
 .biography .firm {
     font-weight: bold;
@@ -46,10 +41,16 @@ main {
 
 .biography img {
     margin-right:20px;
+    margin-top: 10%;
 }
 
 .biography p {
     font-size: 1.2em;
     font-family: Helvetica, Arial, sans-serif;
     line-height: 25px;
+    margin-top: 20px;
+}
+
+.biography .first-letter-style::first-letter {
+    font-size: 1.3em;
 }
