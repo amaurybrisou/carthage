@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2016-09-24T22:12:28Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2016-09-25T07:26:07Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -10,6 +10,11 @@
         <source>artiste_peintre</source>
         <target>Artiste Peintre</target>
         <jms:reference-file line="38">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e5e92e6a159a6736c15467828e00dd129ac7869d" resname="biography.firm">
+        <source>biography.firm</source>
+        <target>Aymard Le Forestier De Quillien</target>
+        <jms:reference-file line="63">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="e176f9a84b066f15e8d17155dc8b81f1ced9a9f0" resname="biography.p1">
         <source>biography.p1</source>
@@ -22,11 +27,6 @@
 
 </target>
         <jms:reference-file line="62">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
-      </trans-unit>
-      <trans-unit id="04f88918c9282b12fce02a23417783d2b7573614" resname="biography.p11">
-        <source>biography.p11</source>
-        <target>Aymard le Forestier de Quillien.</target>
-        <jms:reference-file line="63">/../src/AymardBundle/Resources/views/home/biography.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="f0bafac2380be33e9cb87865ebcf333cda65bc25" resname="biography.p2">
         <source>biography.p2</source>

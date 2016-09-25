@@ -23,24 +23,6 @@
   <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 
-
-
-{% block javascripts %}
-  {% javascripts 
-  '@AymardBundle/Resources/public/vendors/jquery/dist/jquery.min.js'
-  '@bootstrap_js'
-  '@AymardBundle/Resources/public/vendors/imagesloaded/imagesloaded.pkgd.min.js'
-  '@AymardBundle/Resources/public/js/left-slider.js'    
-  '@AymardBundle/Resources/public/js/modal.js'
-  '@AymardBundle/Resources/public/js/author.js'
-  
-
-  %}
-  <script src="{{ asset_url }}"></script>
-  {% endjavascripts %}
-{% endblock %}
-
-
 {% block stylesheets %}
 
   {% stylesheets  filter="cssrewrite"
@@ -60,35 +42,35 @@
 
 {% block left_slider %}
   <div id="c-menu__close" class="c-menu__close glyphicon glyphicon-backward is-active"></div>
-  <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
+  <div id="c-menu--slide-left" class="c-menu c-menu--slide-left is-active">
     {% block left_slider_content %}
       {{ (page.slug) |trans({}, 'sliders') }}    
     {% endblock %}
-  </nav>
+  </div>
 {% endblock %}
-<main id="main-content" >
-  {% block body %}
-    <article id="mosaic">
-      {% block mosaic %}
-        {% for photo in photos %}
-          <a style="margin:5px" data-toggle="modal" data-target="#photo-modal">
-            <img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ ('img/' ~ photo.file) | imagine_filter('fullSize')   }}" image-description="{{ photo.description}}"
-            alt="{{ photo.description}}"
-            title="{{ photo.description}}" />
-          </a>
-        {% endfor %}
-      {% endblock %}
-    </article>
 
-    <article id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="photo-modal-content">
-        <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
-        <div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
-        <img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
-        <div style="display:none;" id="image-description"></div>
-      </div>
-    </article>
-  </main>
+{% block body %}
+  <article id="mosaic">
+    {% block mosaic %}
+      {% for photo in photos %}
+        <a style="margin:5px" data-toggle="modal" data-target="#photo-modal">
+          <img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ ('img/' ~ photo.file) | imagine_filter('fullSize')   }}" image-description="{{ photo.description}}"
+          alt="{{ photo.description}}"
+          title="{{ photo.description}}" />
+        </a>
+      {% endfor %}
+    {% endblock %}
+  </article>
+
+  <article id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="photo-modal-content">
+      <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
+      <div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
+      <img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
+      <div style="display:none;" id="image-description"></div>
+    </div>
+  </article>
+  
 {% endblock %}
 
 <article id="contact-modal" class="modal fade" tabindex="-1" role="dialog">
@@ -106,8 +88,23 @@
   </div>
 </article>
 </div>
-<div id="menu" >
+<footer>
   {% block menu %}
     {% include 'AymardBundle::commons/menus.html.twig' %}
   {% endblock %}
-</div>
+</footer>
+
+
+{% block javascripts %}
+  {% javascripts 
+  '@AymardBundle/Resources/public/vendors/jquery/dist/jquery.min.js'
+  '@bootstrap_js'
+  '@AymardBundle/Resources/public/vendors/imagesloaded/imagesloaded.pkgd.min.js'
+  '@AymardBundle/Resources/public/js/left-slider.js'    
+  '@AymardBundle/Resources/public/js/modal.js'
+  '@AymardBundle/Resources/public/js/main.js'
+  '@AymardBundle/Resources/public/js/author.js'
+  %}
+  <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+{% endblock %}

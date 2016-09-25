@@ -1,11 +1,10 @@
-main {
+body {
   background-color: var(--main-color);
-  height: 100vh;
-  padding-top: 10%;
+  padding: 10%;
 }
 
-.home {
-    width:60%;
+main {
+    /*width:60%;*/
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -22,4 +21,22 @@ main {
 
 .title div:nth-child(2) {
     text-align:center;
+}
+
+@media (min-width: 1150px) {
+  main {
+      width: 60%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1149px) {
+  main {
+      width: 70%;
+  }
+}
+
+@media  (max-width: 1000px) {
+  main {
+      width: 90%;
+  }
 }

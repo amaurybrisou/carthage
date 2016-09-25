@@ -5,7 +5,7 @@ html {
 .biography {
     width:80%;
     display:flex;
-    align-items:center;
+    
     justify-content:space-between;
     margin-right:auto;
     margin-left:auto;
@@ -13,7 +13,7 @@ html {
 }
 
 .title {
-    margin-top: -4%;
+    margin-top: 15%;
     width:70%;
 }
 
@@ -36,11 +36,20 @@ main {
   padding-top: 2%;
 }
 
-.right_content_top div:nth-child(2){
+/*.right_content_top div:nth-child(2){
     width: 52%;
-}
+}*/
 
+.biography .firm {
+    font-weight: bold;
+}
 
 .biography img {
     margin-right:20px;
+}
+
+.biography p {
+    font-size: 1.2em;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 25px;
 }

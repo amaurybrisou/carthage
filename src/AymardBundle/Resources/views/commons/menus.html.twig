@@ -1,6 +1,6 @@
 {% trans_default_domain 'menus' %}
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-center">
         {% for menu in menus %}
             <li class="navbar-header {% if slug == menu.slug %} active {% endif %}">
-              <a href="{{ path(menu.slug) }}">{{ menu.slug | trans({}, 'routes') | upper }}</a></li>
+              <a href="{{ path(menu.slug) }}">{{ menu.slug | trans | upper }}</a></li>
         
           {% endfor %}
         <li>

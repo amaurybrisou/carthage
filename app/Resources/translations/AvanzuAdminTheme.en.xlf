@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2016-09-24T22:12:34Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2016-09-25T07:26:13Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -27,7 +27,7 @@
       </trans-unit>
       <trans-unit id="e0a682b6ab893f251fa816ffad10d94670d68aa5" resname="admin.new">
         <source>admin.new</source>
-        <target state="new">admin.new</target>
+        <target>admin.new</target>
         <jms:reference-file line="39">/../src/AymardBundle/Resources/views/admin/image/show.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="7142fa5573d612a4ece720a83da80eab97a391eb" resname="admin.show">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2016-09-24T22:12:28Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+  <file date="2016-09-25T07:26:07Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -21,9 +21,9 @@
         <target>La technique de l’or en feuille remonte très loin dans les civilisations, en Europe elle a eu sa place dans des œuvres religieuses du moyen âge et participe abondamment à la décoration. Cette matière métallique souple, aux reflets les plus subtils et qui n’a pas d’égale, a fait l’objet d’un travail de recherche technique avec un professionnel, restaurateur des cadres du musée du Louvre Pierre Giquel. La mobilité de la lumière sur la matière provoque une lecture constamment renouvelée. L’absence de possibilité de retouches dans sa réalisation oblige une décision sans retour, la méditation; cette dernière en fait un exercice particulièrement difficile car le doute ne peut exister : avoir foi en soi est impératif. L’or pour moi évoque la notion d’éternité, l’inaltérable et la permanence de l’idée transmise.</target>
         <jms:reference-file line="8">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
       </trans-unit>
-      <trans-unit id="24fa39e505ab9c9a1f589da0a9f5eb99f8cdb212" resname="gouaches-1">
-        <source>gouaches-1</source>
-        <target>J’attribue une place importante à cette matière colorée car elle est très délicate, fragile à utiliser elle a l’avantage de répondre avec beaucoup de force. C’est une technique que j’ai expérimentée sur beaucoup de supports différents, du papier kraft blanc ou brun, du papier bristol en passant par du bois avec des préparations de fond très spécifique. Le support parfois prend une large place dans la composition, les pleins (mes interventions) ou les vides (le support) jouent sur l’un et sur l’autre en fonction de la texture de ce dernier, il laisse de la place à l’air et au silence donnant plus de poids à une affirmation de la forme et de la couleur.</target>
+      <trans-unit id="2b98ab46332dc34cad8b1402db4a12713e6f6879" resname="gouaches">
+        <source>gouaches</source>
+        <target>gouaches</target>
         <jms:reference-file line="7">/../src/AymardBundle/Resources/views/home/translation_placeholder.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="291d3e10d996b9590a718565f00bfbbd0ad02bef" resname="misc">

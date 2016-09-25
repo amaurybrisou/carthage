@@ -1,8 +1,13 @@
-.navbar-default {
-    font-size:0.9em;
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer nav.navbar-default {
     display: flex;
     justify-content:space-around;
-    align-items:center;
+    margin-bottom: 0;
 }
 
 .navbar-default .navbar-nav > .open > a, 
@@ -38,29 +43,20 @@
 }
 
 
-@media (min-width: 1150px) and (max-width: 1250px) {
+@media only screen and (min-width: 1150px) {
   .navbar-default {
-      font-size: 0.8em;
+      font-size: 0.9em;
   }
 }
 
-@media (min-width: 977px) and (max-width: 1149px) {
-  .navbar-default {
-      font-size: 0.7em;
-  }
-  
-  .nav > li > a {
-      padding: 15px 10px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 976px) {
+@media (max-width: 1149px) {
   .navbar-default {
       font-size: 0.6em;
   }
+
   
   .nav > li > a {
-      padding: 15px 5px;
+      padding: 15px 10px;
   }
 }
 

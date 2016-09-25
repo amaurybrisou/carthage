@@ -13,7 +13,6 @@ html {
 }
 
 body {
-    width: 100%;
     font-size: 18px;
     margin: 0 auto;
 }
@@ -26,7 +25,8 @@ body {
 #mosaic {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 5%;
+    justify-content: flex-end;
+    /*margin-bottom: 5%;*/
 }
 
 
