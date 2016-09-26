@@ -48,7 +48,7 @@
 {% endblock %}
 
 {% block body %}
-  <article id="mosaic">
+  <div id="mosaic">
     {% block mosaic %}
       {% for photo in photos %}
         <a style="margin:5px" data-toggle="modal" data-target="#photo-modal">
@@ -56,27 +56,13 @@
         </a>
       {% endfor %}
     {% endblock %}
-  </article>
+  </div>
 
   {% include "AymardBundle::commons/photo-modal.html.twig" %}
   
 {% endblock %}
 
-<article id="contact-modal" class="modal fade">
-  <h2 style="display:none;">{{ page.title }}</h2>
-  <div class="modal-dialog" role="document">
 
-    <div class="modal-content">
-      <div  class="modal-remove" data-dismiss="modal">
-        <span class="glyphicon glyphicon-remove"></span>
-      </div>
-      
-      {{ form_start(form, {'action': path('contact'), 'method': 'POST'}) }}
-      {{ form_widget(form) }}
-      {{ form_end(form) }}
-    </div>
-  </div>
-</article>
 
 <footer>
   {% block menu %}
