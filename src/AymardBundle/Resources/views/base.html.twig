@@ -76,9 +76,9 @@
 
     <div class="modal-content">
 
-      <input class="modal-remove" type="button" data-dismiss="modal">
-        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-      </input>
+      <input class="modal-remove" type="button" data-dismiss="modal"/>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      
       {{ form_start(form, {'action': path('contact'), 'method': 'POST'}) }}
       {{ form_widget(form) }}
       {{ form_end(form) }}
