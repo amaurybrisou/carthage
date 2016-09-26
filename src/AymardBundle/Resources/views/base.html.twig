@@ -52,9 +52,7 @@
     {% block mosaic %}
       {% for photo in photos %}
         <a style="margin:5px" data-toggle="modal" data-target="#photo-modal">
-          <img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}" alt="{{ photo.description}}"
-          alt="{{ photo.description}}"
-          title="{{ photo.description}}" />
+          <img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}" alt="{{ photo.description}}"  title="{{ photo.description}}" />
         </a>
       {% endfor %}
     {% endblock %}

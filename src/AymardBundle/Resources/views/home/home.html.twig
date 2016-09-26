@@ -53,7 +53,7 @@
         </div>
     	{% for photo in photos %}
     		<a data-toggle="modal" data-target="#photo-modal">
-        		<img class="photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ asset('img/' ~ photo.file ~ '' ) }}" image-description="{{ photo.description}}" 
+        		<img class="photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"   image-description="{{ photo.description}}" 
                 alt="{{ photo.description }}"/>
         	</a>
 		{% endfor %}
