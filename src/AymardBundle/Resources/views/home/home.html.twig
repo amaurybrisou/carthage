@@ -53,17 +53,10 @@
         </div>
     	{% for photo in photos %}
     		<a data-toggle="modal" data-target="#photo-modal">
-        		<img class="photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"   image-description="{{ photo.description}}" 
+        		<img class="photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"
                 alt="{{ photo.description }}"/>
         	</a>
 		{% endfor %}
     </main>
-    <article id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
-       <div class="photo-modal-content">
-            <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
-       		<div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
-      		<img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
-      		<div style="display:none;" id="image-description"></div>
-      </div>
-    </article>
+    {% include "AymardBundle::commons/photo-modal.html.twig" %}
 {% endblock %}

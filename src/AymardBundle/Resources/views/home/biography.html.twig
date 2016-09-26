@@ -31,12 +31,12 @@
     <main>
         <div class="biography">
             <div class="title">
-                <div>
+                <article>
                     <h3>{{ 'painter_name' | trans }}</h3>
-                </div>
-                <div>
+                </article>
+                <article>
                     <h4>{{ 'artiste_peintre' | trans | upper }}</h4>
-                </div>
+                </article>
                 <div>
                     {% for photo in photos %}
                         <img class="thumbnail" src="{{ asset('img/' ~ photo.file ~ '') }}" alt="{{ photo.description }}"/>
