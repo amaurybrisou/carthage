@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   
@@ -52,7 +52,7 @@
     {% block mosaic %}
       {% for photo in photos %}
         <a style="margin:5px" data-toggle="modal" data-target="#photo-modal">
-          <img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}"  full-size-link="{{ ('img/' ~ photo.file) | imagine_filter('fullSize')   }}" image-description="{{ photo.description}}"
+          <img class="img-thumbnail photo-thumbnail photo-modal-event" src="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}" alt="{{ photo.description}}"
           alt="{{ photo.description}}"
           title="{{ photo.description}}" />
         </a>
@@ -61,7 +61,7 @@
   </article>
 
   <article id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="photo-modal-content">
+    <div id="photo-modal-content">
       <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
       <div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
       <img style="display:none;" src="" id="photo-modal-img" class="img-responsive" />
@@ -85,7 +85,7 @@
     </div>
   </div>
 </article>
-</div>
+
 <footer>
   {% block menu %}
     {% include 'AymardBundle::commons/menus.html.twig' %}

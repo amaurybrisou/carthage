@@ -1,31 +1,39 @@
 $(document).ready(function(){
+    
+    var fullSizeBaseUrl = "/media/cache/resolve/fullSize/img/";
+    var img = $('#photo-modal-img');
+    var img_desc = $('#image-description');
+    var modal_spinner = $('#photo-modal-spinner');
+    var photo_modal_content = $('#photo-modal-content');
+
     $(".photo-modal-event").on('click', function(event){
-        var imageUrl = $(this).attr('full-size-link');
-        var imageDesc = $(this).attr('image-description');
-       
-        $img = $('#photo-modal-img');
-        $img.attr('src', imageUrl);
         
-        $('#photo-modal-img').imagesLoaded()
+        var splittedUrl = $(this).attr('src').split('/');
+
+        var imageUrl = fullSizeBaseUrl + splittedUrl[splittedUrl.length-1];
+        var imageDesc = $(this).attr('alt');
+       
+        img.attr('src', imageUrl);
+        
+        img.imagesLoaded()
             .always(function(){
-                $('#photo-modal-spinner').fadeOut(1000);
-                $('#image-description').html(imageDesc);
+                modal_spinner.fadeOut(1000);
+                img_desc.html(imageDesc);
                 
-                $('#image-description').fadeIn(3000);
-                $("#photo-modal-img").fadeIn(1500);
+                img_desc.fadeIn(2000);
+                img.fadeIn(1500);
             });
     });
  
     $('#photo-modal').on('hide.bs.modal', function (e) {
-        var img = $('#photo-modal-img');
-        var img_desc = $('#image-description');
+        
         
         img.css('display', 'none');
         
         img_desc.html('');
         img_desc.css('display', 'none');
         
-        $('#photo-modal-spinner').show();
+        modal_spinner.show();
     });
     
     $('#photo-modal').on('show.bs.modal', function (e) {
@@ -33,9 +41,6 @@ $(document).ready(function(){
         var originalWidth = $invoker.children().width();
         var originalHeight = $invoker.children().height();
         var originalRatio = originalWidth/originalHeight;//get dimensions ratio of original image
-        
-        var photo_modal_content = $('.photo-modal-content');
-        var img = $('#photo-modal-img');
         
         photo_modal_content.css({
             "width": function () {

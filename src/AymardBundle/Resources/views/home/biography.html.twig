@@ -39,7 +39,7 @@
                 </div>
                 <div>
                     {% for photo in photos %}
-                        <img class="thumbnail" src="{{ asset('img/' ~ photo.file ~ '') }}"/>
+                        <img class="thumbnail" src="{{ asset('img/' ~ photo.file ~ '') }}" alt="{{ photo.description }}"/>
                     {% endfor %}
                 </div>
             </div>
