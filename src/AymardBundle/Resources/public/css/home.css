@@ -25,17 +25,17 @@ main {
 
 @media (min-width: 1150px) {
   main {
-      width: 60%;
+      width: 80%;
   }
 }
 
 @media (min-width: 1000px) and (max-width: 1149px) {
   main {
-      width: 70%;
+      width: 90%;
   }
 }
 
-@media  (max-width: 1000px) {
+@media  (max-width: 999px) {
   main {
       width: 90%;
   }
