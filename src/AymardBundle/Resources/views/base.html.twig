@@ -58,7 +58,8 @@
     {% endblock %}
   </article>
 
-  <article id="photo-modal" class="modal fade" tabindex="-1" role="dialog">
+  <article id="photo-modal" class="modal fade" >
+    <h2 style="display:none;">{{ page.title }}</h2>
     <div id="photo-modal-content">
       <i class="glyphicon glyphicon-remove" data-dismiss="modal"></i>
       <div id="photo-modal-spinner" class='glyphicon spinning glyphicon-refresh'></div>
@@ -69,7 +70,8 @@
   
 {% endblock %}
 
-<article id="contact-modal" class="modal fade" tabindex="-1" role="dialog">
+<article id="contact-modal" class="modal fade">
+  <h2 style="display:none;">{{ page.title }}</h2>
   <div class="modal-dialog" role="document">
 
     <div class="modal-content">
