@@ -6,14 +6,19 @@ $(document).ready(function(){
     var modal_spinner = $('#photo-modal-spinner');
     var photo_modal_content = $('#photo-modal-content');
 
+    var imgElement;
+
     $(".photo-modal-event").on('click', function(event){
-        
+
         var splittedUrl = $(this).attr('src').split('/');
 
         var imageUrl = fullSizeBaseUrl + splittedUrl[splittedUrl.length-1];
         var imageDesc = $(this).attr('alt');
        
-        img.attr('src', imageUrl);
+        imgElement = $('<img class="img-responsive">');
+        imgElement.attr('src', imageUrl);
+        
+        img.append(imgElement);
         
         img.imagesLoaded()
             .always(function(){
@@ -29,6 +34,7 @@ $(document).ready(function(){
         
         
         img.css('display', 'none');
+        img.html('');
         
         img_desc.html('');
         img_desc.css('display', 'none');
@@ -52,7 +58,7 @@ $(document).ready(function(){
 	        "margin": "auto"
         });
 
-        img.css({
+        imgElement.css({
             "height": function () {
 	            return ("70vh");
 	        },
