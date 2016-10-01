@@ -1,0 +1,15 @@
+<div id="contact-modal" class="modal fade">
+  <h2 style="display:none;">{{ page.title }}</h2>
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+      <div  class="modal-remove" data-dismiss="modal">
+        <span class="glyphicon glyphicon-remove"></span>
+      </div>
+      
+      {{ form_start(form, {'action': path('contact'), 'method': 'POST'}) }}
+      {{ form_widget(form) }}
+      {{ form_end(form) }}
+    </div>
+  </div>
+</div>
