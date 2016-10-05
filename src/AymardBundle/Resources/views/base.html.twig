@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   
   <meta charset="UTF-8"/>
-  
+  <meta property="og:url" content="http://www.aymardleforestierdequillien.com/">
+  <meta property="og:image" content="{{ ('img/' ~ photo.file) | imagine_filter('photoThumb')   }}">
+
   {% if page.metas is defined %}
     {% for meta in page.metas %}
       <meta property="{{ meta.property }}" content="{{ meta.content }}" />
